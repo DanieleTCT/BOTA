@@ -7,52 +7,22 @@
 -- ISTRUZIONI:
 -- 1. Vai su Supabase Dashboard → Storage
 -- 2. Crea un nuovo bucket chiamato 'img-bota'
--- 3. Imposta come PUBLIC
--- 4. Esegui questo script SQL per configurare le policy RLS
+-- 3. Imposta come PUBLIC (molto importante!)
+-- 4. Non serve eseguire questo script nel SQL Editor perché
+--    Supabase gestisce automaticamente le policy per i bucket pubblici
+--
+-- NOTA: Se hai già creato il bucket come PUBLIC, gli upload funzionano
+-- senza bisogno di policy SQL aggiuntive.
 -- =============================================================================
 
--- -----------------------------------------------------------------------------
--- Abilita RLS sulla tabella storage.objects
--- -----------------------------------------------------------------------------
-ALTER TABLE storage.objects ENABLE ROW LEVEL SECURITY;
-
--- -----------------------------------------------------------------------------
--- Rimuovi policy esistenti per evitare conflitti
--- -----------------------------------------------------------------------------
-DROP POLICY IF EXISTS "anon_read_img_bota" ON storage.objects;
-DROP POLICY IF EXISTS "anon_insert_img_bota" ON storage.objects;
-DROP POLICY IF EXISTS "anon_update_img_bota" ON storage.objects;
-DROP POLICY IF EXISTS "anon_delete_img_bota" ON storage.objects;
-
--- -----------------------------------------------------------------------------
--- Policy RLS per il bucket img-bota - accesso completo per ruolo anon
--- -----------------------------------------------------------------------------
-
--- Policy: permette lettura a tutti (anon e authenticated)
-CREATE POLICY "anon_read_img_bota"
-ON storage.objects FOR SELECT
-USING (bucket_id = 'img-bota');
-
--- Policy: permette upload a tutti (senza auth per site builder)
-CREATE POLICY "anon_insert_img_bota"
-ON storage.objects FOR INSERT
-WITH CHECK (bucket_id = 'img-bota');
-
--- Policy: permette aggiornamento a tutti
-CREATE POLICY "anon_update_img_bota"
-ON storage.objects FOR UPDATE
-USING (bucket_id = 'img-bota');
-
--- Policy: permette eliminazione a tutti
-CREATE POLICY "anon_delete_img_bota"
-ON storage.objects FOR DELETE
-USING (bucket_id = 'img-bota');
-
--- -----------------------------------------------------------------------------
--- Verifica: lista dei bucket
--- -----------------------------------------------------------------------------
--- SELECT * FROM storage.buckets WHERE id = 'img-bota';
+-- Questo script non richiede l'esecuzione di SQL.
+-- La configurazione avviene tramite Supabase Dashboard:
+--
+-- 1. Storage → New bucket → nome: img-bota
+-- 2. Public bucket: ON
+-- 3. L'upload pubblico è consentito automaticamente dai client Supabase
+--    usando la chiave anon (anon key) quando il bucket è PUBLIC
 
 -- =============================================================================
--- FINE SCRIPT
+-- FINE SETUP
 -- =============================================================================
