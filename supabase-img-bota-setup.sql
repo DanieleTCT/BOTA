@@ -12,7 +12,7 @@
 -- =============================================================================
 
 -- -----------------------------------------------------------------------------
--- Abilita RLS sulla tabella storage.objects (se non già abilitato)
+-- Abilita RLS sulla tabella storage.objects
 -- -----------------------------------------------------------------------------
 ALTER TABLE storage.objects ENABLE ROW LEVEL SECURITY;
 
@@ -25,25 +25,25 @@ DROP POLICY IF EXISTS "Public Update" ON storage.objects;
 DROP POLICY IF EXISTS "Public Delete" ON storage.objects;
 
 -- -----------------------------------------------------------------------------
--- Policy RLS per il bucket img-bota
+-- Policy RLS per il bucket img-bota - permettono accesso pubblico (anon)
 -- -----------------------------------------------------------------------------
 
--- Policy: permette a tutti di leggere i file pubblici
+-- Policy: permette a tutti di leggere
 CREATE POLICY "Public Read Access"
 ON storage.objects FOR SELECT
 USING (bucket_id = 'img-bota');
 
--- Policy: permette upload pubblico (per site builder senza auth)
+-- Policy: permette a tutti di caricare file
 CREATE POLICY "Public Upload"
 ON storage.objects FOR INSERT
 WITH CHECK (bucket_id = 'img-bota');
 
--- Policy: permette aggiornamento pubblico
+-- Policy: permette a tutti di aggiornare
 CREATE POLICY "Public Update"
 ON storage.objects FOR UPDATE
 USING (bucket_id = 'img-bota');
 
--- Policy: permette eliminazione pubblica
+-- Policy: permette a tutti di eliminare
 CREATE POLICY "Public Delete"
 ON storage.objects FOR DELETE
 USING (bucket_id = 'img-bota');
