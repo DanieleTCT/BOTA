@@ -25,10 +25,11 @@ DROP POLICY IF EXISTS "Public Update" ON storage.objects;
 DROP POLICY IF EXISTS "Public Delete" ON storage.objects;
 
 -- -----------------------------------------------------------------------------
--- Policy RLS per il bucket img-bota - permettono accesso pubblico (anon)
+-- Policy RLS per il bucket img-bota
+-- Queste policy permettono accesso completo al bucket img-bota
 -- -----------------------------------------------------------------------------
 
--- Policy: permette a tutti di leggere
+-- Policy: permette a tutti di leggere i file
 CREATE POLICY "Public Read Access"
 ON storage.objects FOR SELECT
 USING (bucket_id = 'img-bota');
@@ -38,12 +39,12 @@ CREATE POLICY "Public Upload"
 ON storage.objects FOR INSERT
 WITH CHECK (bucket_id = 'img-bota');
 
--- Policy: permette a tutti di aggiornare
+-- Policy: permette a tutti di aggiornare file
 CREATE POLICY "Public Update"
 ON storage.objects FOR UPDATE
 USING (bucket_id = 'img-bota');
 
--- Policy: permette a tutti di eliminare
+-- Policy: permette a tutti di eliminare file
 CREATE POLICY "Public Delete"
 ON storage.objects FOR DELETE
 USING (bucket_id = 'img-bota');
