@@ -6,7 +6,7 @@ const BUCKET = 'img-bota';
 async function getSiteBasePath(): Promise<string> {
   const siteId = await getCurrentSiteId();
   const siteMap: Record<string, string> = {
-    '11111111-1111-1111-1111-111111111111': 'bota',
+    'b1a2c3d4-e5f6-7890-abcd-ef1234567890': 'bota',
     '550e8400-e29b-41d4-a716-446655440000': 'aradia',
     '660f8400-e29b-41d4-a716-446655440001': 'pizzeria'
   };
