@@ -10,7 +10,7 @@
 
 import { supabase } from './supabase';
 
-const DEFAULT_SITE_ID = '11111111-1111-1111-1111-111111111111';
+const DEFAULT_SITE_ID = 'b1a2c3d4-e5f6-7890-abcd-ef1234567890';
 
 export interface SiteInfo {
   id: string;

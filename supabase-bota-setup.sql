@@ -8,7 +8,7 @@
 -- ============================================================
 INSERT INTO sites (id, name, slug, domain, status, modules, metadata)
 VALUES (
-  '11111111-1111-1111-1111-111111111111',
+  'b1a2c3d4-e5f6-7890-abcd-ef1234567890',
   'Bota Pizzeria Ristorante',
   'bota',
   'botafano.it',
@@ -26,7 +26,7 @@ VALUES (
 -- ============================================================
 INSERT INTO site_config (site_id, data)
 VALUES (
-  '11111111-1111-1111-1111-111111111111',
+  'b1a2c3d4-e5f6-7890-abcd-ef1234567890',
   '{
     "version": 1,
     "sections": [
@@ -109,7 +109,7 @@ ORDER BY name;
 
 SELECT site_id, data->'theme'->>'primary' as primary_color, updated_at
 FROM site_config
-WHERE site_id = '11111111-1111-1111-1111-111111111111';
+WHERE site_id = 'b1a2c3d4-e5f6-7890-abcd-ef1234567890';
 
 -- ============================================================
 -- FINE SETUP BOTA
