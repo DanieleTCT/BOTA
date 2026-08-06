@@ -25,29 +25,20 @@ CREATE POLICY "Public Read Access"
 ON storage.objects FOR SELECT
 USING (bucket_id = 'img-bota');
 
--- Policy: permette a utenti autenticati di caricare file
-CREATE POLICY "Authenticated Upload"
+-- Policy: permette upload pubblico (per site builder senza auth)
+CREATE POLICY "Public Upload"
 ON storage.objects FOR INSERT
-WITH CHECK (
-  bucket_id = 'img-bota'
-  AND auth.role() = 'authenticated'
-);
+WITH CHECK (bucket_id = 'img-bota');
 
--- Policy: permette a utenti autenticati di aggiornare file
-CREATE POLICY "Authenticated Update"
+-- Policy: permette aggiornamento pubblico
+CREATE POLICY "Public Update"
 ON storage.objects FOR UPDATE
-USING (
-  bucket_id = 'img-bota'
-  AND auth.role() = 'authenticated'
-);
+USING (bucket_id = 'img-bota');
 
--- Policy: permette a utenti autenticati di eliminare file
-CREATE POLICY "Authenticated Delete"
+-- Policy: permette eliminazione pubblica
+CREATE POLICY "Public Delete"
 ON storage.objects FOR DELETE
-USING (
-  bucket_id = 'img-bota'
-  AND auth.role() = 'authenticated'
-);
+USING (bucket_id = 'img-bota');
 
 -- -----------------------------------------------------------------------------
 -- Verifica: lista dei bucket
