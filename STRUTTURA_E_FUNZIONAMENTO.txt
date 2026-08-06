@@ -1,0 +1,512 @@
+================================================================================
+STRUTTURA E FUNZIONAMENTO DEL SITO - SITE CREATOR
+================================================================================
+
+DESCRIZIONE GENERALE
+--------------------------------------------------------------------------------
+Questo progetto è un generatore di siti web statici personalizzabili, sviluppato 
+con React 18, TypeScript, Vite e TailwindCSS. Il sito funziona come un template 
+multisezione che può essere configurato attraverso un pannello di amministrazione 
+integrato (CMS), senza necessità di backend complessi.
+
+Il progetto demo è configurato per una pizzeria ristorante chiamata "Bota" a
+Fano, ma la struttura è completamente generica e riutilizzabile per qualsiasi
+tipo di attività.
+
+================================================================================
+ARCHITETTURA DEL PROGETTO
+================================================================================
+
+TECNOLOGIE PRINCIPALI:
+- React 18.3 (UI library)
+- TypeScript 5.5 (type safety)
+- Vite 5.4 (build tool e dev server)
+- TailwindCSS 3.4 (styling)
+- Supabase (database per form submissions)
+- Lucide React (icone)
+
+================================================================================
+STRUTTURA DELLE CARTELLE
+================================================================================
+
+c:\Desktop\PROGETTI\web developer\siti\Site_creator-main/
+│
+├── index.html                    # Entry point HTML
+├── package.json                  # Dipendenze e script npm
+├── vite.config.ts                # Configurazione Vite
+├── tailwind.config.js            # Configurazione TailwindCSS
+├── tsconfig.json                 # Configurazione TypeScript
+├── postcss.config.js             # Configurazione PostCSS
+├── eslint.config.js              # Regole di linting
+├── supabase-form-submissions.sql # Schema database Supabase
+│
+└── src/                          # Codice sorgente
+    │
+    ├── main.tsx                  # Entry point React
+    ├── App.tsx                   # Componente root, gestisce modalità admin/pubblica
+    ├── index.css                 # Stili globali e variabili CSS
+    ├── types.ts                  # Definizioni TypeScript (interfacce, tipi)
+    ├── defaults.ts               # Configurazione di default del sito
+    │
+    ├── components/               # Componenti React
+    │   │
+    │   ├── PublicPage.tsx        # Pagina pubblica - renderizza tutte le sezioni
+    │   │
+    │   ├── sections/             # Sezioni del sito
+    │   │   ├── AnnouncementBar   # Barra di annuncio in alto
+    │   │   ├── Header            # Header con logo e navigazione
+    │   │   ├── Hero              # Sezione principale con titolo e CTA
+    │   │   ├── Features          # Griglia di feature/caratteristiche
+    │   │   ├── About             # Sezione "chi siamo" con immagine e stats
+    │   │   ├── Pricing           # Piani di prezzo/abbonamento
+    │   │   ├── Testimonials      # Testimonianze clienti
+    │   │   ├── Faq               # Domande frequenti
+    │   │   ├── ContactForm       # Form di contatto
+    │   │   └── Footer            # Footer con link e social
+    │   │
+    │   ├── widgets/              # Componenti flottanti/globali
+    │   │   ├── FloatingWhatsApp  # Pulsante WhatsApp fisso
+    │   │   ├── CookieBanner      # Banner consenso cookie
+    │   │   └── SeoAndCode         # Iniezione SEO e script custom
+    │   │
+    │   └── admin/                # Pannello di amministrazione
+    │       ├── AdminDashboard    # Dashboard principale con sidebar
+    │       ├── SectionManager    # Gestione visibilità/ordine sezioni
+    │       ├── ThemeEditor       # Editor tema (colori, font, stili)
+    │       ├── ContentEditors    # Editor contenuti di ogni sezione
+    │       ├── LeadsManager      # Gestione lead/form submissions
+    │       ├── ToolsManager      # Strumenti (WhatsApp, cookie, analytics)
+    │       └── BackupManager     # Export/Import/Reset configurazione
+    │
+    ├── hooks/                    # Custom React hooks
+    │   ├── useConfig            # Gestione configurazione sito (CRUD)
+    │   ├── useApplyTheme        # Applica tema dinamicamente (CSS variables)
+    │   └── useToast             # Sistema di notifiche toast
+    │
+    └── lib/                      # Utility e servizi
+        ├── config.ts            # Funzioni per load/save/export/import config
+        ├── supabase.ts          # Inizializzazione client Supabase
+        ├── submissions.ts       # Gestione form submissions su Supabase
+        └── icons.ts             # Mapping icone Lucide
+
+================================================================================
+FUNZIONAMENTO DEL SITO
+================================================================================
+
+1. MODALITÀ DI VISUALIZZAZIONE
+--------------------------------------------------------------------------------
+Il sito opera in due modalità distinte, determinate dal parametro URL "admin":
+
+A) MODALITÀ PUBBLICA (?admin NON presente o diverso da '1')
+   - Mostra il sito web finale come lo vedrebbero i visitatori
+   - Renderizza tutte le sezioni abilitate in ordine
+   - Include widget (WhatsApp, Cookie Banner)
+   - Applica il tema configurato
+
+B) MODALITÀ AMMINISTRATORE (?admin=1)
+   - Accesso: aggiungere "?admin=1" alla URL
+   - Mostra il pannello di controllo (CMS Dashboard)
+   - Permette di modificare ogni aspetto del sito
+   - Cambiamenti salvati automaticamente in localStorage
+   - Include pulsante "View Site" per anteprima
+
+2. GESTIONE DELLA CONFIGURAZIONE
+--------------------------------------------------------------------------------
+Tutti i contenuti e le impostazioni sono memorizzati in un oggetto SiteConfig:
+
+LOCATION: src/defaults.ts
+- Contiene la configurazione di default (template per pizzeria "Bota")
+- Usato come base quando non esiste configurazione salvata
+
+PERSISTENZA: src/lib/config.ts + src/hooks/useConfig.ts
+- Salvataggio automatico in localStorage (chiave: 'website-framework-config-v2')
+- Caricamento all'avvio con merge rispetto ai default
+- Funzioni per export (download JSON) e import (upload JSON)
+- Reset completo ai valori di default
+
+TIPO DATI: src/types.ts
+- SiteConfig: oggetto principale con tutti i contenuti
+- 15+ interfacce specifiche per ogni sezione/configurazione
+- Type safety completo con TypeScript
+
+3. STRUTTURA DELLE SEZIONI
+--------------------------------------------------------------------------------
+Ogni sezione è un componente React autonomo che riceve la propria configurazione.
+
+SEZIONI DISPONIBILI (configurabili in Admin > Sections):
+1. AnnouncementBar  - Barra superiore con annuncio e link
+2. Header           - Navigazione principale con logo, link, CTA
+3. Hero             - Sezione above-the-fold con titolo, sottotitolo, CTA
+4. Features         - Griglia cards con icone per caratteristiche
+5. About            - Immagine, testo, statistiche aziendali
+6. Pricing          - Piani di prezzo con tabella prezzi
+7. Testimonials     - Recensioni clienti (layout griglia o carousel)
+8. Faq              - Domande frequenti organizzate per categoria
+9. ContactForm      - Form di contatto con campi personalizzabili
+10. Footer          - Colonne link, social, copyright
+
+CONTROLLO SEZIONI:
+- Abilitazione/disabilitazione singola sezione
+- Riordinamento tramite drag-and-drop (su/giù)
+- Tutte le sezioni hanno id univoco (tipo SectionId)
+
+4. SISTEMA DI TEMI
+--------------------------------------------------------------------------------
+Il tema è completamente personalizzabile tramite CSS variables.
+
+CONFIGURAZIONE (ThemeConfig):
+- Mode: light/dark
+- Colori: primary, secondary, background, accent, text, mutedText, card, border
+- Font: 5 preset (Inter, Poppins, Roboto, Playfair, Mono)
+- Dimensioni: baseFontSize (px)
+- Stili: radius (border-radius), shadow (box-shadow)
+
+APPLICAZIONE (useApplyTheme.ts):
+- Converte i valori hex in RGB per opacità
+- Genera CSS variables nel :root
+- Applica font-family e font-size al body
+- Cambio istantaneo senza refresh
+
+5. PANNELLO DI AMMINISTRAZIONE (AdminDashboard)
+--------------------------------------------------------------------------------
+INTERFACCIA:
+- Sidebar con 6 tab principali
+- Top bar con azioni rapide (View Site, Export)
+- Contenuto principale cambia per tab
+
+TAB DISPONIBILI:
+1. SECTIONS (SectionManager)
+   - Lista sezioni con toggle on/off
+   - Bottoni su/giù per riordinare
+   - Preview visiva stato
+
+2. THEME (ThemeEditor)
+   - Color picker per ogni colore del tema
+   - Selettore font preset
+   - Slider per dimensione font
+   - Selettori per radius e shadow
+
+3. CONTENT (ContentEditors)
+   - Form per ogni sezione
+   - Campi editabili in tempo reale
+   - Anteprima istantanea
+   - Upload immagini (URL)
+
+4. LEADS (LeadsManager)
+   - Visualizza form submissions
+   - Filtri per stato (new/contacted/archived)
+   - Cambio stato lead
+   - (Richiede Supabase configurato)
+
+5. TOOLS (ToolsManager)
+   - Configurazione WhatsApp (numero, messaggio predefinito)
+   - Configurazione Cookie Banner
+   - Google Analytics ID
+   - Script custom (head/body)
+
+6. BACKUP (BackupManager)
+   - Export configurazione come JSON
+   - Import da file JSON
+   - Reset a default con conferma
+
+6. WIDGET GLOBALI
+--------------------------------------------------------------------------------
+A) FloatingWhatsApp
+   - Pulsante fisso in basso a destra
+   - Configurabile: numero telefono, messaggio predefinito
+   - Apre WhatsApp Web/app con messaggio precompilato
+
+B) CookieBanner
+   - Banner in basso per consenso cookie
+   - Messaggio personalizzabile
+   - Bottoni Accept/Decline
+   - Salvataggio preferenza in localStorage
+
+C) SeoAndCode Injection
+   - Inietta meta tag SEO dinamicamente
+   - Supporta Google Analytics
+   - Inietta script custom in <head> e <body>
+
+7. GESTIONE FORM E LEAD (Supabase)
+--------------------------------------------------------------------------------
+CONFIGURAZIONE:
+- Supabase richiesto (vedi supabase-form-submissions.sql per schema)
+- Client inizializzato in src/lib/supabase.ts
+
+FUNZIONALITÀ:
+- Form di contatto invia dati a Supabase
+- LeadsManager visualizza tutti i submissions
+- Ogni submission ha: id, created_at, data, status
+- Status: new, contacted, archived
+- Admin può cambiare status e archiviare
+
+DATABASE (supabase-form-submissions.sql):
+- Tabella: form_submissions
+- Campi: id (uuid), created_at (timestamp), data (jsonb), status (text)
+
+8. PERSISTENZA DATI
+--------------------------------------------------------------------------------
+LOCAL STORAGE (lato client):
+- Configurazione sito: 'website-framework-config-v2'
+- Consenso cookie: 'website-framework-cookie-consent-v1'
+- Salvataggio automatico ad ogni modifica
+
+SUPABASE (opzionale, lato server):
+- Form submissions
+- Backend-as-a-Service
+- Richiede URL e API key configurate
+
+================================================================================
+FLUSSO DI LAVORO SVILUPPATORE
+================================================================================
+
+INSTALLAZIONE:
+1. npm install          # Installa dipendenze
+2. npm run dev          # Avvia dev server (hot reload)
+
+BUILD:
+1. npm run build        # Build produzione in /dist
+2. npm run preview      # Preview build localmente
+
+UTILITY:
+- npm run lint          # Controllo codice con ESLint
+- npm run typecheck     # Verifica tipi TypeScript
+
+MODIFICA CONTENUTI:
+1. Apri sito con "?admin=1"
+2. Modifica sezioni, tema, contenuti
+3. Salvataggio automatico in localStorage
+4. Per modifiche permanenti: export JSON e salvataggio file
+
+DEPLOY:
+- Il sito è completamente statico dopo il build
+- Può essere hostato su Netlify, Vercel, Cloudflare Pages, etc.
+- Richiede solo servizio di hosting statico
+
+================================================================================
+PERSONALIZZAZIONE
+================================================================================
+
+Per creare un sito diverso da "Bota":
+
+1. MODIFICARE defaults.ts:
+   - Cambiare tutti i contenuti (testi, immagini, prezzi)
+   - Modificare colori del tema
+   - Aggiornare link e informazioni contatto
+
+2. CONFIGURARE SUPABASE (opzionale):
+   - Creare progetto su supabase.com
+   - Eseguire supabase-form-submissions.sql
+   - Configurare URL e API key in src/lib/supabase.ts
+
+3. BRANDING:
+   - Logo: modificare logoText in header e footer
+   - Colori: usare ThemeEditor o modificare defaults.ts
+   - Font: cambiare fontPreset nel tema
+
+4. SEZIONI:
+   - Disabilitare sezioni non necessarie in Admin > Sections
+   - Riordinare sezioni secondo necessità
+   - Modificare contenuti in Admin > Content
+
+================================================================================
+COMPONENTI PRINCIPALI - DETTAGLI TECNICI
+================================================================================
+
+App.tsx:
+- Componente root con gestione modalità admin/pubblica
+- Legge parametro URL "admin"
+- Fornisce ToastProvider per notifiche
+
+useConfig Hook:
+- State management per configurazione
+- Funzioni: update, updateTheme, toggleSection, moveSection, replaceConfig
+- Auto-save in localStorage ad ogni cambiamento
+
+PublicPage:
+- Renderizza sezioni abilitate in ordine
+- Include widget globali (WhatsApp, Cookie Banner)
+- Struttura: div container + map su sezioni abilitate
+
+AdminDashboard:
+- Layout: sidebar + contenuto principale
+- State per tab attivo
+- Sub-components per ogni tab
+- Azioni: reset, export, import
+
+SectionManager:
+- Lista sezioni con checkbox e bottoni su/giù
+- Controlla config.sections array
+- Modifica enabled e ordine
+
+ThemeEditor:
+- Form per ogni proprietà del tema
+- Color input per colori
+- Select per font preset
+- Preview live dei cambiamenti
+
+ContentEditors:
+- Form dinamici per ogni sezione
+- Generati dinamicamente da configurazione
+- Input text, textarea, select
+- Upload immagini (solo URL)
+
+================================================================================
+ESTENSIONIBILITÀ
+================================================================================
+
+AGGIUNGERE NUOVA SEZIONE:
+1. Aggiungi id in SectionId (types.ts)
+2. Crea interfaccia configurazione (es. NewsletterConfig)
+3. Aggiungi a SiteConfig in types.ts
+4. Crea componente sezione in components/sections/
+5. Aggiungi renderer in PublicPage.tsx SECTION_RENDERERS
+6. Aggiungi default in defaults.ts
+7. Aggiungi editor in ContentEditors.tsx
+8. Aggiungi merge in lib/config.ts mergeWithDefaults()
+
+AGGIUNGERE NUOVO WIDGET:
+1. Crea componente in components/widgets/
+2. Includilo in PublicPage.tsx
+3. Aggiungi configurazione in SiteConfig
+4. Crea editor in ToolsManager.tsx
+
+AGGIUNGERE NUOVO TAB ADMIN:
+1. Aggiungi id in tipo Tab (AdminDashboard.tsx)
+2. Aggiungi icona e label in TABS array
+3. Crea componente in components/admin/
+4. Aggiungi condizione di rendering in AdminDashboard
+
+================================================================================
+SICUREZZA E LIMITAZIONI
+================================================================================
+
+SICUREZZA:
+- Nessuna autenticazione nel pannello admin (solo paramentro URL)
+- Configurazione visibile nel client (localStorage)
+- Non adatto per dati sensibili senza backend
+
+LIMITAZIONI ATTUALE:
+- Nessun backend per salvataggio permanente (solo localStorage)
+- Multi-utente non supportato
+- Upload immagini non implementato (solo URL)
+- Nessun versioning configurazione
+- SEO limitato a meta tags base
+
+PER PRODUZIONE:
+- Implementare autenticazione admin
+- Backend API per salvataggio configurazione
+- CDN per immagini
+- Ottimizzazione immagini (next/image, sharp)
+- Caching strategy
+
+================================================================================
+ESEMPI DI UTILIZZO
+================================================================================
+
+CREARE SITO PER RISTORANTE:
+1. Modifica defaults.ts con contenuti ristorante
+2. Modifica colori tema (es. rosso, crema)
+3. Configura sezioni: Hero, About, Menu/Pricing, Testimonials, Contact
+4. Disabilita sezioni non necessarie (es. Pricing se non ci sono abbonamenti)
+5. Configura WhatsApp per prenotazioni
+6. Export JSON come backup
+
+CREARE SITO PORTFOLIO:
+1. Modifica defaults.ts con contenuti personali
+2. Sezioni: Hero, About, Portfolio/Features, Testimonials, Contact
+3. Modifica Features per mostrare progetti
+4. Configura tema con colori personali
+5. Usa Pricing per servizi/rates
+
+CREARE SITO LANDING PAGE:
+1. Sezioni: Hero, Features, Pricing, Testimonials, Faq
+2. Rimuovi About e Contact se non necessari
+3. Configura CTA per conversioni
+4. Aggiungi Google Analytics in Tools
+5. Configura Cookie Banner per GDPR
+
+================================================================================
+SCRIPT E AUTOMAZIONI
+================================================================================
+
+NPM SCRIPTS:
+- "dev": Avvia Vite dev server con hot reload
+- "build": Build produzione ottimizzata in /dist
+- "preview": Preview build locale
+- "lint": Controllo codice con ESLint
+- "typecheck": Verifica tipi TypeScript senza compilare
+
+VITE CONFIG:
+- React plugin con Fast Refresh
+- Alias @/ per src/
+- Ottimizzazioni build
+- Source maps per debug
+
+TAILWIND:
+- Configurazione in tailwind.config.js
+- Variabili CSS personalizzate per tema dinamico
+- PostCSS con autoprefixer
+
+================================================================================
+RISORSE E RIFERIMENTI
+================================================================================
+
+FILE CHIAVE DA MODIFICARE:
+- src/defaults.ts        → Contenuti di default
+- src/types.ts           → Struttura dati
+- src/components/        → Componenti UI
+- src/hooks/              → Logica business
+- src/lib/                → Servizi e utility
+
+DOCUMENTAZIONE ESTERNA:
+- React: https://react.dev
+- TypeScript: https://www.typescriptlang.org
+- Vite: https://vitejs.dev
+- TailwindCSS: https://tailwindcss.com
+- Supabase: https://supabase.com/docs
+- Lucide Icons: https://lucide.dev
+
+================================================================================
+STATO ATTUALE DEL PROGETTO
+================================================================================
+
+VERSIONE: 1.0.0
+STATO: Template funzionante per pizzeria ristorante "Bota" a Fano
+CONFIGURAZIONE:
+- 10 sezioni abilitate (Pricing disabilitato)
+- Tema chiaro con colori rossi/marroni (pizza)
+- Font: Playfair
+- WhatsApp abilitato
+- Cookie banner abilitato
+- SEO configurato
+- Supabase: da configurare per form submissions
+
+CONFIGURAZIONE AMBIENTE
+
+FILE .env (nella root del progetto):
+- VITE_SUPABASE_URL: https://lrjwldskjyalkiriyela.supabase.co
+- VITE_SUPABASE_ANON_KEY: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxyandsZHNranlhbGtpcml5ZWxhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODU3Nzg0NzEsImV4cCI6MjEwMTM1NDQ3MX0.rCkcDlp5wcP_Sc1mJREXgLsmFLfgiJ4l-lcmopqIYls
+- IMPORTANTE: Il file .env è incluso in .gitignore e non viene caricato su GitHub
+
+DEPLOY SU VERCELL:
+1. Connetti repository GitHub (https://github.com/DanieleTCT/Site_creator) a Vercel
+2. Vercel rileva automaticamente Vite + React
+3. Aggiungi variabili d'ambiente in Vercel Dashboard:
+   - VITE_SUPABASE_URL
+   - VITE_SUPABASE_ANON_KEY
+4. Deploy automatico ad ogni push su main
+5. Build command: npm run build
+6. Output directory: dist
+
+PROSSIMI PASSI PER PERSONALIZZARE:
+1. Eseguire "npm install" se prima esecuzione
+2. Eseguire "npm run dev" per avviare
+3. Aprire browser su http://localhost:5173
+4. Aggiungere "?admin=1" per pannello admin
+5. Modificare contenuti e salvare
+6. Per deploy: "npm run build" e caricare /dist
+
+================================================================================
+FINE DOCUMENTO
+================================================================================

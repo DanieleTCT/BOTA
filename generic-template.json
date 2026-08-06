@@ -1,0 +1,538 @@
+{
+  "version": 1,
+  "sections": [
+    {
+      "id": "announcement",
+      "enabled": true
+    },
+    {
+      "id": "header",
+      "enabled": true
+    },
+    {
+      "id": "hero",
+      "enabled": true
+    },
+    {
+      "id": "features",
+      "enabled": true
+    },
+    {
+      "id": "about",
+      "enabled": true
+    },
+    {
+      "id": "products",
+      "enabled": true
+    },
+    {
+      "id": "pricing",
+      "enabled": true
+    },
+    {
+      "id": "testimonials",
+      "enabled": true
+    },
+    {
+      "id": "faq",
+      "enabled": true
+    },
+    {
+      "id": "contact",
+      "enabled": true
+    },
+    {
+      "id": "footer",
+      "enabled": true
+    }
+  ],
+  "theme": {
+    "mode": "light",
+    "primary": "#2563eb",
+    "secondary": "#64748b",
+    "background": "#ffffff",
+    "accent": "#3b82f6",
+    "text": "#1e293b",
+    "mutedText": "#64748b",
+    "card": "#f8fafc",
+    "border": "#e2e8f0",
+    "fontPreset": "inter",
+    "baseFontSize": 16,
+    "radius": "md",
+    "shadow": "sm"
+  },
+  "announcement": {
+    "text": "🚀 Nuovo: Scopri le nostre offerte speciali this month!",
+    "linkText": "Scopri di più",
+    "linkHref": "#features",
+    "bg": "#2563eb",
+    "fg": "#ffffff"
+  },
+  "header": {
+    "logoText": "Il Tuo Brand",
+    "links": [
+      {
+        "id": "l1",
+        "label": "Home",
+        "href": "#hero"
+      },
+      {
+        "id": "l2",
+        "label": "Servizi",
+        "href": "#features"
+      },
+      {
+        "id": "l3",
+        "label": "Chi Siamo",
+        "href": "#about"
+      },
+      {
+        "id": "l4",
+        "label": "Contatti",
+        "href": "#contact"
+      }
+    ],
+    "ctaText": "Inizia Ora",
+    "ctaHref": "#contact",
+    "sticky": true
+  },
+  "hero": {
+    "badge": "✨ Benvenuto nel futuro",
+    "title": "Costruisci qualcosa di straordinario",
+    "subtitle": "La piattaforma ideale per far crescere il tuo business. Soluzioni innovative, design moderno e risultati concreti per professionisti e aziende.",
+    "primaryCtaText": "Inizia Gratuitamente",
+    "primaryCtaHref": "#contact",
+    "secondaryCtaText": "Scopri di Più",
+    "secondaryCtaHref": "#features",
+    "bgType": "gradient",
+    "gradientFrom": "#2563eb",
+    "gradientTo": "#7c3aed",
+    "imageUrl": "",
+    "overlayOpacity": 30
+  },
+  "features": {
+    "heading": "I nostri servizi",
+    "subheading": "Tutto ciò di cui hai bisogno per avere successo",
+    "columns": 3,
+    "cards": [
+      {
+        "id": "f1",
+        "icon": "Zap",
+        "title": "Veloce e Affidabile",
+        "description": "Performance ottimizzate per garantire tempi di caricamento rapidi e un'esperienza utente impeccabile su ogni dispositivo.",
+        "badge": "Performance"
+      },
+      {
+        "id": "f2",
+        "icon": "Shield",
+        "title": "Sicurezza Avanzata",
+        "description": "I tuoi dati sono protetti con crittografia di livello enterprise. Backup automatici e conformità GDPR inclusi.",
+        "badge": "Sicurezza"
+      },
+      {
+        "id": "f3",
+        "icon": "Users",
+        "title": "Supporto Dedicato",
+        "description": "Il nostro team di esperti è sempre a disposizione per aiutarti. Assistenza personalizzata in italiano e inglese.",
+        "badge": "Supporto"
+      },
+      {
+        "id": "f4",
+        "icon": "Rocket",
+        "title": "Scalabilità",
+        "description": "Cresci senza limiti. La nostra infrastruttura si adatta automaticamente alle tue necessità di business.",
+        "badge": "Crescita"
+      },
+      {
+        "id": "f5",
+        "icon": "Palette",
+        "title": "Design Moderno",
+        "description": "Interfacce eleganti e intuitive che conquistano i tuoi clienti. Template personalizzabili e responsive.",
+        "badge": "Design"
+      },
+      {
+        "id": "f6",
+        "icon": "BarChart",
+        "title": "Analytics Integrate",
+        "description": "Monitora le performance del tuo sito con statistiche dettagliate e report automatici in tempo reale.",
+        "badge": "Analytics"
+      }
+    ]
+  },
+  "about": {
+    "heading": "Chi siamo",
+    "body": "Siamo un team di professionisti appassionati di tecnologia e innovazione. Dal 2020, aiutiamo aziende e professionisti a trasformare le loro idee in realtà digitali. La nostra missione è rendere accessibile a tutti strumenti potenti per il successo online. Crediamo nella trasparenza, nella qualità e nel supporto continuo ai nostri clienti. Ogni progetto è un'opportunità per creare qualcosa di unico e di valore.",
+    "imageUrl": "https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=900",
+    "imageAlt": "Team di professionisti che lavorano insieme in un ufficio moderno",
+    "stats": [
+      {
+        "id": "s1",
+        "value": "500+",
+        "label": "Clienti Soddisfatti"
+      },
+      {
+        "id": "s2",
+        "value": "99.9%",
+        "label": "Uptime Garantito"
+      },
+      {
+        "id": "s3",
+        "value": "24/7",
+        "label": "Supporto H24"
+      },
+      {
+        "id": "s4",
+        "value": "4.9/5",
+        "label": "Rating Cliente"
+      }
+    ]
+  },
+  "products": {
+    "heading": "I nostri prodotti",
+    "subheading": "Soluzioni pensate per aiutarti a crescere",
+    "layout": "grid",
+    "columns": 3,
+    "products": [
+      {
+        "id": "pr1",
+        "name": "Consulenza Strategica",
+        "description": "Percorso personalizzato per definire la tua strategia digitale e raggiungere i tuoi obiettivi di business.",
+        "price": "€199",
+        "imageUrl": "",
+        "badge": "Popolare",
+        "features": ["Analisi completa", "Piano d'azione", "Supporto dedicato", "Report mensili"],
+        "buttonText": "Scopri di più",
+        "buttonHref": "#contact"
+      },
+      {
+        "id": "pr2",
+        "name": "Sviluppo Web",
+        "description": "Siti web moderni, veloci e ottimizzati per convertire i visitatori in clienti.",
+        "price": "€999",
+        "imageUrl": "",
+        "badge": "Best Seller",
+        "features": ["Design responsive", "SEO ottimizzato", "CMS integrato", "Hosting incluso"],
+        "buttonText": "Inizia ora",
+        "buttonHref": "#contact"
+      },
+      {
+        "id": "pr3",
+        "name": "Pacchetto Marketing",
+        "description": "Strategia e strumenti per far crescere la tua presenza online e aumentare le conversioni.",
+        "price": "€499",
+        "imageUrl": "",
+        "badge": "Nuovo",
+        "features": ["Social media", "Email marketing", "Automazioni", "Analytics avanzate"],
+        "buttonText": "Richiedi info",
+        "buttonHref": "#contact"
+      }
+    ]
+  },
+  "pricing": {
+    "heading": "Piani e prezzi",
+    "subheading": "Scegli il piano perfetto per le tue necessità. Tutti i piani includono supporto tecnico.",
+    "plans": [
+      {
+        "id": "p1",
+        "name": "Starter",
+        "monthlyPrice": "€29",
+        "yearlyPrice": "€290",
+        "description": "Perfetto per piccoli progetti e startup. Include tutte le funzionalità essenziali per iniziare.",
+        "features": [
+          "1 sito web",
+          "10GB storage",
+          "Dominio personalizzato",
+          "Supporto email",
+          "Analytics base"
+        ],
+        "buttonText": "Inizia Gratis",
+        "buttonHref": "#contact",
+        "popular": false
+      },
+      {
+        "id": "p2",
+        "name": "Professional",
+        "monthlyPrice": "€79",
+        "yearlyPrice": "€790",
+        "description": "La scelta ideale per professionisti e piccole imprese in crescita.",
+        "features": [
+          "5 siti web",
+          "50GB storage",
+          "Domini personalizzati",
+          "Supporto prioritario",
+          "Analytics avanzate",
+          "Integrazione e-commerce",
+          "API access"
+        ],
+        "buttonText": "Prova Gratis",
+        "buttonHref": "#contact",
+        "popular": true
+      },
+      {
+        "id": "p3",
+        "name": "Enterprise",
+        "monthlyPrice": "€199",
+        "yearlyPrice": "€1990",
+        "description": "Soluzioni su misura per grandi aziende con necessità specifiche.",
+        "features": [
+          "Siti illimitati",
+          "Storage illimitato",
+          "Domini personalizzati",
+          "Supporto dedicato 24/7",
+          "Analytics enterprise",
+          "Custom integrations",
+          "SLA garantito",
+          "Formazione inclusa"
+        ],
+        "buttonText": "Contattaci",
+        "buttonHref": "#contact",
+        "popular": false
+      }
+    ]
+  },
+  "testimonials": {
+    "heading": "Cosa dicono i nostri clienti",
+    "subheading": "Storie di successo da chi ha scelto di crescere con noi",
+    "layout": "grid",
+    "items": [
+      {
+        "id": "t1",
+        "name": "Marco Rossi",
+        "role": "CEO, Tech Startup",
+        "avatar": "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=200",
+        "rating": 5,
+        "text": "Piattaforma eccezionale! Abbiamo lanciato il nostro sito in meno di una settimana. Il supporto è sempre disponibile e le funzionalità sono esattamente quelle che cercavamo."
+      },
+      {
+        "id": "t2",
+        "name": "Giulia Bianchi",
+        "role": "Freelance Designer",
+        "avatar": "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=200",
+        "rating": 5,
+        "text": "Finalmente una piattaforma che capisce le necessità dei professionisti. Design bellissimi e facile da usare. I miei clienti sono sempre più soddisfatti."
+      },
+      {
+        "id": "t3",
+        "name": "Alessandro Conti",
+        "role": "Marketing Manager",
+        "avatar": "https://images.pexels.com/photos/1043471/pexels-photo-1043471.jpeg?auto=compress&cs=tinysrgb&w=200",
+        "rating": 5,
+        "text": "Abbiamo aumentato le conversioni del 150% da quando usiamo questa piattaforma. L'integrazione con i nostri strumenti di marketing è stata semplicissima."
+      },
+      {
+        "id": "t4",
+        "name": "Francesca Romano",
+        "role": "E-commerce Owner",
+        "avatar": "https://images.pexels.com/photos/762020/pexels-photo-762020.jpeg?auto=compress&cs=tinysrgb&w=200",
+        "rating": 4,
+        "text": "Ottimo rapporto qualità-prezzo. Il piano professional ha tutte le funzionalità che servono per gestire un negozio online in modo professionale."
+      }
+    ]
+  },
+  "faq": {
+    "heading": "Domande frequenti",
+    "subheading": "Trova risposta alle tue domande più comuni",
+    "items": [
+      {
+        "id": "q1",
+        "category": "Generale",
+        "question": "Come posso iniziare a usare la piattaforma?",
+        "answer": "È semplicissimo! Registrati gratuitamente, scegli un template e inizia a personalizzare. Non è necessaria una carta di credito per la prova gratuita di 14 giorni."
+      },
+      {
+        "id": "q2",
+        "category": "Tecnico",
+        "question": "Posso usare il mio dominio?",
+        "answer": "Sì, tutti i piani includono la possibilità di collegare il tuo dominio personalizzato. Il processo è semplice e ti guidiamo passo passo nella configurazione."
+      },
+      {
+        "id": "q3",
+        "category": "Prezzi",
+        "question": "Posso cambiare piano in qualsiasi momento?",
+        "answer": "Assolutamente sì! Puoi upgrade o downgrade il tuo piano in qualsiasi momento. Le modifiche hanno effetto immediato e il billing viene adattato di conseguenza."
+      },
+      {
+        "id": "q4",
+        "category": "Supporto",
+        "question": "Quale tipo di supporto è incluso?",
+        "answer": "Tutti i piani includono supporto via email. I piani Professional ed Enterprise hanno accesso a supporto prioritario con tempi di risposta garantiti sotto le 2 ore."
+      },
+      {
+        "id": "q5",
+        "category": "Tecnico",
+        "question": "I dati sono al sicuro?",
+        "answer": "La sicurezza è la nostra priorità. Utilizziamo crittografia end-to-end, backup automatici giornalieri e siamo conformi al GDPR. I tuoi dati sono al sicuro con noi."
+      }
+    ]
+  },
+  "contact": {
+    "heading": "Parliamo del tuo progetto",
+    "subheading": "Hai domande o vuoi iniziare? Compila il form e ti risponderemo entro 24 ore.",
+    "buttonText": "Invia Messaggio",
+    "successMessage": "Grazie per averci contattato! Ti risponderemo entro 24 ore.",
+    "fields": [
+      {
+        "id": "cf1",
+        "type": "text",
+        "label": "Nome e Cognome",
+        "placeholder": "Mario Rossi",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "cf2",
+        "type": "email",
+        "label": "Indirizzo Email",
+        "placeholder": "mario@esempio.com",
+        "required": true,
+        "options": []
+      },
+      {
+        "id": "cf3",
+        "type": "phone",
+        "label": "Numero di Telefono",
+        "placeholder": "+39 333 123 4567",
+        "required": false,
+        "options": []
+      },
+      {
+        "id": "cf4",
+        "type": "select",
+        "label": "Tipo di richiesta",
+        "placeholder": "Seleziona un'opzione",
+        "required": false,
+        "options": [
+          "Informazioni generali",
+          "Demo prodotto",
+          "Preventivo",
+          "Supporto tecnico",
+          "Partnership",
+          "Altro"
+        ]
+      },
+      {
+        "id": "cf5",
+        "type": "textarea",
+        "label": "Il tuo messaggio",
+        "placeholder": "Raccontaci il tuo progetto o la tua domanda...",
+        "required": true,
+        "options": []
+      }
+    ]
+  },
+  "footer": {
+    "logoText": "Il Tuo Brand",
+    "description": "Costruiamo soluzioni digitali innovative per far crescere il tuo business. Professionalità, tecnologia e passione al servizio dei tuoi obiettivi.",
+    "columns": [
+      {
+        "id": "fc1",
+        "title": "Servizi",
+        "links": [
+          {
+            "id": "fl1",
+            "label": "Web Development",
+            "href": "#features"
+          },
+          {
+            "id": "fl2",
+            "label": "Consulenza",
+            "href": "#features"
+          },
+          {
+            "id": "fl3",
+            "label": "Supporto",
+            "href": "#contact"
+          }
+        ]
+      },
+      {
+        "id": "fc2",
+        "title": "Azienda",
+        "links": [
+          {
+            "id": "fl4",
+            "label": "Chi Siamo",
+            "href": "#about"
+          },
+          {
+            "id": "fl5",
+            "label": "Blog",
+            "href": "#"
+          },
+          {
+            "id": "fl6",
+            "label": "Lavora con Noi",
+            "href": "#"
+          }
+        ]
+      },
+      {
+        "id": "fc3",
+        "title": "Legale",
+        "links": [
+          {
+            "id": "fl7",
+            "label": "Privacy Policy",
+            "href": "#"
+          },
+          {
+            "id": "fl8",
+            "label": "Termini di Servizio",
+            "href": "#"
+          },
+          {
+            "id": "fl9",
+            "label": "Cookie Policy",
+            "href": "#"
+          }
+        ]
+      }
+    ],
+    "socials": [
+      {
+        "id": "so1",
+        "icon": "Linkedin",
+        "href": "#"
+      },
+      {
+        "id": "so2",
+        "icon": "Twitter",
+        "href": "#"
+      },
+      {
+        "id": "so3",
+        "icon": "Instagram",
+        "href": "#"
+      },
+      {
+        "id": "so4",
+        "icon": "Facebook",
+        "href": "#"
+      }
+    ],
+    "copyright": "© 2024 Il Tuo Brand. Tutti i diritti riservati.",
+    "showLegalDisclaimer": false,
+    "legalText": ""
+  },
+  "whatsapp": {
+    "enabled": false,
+    "phone": "",
+    "message": "Ciao! Vorrei avere informazioni sui vostri servizi."
+  },
+  "cookie": {
+    "enabled": true,
+    "message": "Utilizziamo i cookie per migliorare la tua esperienza di navigazione. Continuando a visitare il sito accetti l'utilizzo dei cookie.",
+    "acceptText": "Accetta",
+    "declineText": "Rifiuta"
+  },
+  "seo": {
+    "pageTitle": "Il Tuo Brand — Soluzioni Digitali Innovative",
+    "metaDescription": "Piattaforma leader per soluzioni digitali. Offriamo servizi di web development, consulenza IT e supporto tecnico per aziende e professionisti.",
+    "ogImageUrl": ""
+  },
+  "code": {
+    "googleAnalyticsId": "",
+    "customHeadScripts": "",
+    "customBodyScripts": ""
+  }
+}
