@@ -19,33 +19,32 @@ ALTER TABLE storage.objects ENABLE ROW LEVEL SECURITY;
 -- -----------------------------------------------------------------------------
 -- Rimuovi policy esistenti per evitare conflitti
 -- -----------------------------------------------------------------------------
-DROP POLICY IF EXISTS "Public Read Access" ON storage.objects;
-DROP POLICY IF EXISTS "Public Upload" ON storage.objects;
-DROP POLICY IF EXISTS "Public Update" ON storage.objects;
-DROP POLICY IF EXISTS "Public Delete" ON storage.objects;
+DROP POLICY IF EXISTS "anon_read_img_bota" ON storage.objects;
+DROP POLICY IF EXISTS "anon_insert_img_bota" ON storage.objects;
+DROP POLICY IF EXISTS "anon_update_img_bota" ON storage.objects;
+DROP POLICY IF EXISTS "anon_delete_img_bota" ON storage.objects;
 
 -- -----------------------------------------------------------------------------
--- Policy RLS per il bucket img-bota
--- Queste policy permettono accesso completo al bucket img-bota
+-- Policy RLS per il bucket img-bota - accesso completo per ruolo anon
 -- -----------------------------------------------------------------------------
 
--- Policy: permette a tutti di leggere i file
-CREATE POLICY "Public Read Access"
+-- Policy: permette lettura a tutti (anon e authenticated)
+CREATE POLICY "anon_read_img_bota"
 ON storage.objects FOR SELECT
 USING (bucket_id = 'img-bota');
 
--- Policy: permette a tutti di caricare file
-CREATE POLICY "Public Upload"
+-- Policy: permette upload a tutti (senza auth per site builder)
+CREATE POLICY "anon_insert_img_bota"
 ON storage.objects FOR INSERT
 WITH CHECK (bucket_id = 'img-bota');
 
--- Policy: permette a tutti di aggiornare file
-CREATE POLICY "Public Update"
+-- Policy: permette aggiornamento a tutti
+CREATE POLICY "anon_update_img_bota"
 ON storage.objects FOR UPDATE
 USING (bucket_id = 'img-bota');
 
--- Policy: permette a tutti di eliminare file
-CREATE POLICY "Public Delete"
+-- Policy: permette eliminazione a tutti
+CREATE POLICY "anon_delete_img_bota"
 ON storage.objects FOR DELETE
 USING (bucket_id = 'img-bota');
 
