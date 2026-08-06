@@ -12,9 +12,17 @@
 -- =============================================================================
 
 -- -----------------------------------------------------------------------------
--- Crea il bucket img-bota (se non esiste)
--- Nota: Su Supabase, i bucket vanno creati da Dashboard o API, non da SQL
+-- Abilita RLS sulla tabella storage.objects (se non già abilitato)
 -- -----------------------------------------------------------------------------
+ALTER TABLE storage.objects ENABLE ROW LEVEL SECURITY;
+
+-- -----------------------------------------------------------------------------
+-- Rimuovi policy esistenti per evitare conflitti
+-- -----------------------------------------------------------------------------
+DROP POLICY IF EXISTS "Public Read Access" ON storage.objects;
+DROP POLICY IF EXISTS "Public Upload" ON storage.objects;
+DROP POLICY IF EXISTS "Public Update" ON storage.objects;
+DROP POLICY IF EXISTS "Public Delete" ON storage.objects;
 
 -- -----------------------------------------------------------------------------
 -- Policy RLS per il bucket img-bota
