@@ -14,6 +14,9 @@ const ICON_MAP: Record<string, string> = {
   Clock: '⏰',
   Users: '👥',
   Heart: '❤️',
+  Fish: '🐟',
+  Beef: '🥩',
+  Carrot: '🥕',
 };
 
 export function InteractiveMenu({ config }: { config: SiteConfig }) {
@@ -58,6 +61,7 @@ export function InteractiveMenu({ config }: { config: SiteConfig }) {
           </button>
           {products.categories.map((category) => {
             const icon = ICON_MAP[category.icon] || '📋';
+            const count = products.products.filter(p => p.categoryId === category.id).length;
             return (
               <button
                 key={category.id}
@@ -70,6 +74,7 @@ export function InteractiveMenu({ config }: { config: SiteConfig }) {
               >
                 <span>{icon}</span>
                 <span>{category.name}</span>
+                <span className="text-xs opacity-75">({count})</span>
               </button>
             );
           })}
@@ -82,51 +87,63 @@ export function InteractiveMenu({ config }: { config: SiteConfig }) {
           </div>
         )}
 
-        {/* Products Grid */}
-        <div className={`grid grid-cols-1 gap-6 ${
-          products.columns === 2 ? 'sm:grid-cols-2' :
-          products.columns === 3 ? 'sm:grid-cols-3' :
-          'sm:grid-cols-4'
-        }`}>
+        {/* Products List - Compact Grid */}
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {filteredProducts.map((product) => (
             <div
               key={product.id}
               onClick={() => setSelectedProduct(product)}
-              className="cursor-pointer rounded-xl border border-slate-200 bg-white p-6 transition hover:shadow-lg"
+              className="group cursor-pointer overflow-hidden rounded-xl border border-slate-200 bg-white transition hover:shadow-lg"
             >
-              {product.imageUrl && (
-                <img src={product.imageUrl} alt={product.name} className="mb-4 h-48 w-full rounded-lg object-cover" />
-              )}
-              <div className="mb-2 flex items-start justify-between">
-                <h3 className="text-lg font-bold text-slate-900">{product.name}</h3>
+              {/* Image */}
+              <div className="relative h-48 overflow-hidden bg-slate-100">
+                {product.imageUrl ? (
+                  <img
+                    src={product.imageUrl}
+                    alt={product.name}
+                    className="h-full w-full object-cover transition group-hover:scale-105"
+                  />
+                ) : (
+                  <div className="flex h-full w-full items-center justify-center text-4xl text-slate-300">
+                    🍽️
+                  </div>
+                )}
                 {product.badge && (
-                  <span className="rounded-full bg-blue-100 px-3 py-1 text-xs font-semibold text-blue-700">
+                  <span className="absolute right-3 top-3 rounded-full bg-blue-600 px-3 py-1 text-xs font-semibold text-white">
                     {product.badge}
                   </span>
                 )}
               </div>
-              <p className="mb-4 text-sm text-slate-600">{product.description}</p>
-              
-              {/* Features */}
-              {product.features && product.features.length > 0 && (
-                <ul className="mb-4 space-y-1">
-                  {product.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-center gap-2 text-xs text-slate-600">
-                      <span className="text-blue-600">✓</span>
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-              )}
 
-              <div className="flex items-center justify-between">
-                <div className="text-xl font-bold text-slate-900">{product.price}</div>
+              {/* Content */}
+              <div className="p-4">
+                <div className="mb-2 flex items-start justify-between gap-2">
+                  <h3 className="font-bold text-slate-900">{product.name}</h3>
+                  <span className="whitespace-nowrap text-lg font-bold text-blue-600">{product.price}</span>
+                </div>
+                <p className="mb-3 line-clamp-2 text-sm text-slate-600">{product.description}</p>
+
+                {/* Features preview */}
+                {product.features && product.features.length > 0 && (
+                  <div className="mb-3 flex flex-wrap gap-1">
+                    {product.features.slice(0, 3).map((feature, idx) => (
+                      <span
+                        key={idx}
+                        className="rounded-full bg-slate-100 px-2 py-1 text-xs text-slate-600"
+                      >
+                        {feature}
+                      </span>
+                    ))}
+                  </div>
+                )}
+
+                {/* Button */}
                 <button
                   onClick={(e) => {
                     e.stopPropagation();
                     document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
                   }}
-                  className="rounded-lg bg-blue-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-blue-700"
+                  className="w-full rounded-lg bg-blue-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-blue-700"
                 >
                   {product.buttonText}
                 </button>
