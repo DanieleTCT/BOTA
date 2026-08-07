@@ -147,10 +147,13 @@ export function InteractiveMenu({ config }: { config: SiteConfig }) {
                         if (!dish) return null;
                         
                         return (
-                          <div key={dishType} className="text-xs">
+                          <div
+                            key={dishType}
+                            onClick={() => setSelectedProduct(dish)}
+                            className="cursor-pointer rounded-lg border border-slate-100 bg-slate-50 p-2 transition hover:border-blue-300 hover:bg-white hover:shadow-sm"
+                          >
                             <div className="font-semibold text-slate-700">{dishTypesLabels[dishType] || dishType}</div>
                             <div className="text-slate-600 line-clamp-1">{dish.name}</div>
-                            <div className="font-semibold text-blue-600">{dish.price}</div>
                           </div>
                         );
                       })}
