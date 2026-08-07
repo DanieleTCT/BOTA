@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import type { SiteConfig, Product } from '@/types';
 import { ProductModal } from './ProductModal';
-import { ChevronLeft, ChevronRight, BookOpen } from 'lucide-react';
+import { ChevronLeft, ChevronRight, BookOpen, Sun, Moon } from 'lucide-react';
 
 const ICON_MAP: Record<string, string> = {
   Pizza: '🍕',
@@ -25,6 +25,7 @@ export function InteractiveMenu({ config }: { config: SiteConfig }) {
   const [currentPage, setCurrentPage] = useState(0);
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+  const [selectedMeal, setSelectedMeal] = useState<'lunch' | 'dinner'>('lunch');
 
   if (!products || !config.sections.find(s => s.id === 'products')?.enabled) {
     return null;
@@ -37,9 +38,14 @@ export function InteractiveMenu({ config }: { config: SiteConfig }) {
     (currentPage + 1) * itemsPerPage
   );
 
+  // Filter products by meal type
+  const mealFilteredProducts = selectedMeal === 'lunch'
+    ? products.products.filter(p => p.meal === 'lunch' || p.meal === 'both')
+    : products.products.filter(p => p.meal === 'dinner' || p.meal === 'both');
+
   const filteredProducts = selectedCategory
-    ? products.products.filter(p => p.categoryId === selectedCategory)
-    : products.products;
+    ? mealFilteredProducts.filter(p => p.categoryId === selectedCategory)
+    : mealFilteredProducts;
 
   const selectedCat = products.categories.find(c => c.id === selectedCategory);
 
@@ -58,6 +64,40 @@ export function InteractiveMenu({ config }: { config: SiteConfig }) {
           <p className="mx-auto max-w-2xl text-lg text-slate-600">
             {products.subheading}
           </p>
+        </div>
+
+        {/* Meal Toggle */}
+        <div className="mb-10 flex items-center justify-center gap-4">
+          <button
+            onClick={() => {
+              setSelectedMeal('lunch');
+              setCurrentPage(0);
+              setSelectedCategory(null);
+            }}
+            className={`flex items-center gap-2 rounded-xl px-6 py-3 text-sm font-semibold transition ${
+              selectedMeal === 'lunch'
+                ? 'bg-amber-500 text-white shadow-lg'
+                : 'bg-white text-slate-600 hover:bg-slate-100 border border-slate-200'
+            }`}
+          >
+            <Sun className="h-5 w-5" />
+            Menu Pranzo
+          </button>
+          <button
+            onClick={() => {
+              setSelectedMeal('dinner');
+              setCurrentPage(0);
+              setSelectedCategory(null);
+            }}
+            className={`flex items-center gap-2 rounded-xl px-6 py-3 text-sm font-semibold transition ${
+              selectedMeal === 'dinner'
+                ? 'bg-indigo-600 text-white shadow-lg'
+                : 'bg-white text-slate-600 hover:bg-slate-100 border border-slate-200'
+            }`}
+          >
+            <Moon className="h-5 w-5" />
+            Menu Cena
+          </button>
         </div>
 
         {/* Menu Book Navigation */}

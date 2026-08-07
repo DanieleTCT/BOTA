@@ -13,6 +13,9 @@ export type SectionId =
   | 'contact'
   | 'footer';
 
+export type MealType = 'lunch' | 'dinner' | 'both';
+export type DishType = 'antipasto' | 'primo' | 'contorno' | 'secondo' | 'dolce' | 'bevanda' | 'pizza' | 'altro';
+
 export interface SectionMeta {
   id: SectionId;
   enabled: boolean;
@@ -136,6 +139,8 @@ export interface Product {
   buttonText: string;
   buttonHref: string;
   categoryId: string;
+  meal: MealType;
+  dishType: DishType;
 }
 
 export interface MenuCategory {

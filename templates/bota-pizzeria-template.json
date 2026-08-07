@@ -153,7 +153,9 @@
         "allergens": "Crostacei",
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
-        "categoryId": "cat1"
+        "categoryId": "cat1",
+        "meal": "dinner",
+        "dishType": "antipasto"
       },
       {
         "id": "pr2",
@@ -167,7 +169,9 @@
         "allergens": "Pesce, Molluschi",
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
-        "categoryId": "cat1"
+        "categoryId": "cat1",
+        "meal": "dinner",
+        "dishType": "antipasto"
       },
       {
         "id": "pr3",
@@ -181,7 +185,9 @@
         "allergens": "Pesce, Crostacei, Molluschi",
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
-        "categoryId": "cat1"
+        "categoryId": "cat1",
+        "meal": "dinner",
+        "dishType": "antipasto"
       },
       {
         "id": "pr4",
@@ -195,7 +201,9 @@
         "allergens": "Crostacei, Molluschi, Glutine",
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
-        "categoryId": "cat1"
+        "categoryId": "cat1",
+        "meal": "dinner",
+        "dishType": "antipasto"
       },
       {
         "id": "pr5",
@@ -209,7 +217,9 @@
         "allergens": "Pesce, Crostacei, Molluschi",
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
-        "categoryId": "cat1"
+        "categoryId": "cat1",
+        "meal": "dinner",
+        "dishType": "antipasto"
       },
       {
         "id": "pr6",
@@ -223,7 +233,9 @@
         "allergens": "Latticini, Glutine",
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
-        "categoryId": "cat2"
+        "categoryId": "cat2",
+        "meal": "dinner",
+        "dishType": "antipasto"
       },
       {
         "id": "pr7",
@@ -237,7 +249,9 @@
         "allergens": "Latticini",
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
-        "categoryId": "cat2"
+        "categoryId": "cat2",
+        "meal": "dinner",
+        "dishType": "antipasto"
       },
       {
         "id": "pr8",
@@ -251,7 +265,9 @@
         "allergens": "Glutine",
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
-        "categoryId": "cat2"
+        "categoryId": "cat2",
+        "meal": "dinner",
+        "dishType": "antipasto"
       },
       {
         "id": "pr9",
@@ -265,7 +281,9 @@
         "allergens": "Crostacei, Molluschi, Glutine",
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
-        "categoryId": "cat3"
+        "categoryId": "cat3",
+        "meal": "dinner",
+        "dishType": "primo"
       },
       {
         "id": "pr10",
@@ -279,7 +297,9 @@
         "allergens": "Crostacei, Glutine, Uova, Latticini",
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
-        "categoryId": "cat3"
+        "categoryId": "cat3",
+        "meal": "dinner",
+        "dishType": "primo"
       },
       {
         "id": "pr11",
@@ -293,7 +313,9 @@
         "allergens": "Pesce",
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
-        "categoryId": "cat4"
+        "categoryId": "cat4",
+        "meal": "dinner",
+        "dishType": "secondo"
       },
       {
         "id": "pr12",
@@ -307,7 +329,9 @@
         "allergens": "Crostacei, Molluschi, Glutine",
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
-        "categoryId": "cat3"
+        "categoryId": "cat3",
+        "meal": "dinner",
+        "dishType": "primo"
       },
       {
         "id": "pr13",
@@ -321,7 +345,9 @@
         "allergens": "Crostacei, Glutine, Latticini",
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
-        "categoryId": "cat3"
+        "categoryId": "cat3",
+        "meal": "dinner",
+        "dishType": "primo"
       },
       {
         "id": "pr14",
@@ -335,7 +361,9 @@
         "allergens": "Crostacei, Glutine",
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
-        "categoryId": "cat3"
+        "categoryId": "cat3",
+        "meal": "dinner",
+        "dishType": "primo"
       },
       {
         "id": "pr15",
@@ -349,7 +377,9 @@
         "allergens": "Glutine, Uova, Latticini",
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
-        "categoryId": "cat3"
+        "categoryId": "cat3",
+        "meal": "dinner",
+        "dishType": "primo"
       },
       {
         "id": "pr16",
@@ -363,7 +393,9 @@
         "allergens": "Glutine, Uova, Latticini",
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
-        "categoryId": "cat3"
+        "categoryId": "cat3",
+        "meal": "dinner",
+        "dishType": "primo"
       },
       {
         "id": "pr17",
@@ -377,7 +409,9 @@
         "allergens": "Glutine, Uova, Latticini",
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
-        "categoryId": "cat3"
+        "categoryId": "cat3",
+        "meal": "dinner",
+        "dishType": "primo"
       },
       {
         "id": "pr18",
@@ -391,7 +425,9 @@
         "allergens": "Nessuno",
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
-        "categoryId": "cat5"
+        "categoryId": "cat5",
+        "meal": "dinner",
+        "dishType": "secondo"
       },
       {
         "id": "pr19",
@@ -405,7 +441,9 @@
         "allergens": "Nessuno",
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
-        "categoryId": "cat5"
+        "categoryId": "cat5",
+        "meal": "dinner",
+        "dishType": "secondo"
       },
       {
         "id": "pr20",
@@ -419,7 +457,9 @@
         "allergens": "Nessuno",
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
-        "categoryId": "cat5"
+        "categoryId": "cat5",
+        "meal": "dinner",
+        "dishType": "secondo"
       },
       {
         "id": "pr21",
@@ -433,7 +473,9 @@
         "allergens": "Pesce",
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
-        "categoryId": "cat4"
+        "categoryId": "cat4",
+        "meal": "dinner",
+        "dishType": "secondo"
       },
       {
         "id": "pr22",
@@ -447,7 +489,9 @@
         "allergens": "Latticini",
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
-        "categoryId": "cat5"
+        "categoryId": "cat5",
+        "meal": "dinner",
+        "dishType": "secondo"
       },
       {
         "id": "pr23",
@@ -461,7 +505,9 @@
         "allergens": "Nessuno",
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
-        "categoryId": "cat7"
+        "categoryId": "cat7",
+        "meal": "dinner",
+        "dishType": "contorno"
       },
       {
         "id": "pr24",
@@ -475,7 +521,9 @@
         "allergens": "Nessuno",
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
-        "categoryId": "cat7"
+        "categoryId": "cat7",
+        "meal": "dinner",
+        "dishType": "contorno"
       },
       {
         "id": "pr25",
@@ -489,7 +537,9 @@
         "allergens": "Nessuno",
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
-        "categoryId": "cat7"
+        "categoryId": "cat7",
+        "meal": "dinner",
+        "dishType": "contorno"
       },
       {
         "id": "pr26",
@@ -503,7 +553,9 @@
         "allergens": "Nessuno",
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
-        "categoryId": "cat7"
+        "categoryId": "cat7",
+        "meal": "dinner",
+        "dishType": "contorno"
       },
       {
         "id": "pr27",
@@ -517,7 +569,9 @@
         "allergens": "Nessuno",
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
-        "categoryId": "cat7"
+        "categoryId": "cat7",
+        "meal": "dinner",
+        "dishType": "contorno"
       },
       {
         "id": "pr28",
@@ -531,7 +585,9 @@
         "allergens": "Glutine, Latticini",
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
-        "categoryId": "cat6"
+        "categoryId": "cat6",
+        "meal": "both",
+        "dishType": "pizza"
       },
       {
         "id": "pr29",
@@ -545,7 +601,9 @@
         "allergens": "Glutine, Latticini",
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
-        "categoryId": "cat6"
+        "categoryId": "cat6",
+        "meal": "both",
+        "dishType": "pizza"
       },
       {
         "id": "pr30",
@@ -559,7 +617,9 @@
         "allergens": "Glutine, Latticini, Frutta a guscio",
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
-        "categoryId": "cat6"
+        "categoryId": "cat6",
+        "meal": "both",
+        "dishType": "pizza"
       },
       {
         "id": "pr31",
@@ -573,7 +633,9 @@
         "allergens": "Glutine, Latticini, Crostacei",
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
-        "categoryId": "cat6"
+        "categoryId": "cat6",
+        "meal": "both",
+        "dishType": "pizza"
       },
       {
         "id": "pr32",
@@ -587,7 +649,9 @@
         "allergens": "Glutine, Latticini, Pesce",
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
-        "categoryId": "cat6"
+        "categoryId": "cat6",
+        "meal": "both",
+        "dishType": "pizza"
       },
       {
         "id": "pr33",
@@ -601,7 +665,9 @@
         "allergens": "Glutine, Latticini",
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
-        "categoryId": "cat6"
+        "categoryId": "cat6",
+        "meal": "both",
+        "dishType": "pizza"
       },
       {
         "id": "pr34",
@@ -615,7 +681,9 @@
         "allergens": "Glutine, Latticini",
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
-        "categoryId": "cat6"
+        "categoryId": "cat6",
+        "meal": "both",
+        "dishType": "pizza"
       },
       {
         "id": "pr35",
@@ -629,7 +697,9 @@
         "allergens": "Glutine, Latticini",
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
-        "categoryId": "cat6"
+        "categoryId": "cat6",
+        "meal": "both",
+        "dishType": "pizza"
       },
       {
         "id": "pr36",
@@ -643,7 +713,9 @@
         "allergens": "Glutine, Latticini",
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
-        "categoryId": "cat6"
+        "categoryId": "cat6",
+        "meal": "both",
+        "dishType": "pizza"
       },
       {
         "id": "pr37",
@@ -657,7 +729,9 @@
         "allergens": "Glutine, Latticini, Pesce, Frutta a guscio",
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
-        "categoryId": "cat6"
+        "categoryId": "cat6",
+        "meal": "both",
+        "dishType": "pizza"
       },
       {
         "id": "pr38",
@@ -671,7 +745,9 @@
         "allergens": "Glutine, Latticini",
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
-        "categoryId": "cat6"
+        "categoryId": "cat6",
+        "meal": "both",
+        "dishType": "pizza"
       },
       {
         "id": "pr39",
@@ -685,7 +761,9 @@
         "allergens": "Glutine, Latticini, Crostacei, Molluschi",
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
-        "categoryId": "cat6"
+        "categoryId": "cat6",
+        "meal": "both",
+        "dishType": "pizza"
       },
       {
         "id": "pr40",
@@ -699,7 +777,9 @@
         "allergens": "Glutine, Latticini",
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
-        "categoryId": "cat6"
+        "categoryId": "cat6",
+        "meal": "both",
+        "dishType": "pizza"
       },
       {
         "id": "pr41",
@@ -713,7 +793,9 @@
         "allergens": "Glutine, Latticini",
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
-        "categoryId": "cat6"
+        "categoryId": "cat6",
+        "meal": "both",
+        "dishType": "pizza"
       },
       {
         "id": "pr42",
@@ -727,7 +809,9 @@
         "allergens": "Glutine, Latticini",
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
-        "categoryId": "cat6"
+        "categoryId": "cat6",
+        "meal": "both",
+        "dishType": "pizza"
       },
       {
         "id": "pr43",
@@ -741,7 +825,9 @@
         "allergens": "Glutine, Latticini, Uova",
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
-        "categoryId": "cat6"
+        "categoryId": "cat6",
+        "meal": "both",
+        "dishType": "pizza"
       },
       {
         "id": "pr44",
@@ -755,7 +841,9 @@
         "allergens": "Glutine, Latticini",
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
-        "categoryId": "cat6"
+        "categoryId": "cat6",
+        "meal": "both",
+        "dishType": "pizza"
       },
       {
         "id": "pr45",
@@ -769,7 +857,9 @@
         "allergens": "Glutine, Latticini, Uova",
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
-        "categoryId": "cat8"
+        "categoryId": "cat8",
+        "meal": "both",
+        "dishType": "dolce"
       },
       {
         "id": "pr46",
@@ -783,7 +873,9 @@
         "allergens": "Latticini, Uova, Frutta a guscio",
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
-        "categoryId": "cat8"
+        "categoryId": "cat8",
+        "meal": "both",
+        "dishType": "dolce"
       },
       {
         "id": "pr47",
@@ -797,7 +889,9 @@
         "allergens": "Glutine, Uova, Latticini",
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
-        "categoryId": "cat8"
+        "categoryId": "cat8",
+        "meal": "both",
+        "dishType": "dolce"
       },
       {
         "id": "pr48",
@@ -811,7 +905,9 @@
         "allergens": "Glutine, Latticini, Uova",
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
-        "categoryId": "cat8"
+        "categoryId": "cat8",
+        "meal": "both",
+        "dishType": "dolce"
       },
       {
         "id": "pr49",
@@ -825,7 +921,9 @@
         "allergens": "Solfiti",
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
-        "categoryId": "cat9"
+        "categoryId": "cat9",
+        "meal": "both",
+        "dishType": "bevanda"
       },
       {
         "id": "pr50",
@@ -839,7 +937,9 @@
         "allergens": "Glutine",
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
-        "categoryId": "cat9"
+        "categoryId": "cat9",
+        "meal": "both",
+        "dishType": "bevanda"
       }
     ]
   },

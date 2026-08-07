@@ -79,6 +79,8 @@ export function ProductsManager({ config, ctx }: { config: SiteConfig; ctx: Admi
       buttonText: 'Ordina Ora',
       buttonHref: '#contact',
       categoryId: categoryId || products.categories[0]?.id || '',
+      meal: 'both',
+      dishType: 'altro',
     };
     updateProducts(p => ({ ...p, products: [...p.products, newProduct] }));
   };
@@ -329,6 +331,35 @@ export function ProductsManager({ config, ctx }: { config: SiteConfig; ctx: Admi
                             className="w-full rounded-lg border border-slate-300 px-2 py-1.5 text-sm outline-none focus:border-blue-500"
                             placeholder="Es: €8"
                           />
+                        </div>
+                        <div>
+                          <label className="mb-1 block text-xs font-semibold text-slate-700">Pasto</label>
+                          <select
+                            value={product.meal}
+                            onChange={(e) => updateProduct(product.id, { meal: e.target.value as 'lunch' | 'dinner' | 'both' })}
+                            className="w-full rounded-lg border border-slate-300 px-2 py-1.5 text-sm outline-none focus:border-blue-500"
+                          >
+                            <option value="lunch">Pranzo</option>
+                            <option value="dinner">Cena</option>
+                            <option value="both">Entrambi</option>
+                          </select>
+                        </div>
+                        <div>
+                          <label className="mb-1 block text-xs font-semibold text-slate-700">Tipo Piatto</label>
+                          <select
+                            value={product.dishType}
+                            onChange={(e) => updateProduct(product.id, { dishType: e.target.value as 'antipasto' | 'primo' | 'contorno' | 'secondo' | 'dolce' | 'bevanda' | 'pizza' | 'altro' })}
+                            className="w-full rounded-lg border border-slate-300 px-2 py-1.5 text-sm outline-none focus:border-blue-500"
+                          >
+                            <option value="antipasto">Antipasto</option>
+                            <option value="primo">Primo</option>
+                            <option value="contorno">Contorno</option>
+                            <option value="secondo">Secondo</option>
+                            <option value="dolce">Dolce</option>
+                            <option value="bevanda">Bevanda</option>
+                            <option value="pizza">Pizza</option>
+                            <option value="altro">Altro</option>
+                          </select>
                         </div>
                         <div>
                           <label className="mb-1 block text-xs font-semibold text-slate-700">Immagine URL</label>

@@ -191,6 +191,8 @@ export const DEFAULT_CONFIG: SiteConfig = {
         buttonText: 'Ordina Ora',
         buttonHref: '#contact',
         categoryId: 'cat1',
+        meal: 'both',
+        dishType: 'pizza',
       },
       {
         id: 'pr2',
@@ -205,6 +207,8 @@ export const DEFAULT_CONFIG: SiteConfig = {
         buttonText: 'Ordina Ora',
         buttonHref: '#contact',
         categoryId: 'cat1',
+        meal: 'both',
+        dishType: 'pizza',
       },
       {
         id: 'pr3',
@@ -219,6 +223,8 @@ export const DEFAULT_CONFIG: SiteConfig = {
         buttonText: 'Ordina Ora',
         buttonHref: '#contact',
         categoryId: 'cat2',
+        meal: 'both',
+        dishType: 'pizza',
       },
       {
         id: 'pr4',
@@ -233,6 +239,8 @@ export const DEFAULT_CONFIG: SiteConfig = {
         buttonText: 'Ordina Ora',
         buttonHref: '#contact',
         categoryId: 'cat2',
+        meal: 'both',
+        dishType: 'pizza',
       },
       {
         id: 'pr5',
@@ -247,6 +255,8 @@ export const DEFAULT_CONFIG: SiteConfig = {
         buttonText: 'Ordina Ora',
         buttonHref: '#contact',
         categoryId: 'cat2',
+        meal: 'both',
+        dishType: 'pizza',
       },
       {
         id: 'pr6',
@@ -261,6 +271,8 @@ export const DEFAULT_CONFIG: SiteConfig = {
         buttonText: 'Ordina Ora',
         buttonHref: '#contact',
         categoryId: 'cat1',
+        meal: 'both',
+        dishType: 'pizza',
       },
       {
         id: 'pr7',
@@ -275,6 +287,8 @@ export const DEFAULT_CONFIG: SiteConfig = {
         buttonText: 'Ordina Ora',
         buttonHref: '#contact',
         categoryId: 'cat3',
+        meal: 'both',
+        dishType: 'antipasto',
       },
       {
         id: 'pr8',
@@ -289,6 +303,8 @@ export const DEFAULT_CONFIG: SiteConfig = {
         buttonText: 'Ordina Ora',
         buttonHref: '#contact',
         categoryId: 'cat4',
+        meal: 'both',
+        dishType: 'primo',
       },
       {
         id: 'pr9',
@@ -303,6 +319,8 @@ export const DEFAULT_CONFIG: SiteConfig = {
         buttonText: 'Ordina Ora',
         buttonHref: '#contact',
         categoryId: 'cat5',
+        meal: 'both',
+        dishType: 'dolce',
       },
       {
         id: 'pr10',
@@ -317,6 +335,8 @@ export const DEFAULT_CONFIG: SiteConfig = {
         buttonText: 'Ordina Ora',
         buttonHref: '#contact',
         categoryId: 'cat6',
+        meal: 'both',
+        dishType: 'bevanda',
       },
     ],
   },
