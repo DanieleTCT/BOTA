@@ -139,6 +139,44 @@ export const DEFAULT_CONFIG: SiteConfig = {
     subheading: 'Pizze classiche, specialità della casa e prelibatezze del territorio',
     layout: 'grid',
     columns: 3,
+    categories: [
+      {
+        id: 'cat1',
+        name: 'Pizze Classiche',
+        description: 'Le pizze tradizionali che hanno fatto la storia',
+        icon: 'Pizza',
+      },
+      {
+        id: 'cat2',
+        name: 'Specialità della Casa',
+        description: 'Le nostre creazioni esclusive',
+        icon: 'Star',
+      },
+      {
+        id: 'cat3',
+        name: 'Antipasti',
+        description: 'Per iniziare la serata',
+        icon: 'Utensils',
+      },
+      {
+        id: 'cat4',
+        name: 'Primi Piatti',
+        description: 'La tradizione marchigiana',
+        icon: 'Soup',
+      },
+      {
+        id: 'cat5',
+        name: 'Dolci',
+        description: 'Fatti in casa con passione',
+        icon: 'Cake',
+      },
+      {
+        id: 'cat6',
+        name: 'Bevande',
+        description: 'Vini, birre e molto altro',
+        icon: 'Wine',
+      },
+    ],
     products: [
       {
         id: 'pr1',
@@ -150,6 +188,7 @@ export const DEFAULT_CONFIG: SiteConfig = {
         features: ['Pomodoro San Marzano', 'Fior di latte', 'Basilico fresco', 'Olio EVO'],
         buttonText: 'Ordina Ora',
         buttonHref: '#contact',
+        categoryId: 'cat1',
       },
       {
         id: 'pr2',
@@ -161,6 +200,7 @@ export const DEFAULT_CONFIG: SiteConfig = {
         features: ['Pomodoro San Marzano', 'Aglio', 'Origano', 'Olio EVO'],
         buttonText: 'Ordina Ora',
         buttonHref: '#contact',
+        categoryId: 'cat1',
       },
       {
         id: 'pr3',
@@ -172,6 +212,7 @@ export const DEFAULT_CONFIG: SiteConfig = {
         features: ['Pomodoro', 'Fior di latte', 'Salame piccante', 'Olive nere'],
         buttonText: 'Ordina Ora',
         buttonHref: '#contact',
+        categoryId: 'cat2',
       },
       {
         id: 'pr4',
@@ -183,6 +224,7 @@ export const DEFAULT_CONFIG: SiteConfig = {
         features: ['Crema di tartufo', 'Funghi porcini', 'Prosciutto crudo', 'Parmigiano'],
         buttonText: 'Ordina Ora',
         buttonHref: '#contact',
+        categoryId: 'cat2',
       },
       {
         id: 'pr5',
@@ -194,6 +236,7 @@ export const DEFAULT_CONFIG: SiteConfig = {
         features: ['Mozzarella', 'Gorgonzola', 'Taleggio', 'Parmigiano'],
         buttonText: 'Ordina Ora',
         buttonHref: '#contact',
+        categoryId: 'cat2',
       },
       {
         id: 'pr6',
@@ -205,6 +248,7 @@ export const DEFAULT_CONFIG: SiteConfig = {
         features: ['Pomodoro', 'Fior di latte', 'Prosciutto di Parma', 'Rucola fresca'],
         buttonText: 'Ordina Ora',
         buttonHref: '#contact',
+        categoryId: 'cat1',
       },
     ],
   },

@@ -133,6 +133,14 @@ export interface Product {
   features: string[];
   buttonText: string;
   buttonHref: string;
+  categoryId: string;
+}
+
+export interface MenuCategory {
+  id: string;
+  name: string;
+  description: string;
+  icon: string;
 }
 
 export interface ProductsConfig {
@@ -140,6 +148,7 @@ export interface ProductsConfig {
   subheading: string;
   layout: 'grid' | 'list';
   columns: 2 | 3 | 4;
+  categories: MenuCategory[];
   products: Product[];
 }
 

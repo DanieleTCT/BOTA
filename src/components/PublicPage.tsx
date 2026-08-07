@@ -4,7 +4,7 @@ import { Header } from '@/components/sections/Header';
 import { Hero } from '@/components/sections/Hero';
 import { Features } from '@/components/sections/Features';
 import { About } from '@/components/sections/About';
-import { ProductsSection } from '@/components/sections/ProductsSection';
+import { InteractiveMenu } from '@/components/sections/InteractiveMenu';
 import { Pricing } from '@/components/sections/Pricing';
 import { Testimonials } from '@/components/sections/Testimonials';
 import { Faq } from '@/components/sections/Faq';
@@ -21,7 +21,7 @@ const SECTION_RENDERERS: Record<SectionId, (config: SiteConfig) => React.ReactNo
   hero: (c) => <Hero config={c.hero} />,
   features: (c) => <Features config={c.features} />,
   about: (c) => <About config={c.about} />,
-  products: (c) => <ProductsSection config={c} />,
+  products: (c) => <InteractiveMenu config={c} />,
   pricing: (c) => <Pricing config={c.pricing} />,
   testimonials: (c) => <Testimonials config={c.testimonials} />,
   faq: (c) => <Faq config={c.faq} />,
