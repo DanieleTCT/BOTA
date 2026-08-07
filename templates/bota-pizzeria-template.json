@@ -30,7 +30,7 @@
     "radius": "lg",
     "shadow": "md"
   },
-"announcement": {
+  "announcement": {
     "text": "🍽️ Cucina marchigiana, pesce fresco e pizza artigianale — aperto tutte le sere da martedì a domenica!",
     "linkText": "Scopri il menu",
     "linkHref": "#products",
@@ -49,7 +49,7 @@
     "ctaHref": "#contact",
     "sticky": true
   },
-"hero": {
+  "hero": {
     "badge": "🍽️ Ristorante — Fano",
     "title": "Ristorante Bota: il migliore a Fano",
     "subtitle": "Questo è il posto migliore vicino al Santuario Della Madonna Del Ponte. I curatissimi pizza, pesce e tagliatelle potrebbero farti una ottima impressione. Un servizio cordiale, personale professionale e atmosfera spettacolare ti aspettano.",
@@ -63,7 +63,7 @@
     "imageUrl": "https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg?auto=compress&cs=tinysrgb&w=1600",
     "overlayOpacity": 45
   },
-"features": {
+  "features": {
     "heading": "Perché scegliere Ristorante Bota",
     "subheading": "Ogni dettaglio conta — dalla cucina all'atmosfera.",
     "columns": 3,
@@ -112,7 +112,7 @@
       }
     ]
   },
-"about": {
+  "about": {
     "heading": "La nostra storia",
     "body": "Il Ristorante Bota (che in albanese significa 'mondo') si trova nel cuore di Fano, vicino al Santuario Della Madonna Del Ponte. Qui trovi la curatissima pizza, il pesce freschissimo e le tagliatelle allo scoglio. Il professionale personale lavora duramente con un atteggiamento positivo per rendere questo posto fantastico. I nostri clienti apprezzano il servizio eccellente e i prezzi ragionevoli. Un'atmosfera spettacolare che ti farà tornare.",
     "imageUrl": "https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg?auto=compress&cs=tinysrgb&w=900",
@@ -124,14 +124,14 @@
       { "id": "s4", "value": "€20-30", "label": "Prezzo per Persona" }
     ]
   },
-"products": {
+  "products": {
     "heading": "Il Nostro Menu",
     "subheading": "Pizza, pesce fresco, tagliatelle e specialità marchigiane",
     "layout": "grid",
     "columns": 3,
     "categories": [
-      { "id": "cat1", "name": "Antipasti di Mare", "description": "Per iniziare la serata", "icon": "Utensils" },
-      { "id": "cat2", "name": "Antipasti di Terra", "description": "Per iniziare la serata", "icon": "Utensils" },
+      { "id": "cat1", "name": "Antipasti di Mare", "description": "Il meglio del nostro mare fresco", "icon": "Fish" },
+      { "id": "cat2", "name": "Antipasti di Terra", "description": "Salumi, formaggi e prodotti tipici", "icon": "Beef" },
       { "id": "cat3", "name": "Primi Piatti", "description": "Pasta fresca e tradizione", "icon": "Soup" },
       { "id": "cat4", "name": "Secondi di Mare", "description": "Pesce fresco del giorno", "icon": "Fish" },
       { "id": "cat5", "name": "Secondi di Terra", "description": "Carne e tradizione", "icon": "Beef" },
@@ -142,13 +142,127 @@
     ],
     "products": [
       {
+        "id": "pr1",
+        "name": "Gamberoni all'Arrabbiata",
+        "description": "Gamberoni freschi in salsa piccante con aglio e peperoncino",
+        "price": "€20",
+        "imageUrl": "https://images.pexels.com/photos/725992/pexels-photo-725992.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "badge": "Specialità",
+        "features": ["Gamberoni freschi", "Salsa piccante", "Aglio"],
+        "ingredients": "Gamberoni rossi mediterranei, aglio, peperoncino calabrese, vino bianco, prezzemolo, olio EVO",
+        "allergens": "Crostacei",
+        "buttonText": "Ordina Ora",
+        "buttonHref": "#contact",
+        "categoryId": "cat1"
+      },
+      {
+        "id": "pr2",
+        "name": "Cozze alla Tarantina",
+        "description": "Cozze fresche in salsa di pomodoro piccante",
+        "price": "€12",
+        "imageUrl": "https://images.pexels.com/photos/725992/pexels-photo-725992.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "badge": "Classico",
+        "features": ["Cozze fresche", "Pomodoro", "Piccante"],
+        "ingredients": "Cozze fresche del mediterraneo, pomodorini San Marzano, aglio, peperoncino, vino bianco, prezzemolo",
+        "allergens": "Pesce, Molluschi",
+        "buttonText": "Ordina Ora",
+        "buttonHref": "#contact",
+        "categoryId": "cat1"
+      },
+      {
+        "id": "pr3",
+        "name": "Antipasto Freddo",
+        "description": "Insalata di mare: gamberi, seppia, rucola, salmone affumicato, branzino, salsa tartare, carpaccio di pesce spada, cetrioli, salmone affumicato, formaggio spalmabile, noci e glassa all'aceto balsamico",
+        "price": "€18",
+        "imageUrl": "https://images.pexels.com/photos/725991/pexels-photo-725991.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "badge": "Fresco",
+        "features": ["Salmone", "Branzino", "Sashimi"],
+        "ingredients": "Salmone norvegese affumicato, branzino crudo, gamberi, seppia, rucola, salsa tartare, carpaccio di pesce spada, cetrioli, formaggio spalmabile, noci, glassa aceto balsamico",
+        "allergens": "Pesce, Crostacei, Molluschi",
+        "buttonText": "Ordina Ora",
+        "buttonHref": "#contact",
+        "categoryId": "cat1"
+      },
+      {
+        "id": "pr4",
+        "name": "Antipasto Caldo",
+        "description": "Soutè di cozze e vongole, gamberoni al brandy, polipetti alla contadina, bomboletti in brodetto",
+        "price": "€18",
+        "imageUrl": "https://images.pexels.com/photos/725992/pexels-photo-725992.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "badge": "Caldo",
+        "features": ["Gamberoni", "Cozze", "Brandy"],
+        "ingredients": "Cozze, vongole, gamberoni, brandy, polipetti, bomboletti, brodetto di pesce, aglio, peperoncino, vino bianco",
+        "allergens": "Crostacei, Molluschi, Glutine",
+        "buttonText": "Ordina Ora",
+        "buttonHref": "#contact",
+        "categoryId": "cat1"
+      },
+      {
+        "id": "pr5",
+        "name": "Antipasto Freddo e Caldo",
+        "description": "La nostra selezione: 5 antipasti freddi più 3 antipasti caldi",
+        "price": "€28",
+        "imageUrl": "https://images.pexels.com/photos/725991/pexels-photo-725991.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "badge": "Completo",
+        "features": ["Selezione mista", "Per 2 persone", "Chef seleziona"],
+        "ingredients": "La nostra selezione dei migliori antipasti di mare, freddi e caldi, secondo la freschezza del pescato del giorno",
+        "allergens": "Pesce, Crostacei, Molluschi",
+        "buttonText": "Ordina Ora",
+        "buttonHref": "#contact",
+        "categoryId": "cat1"
+      },
+      {
+        "id": "pr6",
+        "name": "Tagliere di Salumi",
+        "description": "Selezione di salumi italiani DOP con formaggi",
+        "price": "€14",
+        "imageUrl": "https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "badge": "Terra",
+        "features": ["Prosciutto", "Salsiccia", "Formaggi"],
+        "ingredients": "Prosciutto di Parma DOP, salame toscano, salsiccia di cinghiale, caciotta, pecorino, crostini",
+        "allergens": "Latticini, Glutine",
+        "buttonText": "Ordina Ora",
+        "buttonHref": "#contact",
+        "categoryId": "cat2"
+      },
+      {
+        "id": "pr7",
+        "name": "Formaggi Misti",
+        "description": "Selezione di formaggi italiani con miele e confetture",
+        "price": "€12",
+        "imageUrl": "https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "badge": "Formaggi",
+        "features": ["Parmigiano", "Gorgonzola", "Miele"],
+        "ingredients": "Parmigiano Reggiano 24 mesi, gorgonzola dolce, robiola, miele di castagno, confettura di fichi, noci",
+        "allergens": "Latticini",
+        "buttonText": "Ordina Ora",
+        "buttonHref": "#contact",
+        "categoryId": "cat2"
+      },
+      {
+        "id": "pr8",
+        "name": "Mix Fritto",
+        "description": "Fritto misto di verdure e olive",
+        "price": "€8",
+        "imageUrl": "https://images.pexels.com/photos/1893558/pexels-photo-1893558.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "badge": "Veggy",
+        "features": ["Verdure", "Olive", "Fritte"],
+        "ingredients": "Zucchine, melanzane, peperoni, funghi, olive ascolane, pastella leggera",
+        "allergens": "Glutine",
+        "buttonText": "Ordina Ora",
+        "buttonHref": "#contact",
+        "categoryId": "cat2"
+      },
+      {
         "id": "pr9",
         "name": "Tagliatelle allo scoglio",
-        "description": "Tagliatelle allo scoglio",
+        "description": "Tagliatelle fresche con frutti di mare",
         "price": "€12",
         "imageUrl": "https://images.pexels.com/photos/4518598/pexels-photo-4518598.jpeg?auto=compress&cs=tinysrgb&w=400",
         "badge": "Fresche",
         "features": ["Tagliatelle fresche", "Frutti di mare"],
+        "ingredients": "Tagliatelle fresche, cozze, vongole, gamberi, pomodorini, aglio, olio EVO, prezzemolo",
+        "allergens": "Crostacei, Molluschi, Glutine",
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
         "categoryId": "cat3"
@@ -156,11 +270,13 @@
       {
         "id": "pr10",
         "name": "Mezzelune ai crostacei",
-        "description": "Mezzelune ai crostacei",
+        "description": "Pasta fresca ripiena di crostacei",
         "price": "€14",
         "imageUrl": "https://images.pexels.com/photos/3171836/pexels-photo-3171836.jpeg?auto=compress&cs=tinysrgb&w=400",
         "badge": "Gourmet",
         "features": ["Crostacei", "Pasta fresca"],
+        "ingredients": "Pasta fresca all'uovo, gamberi, scampi, ricotta, pomodorini, burro, salvia",
+        "allergens": "Crostacei, Glutine, Uova, Latticini",
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
         "categoryId": "cat3"
@@ -168,11 +284,13 @@
       {
         "id": "pr11",
         "name": "Spiedini di spigola e carciofi",
-        "description": "Spiedini di spigola e carciofi",
+        "description": "Spiedini di pesce spada con carciofi grigliati",
         "price": "€13",
         "imageUrl": "https://images.pexels.com/photos/1267210/pexels-photo-1267210.jpeg?auto=compress&cs=tinysrgb&w=400",
         "badge": "Griglia",
         "features": ["Spigola", "Carciofi", "Griglia"],
+        "ingredients": "Pesce spada, carciofi, limone, origano, olio EVO, sale marino",
+        "allergens": "Pesce",
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
         "categoryId": "cat4"
@@ -180,11 +298,13 @@
       {
         "id": "pr12",
         "name": "Gnocchi alla pescatora",
-        "description": "Gnocchi alla pescatora",
+        "description": "Gnocchi di patate con sugo di pesce",
         "price": "€12",
         "imageUrl": "https://images.pexels.com/photos/4518598/pexels-photo-4518598.jpeg?auto=compress&cs=tinysrgb&w=400",
         "badge": "Primi",
         "features": ["Gnocchi", "Sugo di pesce"],
+        "ingredients": "Gnocchi di patate fatti in casa, cozze, vongole, gamberi, pomodorini, aglio, peperoncino",
+        "allergens": "Crostacei, Molluschi, Glutine",
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
         "categoryId": "cat3"
@@ -192,23 +312,27 @@
       {
         "id": "pr13",
         "name": "Mezze maniche mazzancolle e Brandy",
-        "description": "Mezze maniche con mazzancolle e Brandy (minimo 2 porzioni)",
+        "description": "Pasta con mazzancolle e brandy",
         "price": "€13",
         "imageUrl": "https://images.pexels.com/photos/4518598/pexels-photo-4518598.jpeg?auto=compress&cs=tinysrgb&w=400",
         "badge": "Speciali",
         "features": ["Mazzancolle", "Brandy", "Pasta"],
+        "ingredients": "Mezze maniche, mazzancolle fresche, brandy, panna, parmigiano, prezzemolo",
+        "allergens": "Crostacei, Glutine, Latticini",
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
         "categoryId": "cat3"
       },
       {
         "id": "pr14",
-        "name": "Pacchero all'astice",
-        "description": "Paccheri all'astice (minimo 2 porzioni)",
+        "name": "Paccheri all'astice",
+        "description": "Paccheri con astice fresco",
         "price": "€20",
         "imageUrl": "https://images.pexels.com/photos/1267210/pexels-photo-1267210.jpeg?auto=compress&cs=tinysrgb&w=400",
         "badge": "Premium",
         "features": ["Astice", "Paccheri"],
+        "ingredients": "Paccheri di grano duro, astice fresco, pomodorini, aglio, olio EVO, prezzemolo",
+        "allergens": "Crostacei, Glutine",
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
         "categoryId": "cat3"
@@ -216,23 +340,27 @@
       {
         "id": "pr15",
         "name": "Passatelli ai porcini",
-        "description": "Passatelli ai porcini",
+        "description": "Passatelli freschi con funghi porcini",
         "price": "€11",
         "imageUrl": "https://images.pexels.com/photos/4518598/pexels-photo-4518598.jpeg?auto=compress&cs=tinysrgb&w=400",
         "badge": "Tradizionali",
         "features": ["Passatelli", "Porcini"],
+        "ingredients": "Passatelli fatti in casa (uova, pane, parmigiano), porcini freschi, burro, aglio, prezzemolo",
+        "allergens": "Glutine, Uova, Latticini",
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
         "categoryId": "cat3"
       },
       {
         "id": "pr16",
-        "name": "Ravioli gorgonzola, pere, panna e noci",
-        "description": "Ravioli gorgonzola, pere, panna e noci",
+        "name": "Ravioli gorgonzola, pere e noci",
+        "description": "Ravioli ripieni di gorgonzola con pere e noci",
         "price": "€12",
         "imageUrl": "https://images.pexels.com/photos/4518598/pexels-photo-4518598.jpeg?auto=compress&cs=tinysrgb&w=400",
         "badge": "Gourmet",
         "features": ["Gorgonzola", "Pere", "Noci"],
+        "ingredients": "Pasta fresca all'uovo, gorgonzola dolce, pere, noci, panna, burro",
+        "allergens": "Glutine, Uova, Latticini",
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
         "categoryId": "cat3"
@@ -240,11 +368,13 @@
       {
         "id": "pr17",
         "name": "Tortellini al ragù",
-        "description": "Tortellini al ragù",
+        "description": "Tortellini freschi con ragù bolognese",
         "price": "€10",
         "imageUrl": "https://images.pexels.com/photos/4518598/pexels-photo-4518598.jpeg?auto=compress&cs=tinysrgb&w=400",
         "badge": "Classici",
         "features": ["Tortellini", "Ragù"],
+        "ingredients": "Tortellini di carne freschi, ragù di manzo, pomodoro, parmigiano",
+        "allergens": "Glutine, Uova, Latticini",
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
         "categoryId": "cat3"
@@ -252,11 +382,13 @@
       {
         "id": "pr18",
         "name": "Bistecca di manzo alla brace",
-        "description": "Bistecca di manzo alla brace",
+        "description": "Bistecca di manzo alla griglia",
         "price": "€20",
         "imageUrl": "https://images.pexels.com/photos/1267210/pexels-photo-1267210.jpeg?auto=compress&cs=tinysrgb&w=400",
         "badge": "Carne",
         "features": ["Manzo", "Griglia", "Contorni"],
+        "ingredients": "Bistecca di manzo scelta, rosmarino, aglio, olio EVO, sale marino",
+        "allergens": "Nessuno",
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
         "categoryId": "cat5"
@@ -264,11 +396,13 @@
       {
         "id": "pr19",
         "name": "Petto di tacchino alla legna",
-        "description": "Petto di tacchino alla legna",
+        "description": "Petto di tacchino cotto al forno a legna",
         "price": "€15",
         "imageUrl": "https://images.pexels.com/photos/1267210/pexels-photo-1267210.jpeg?auto=compress&cs=tinysrgb&w=400",
         "badge": "Legna",
         "features": ["Tacchino", "Cottura alla legna"],
+        "ingredients": "Petto di tacchino, rosmarino, timo, aglio, olio EVO, sale marino",
+        "allergens": "Nessuno",
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
         "categoryId": "cat5"
@@ -276,11 +410,13 @@
       {
         "id": "pr20",
         "name": "Agnello cotto in forno a legna",
-        "description": "Agnello cotto in forno a legna",
+        "description": "Agnello arrosto con erbe aromatiche",
         "price": "€22",
         "imageUrl": "https://images.pexels.com/photos/1267210/pexels-photo-1267210.jpeg?auto=compress&cs=tinysrgb&w=400",
         "badge": "Speciale",
         "features": ["Agnello", "Forno a legna"],
+        "ingredients": "Agnello locale, rosmarino, aglio, menta, olio EVO, vino bianco",
+        "allergens": "Nessuno",
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
         "categoryId": "cat5"
@@ -288,11 +424,13 @@
       {
         "id": "pr21",
         "name": "Orata in forno",
-        "description": "Orata in forno",
+        "description": "Orata intera al forno con patate",
         "price": "€15",
         "imageUrl": "https://images.pexels.com/photos/1267210/pexels-photo-1267210.jpeg?auto=compress&cs=tinysrgb&w=400",
         "badge": "Pesce",
         "features": ["Orata", "Al forno"],
+        "ingredients": "Orata intera, patate, limone, prezzemolo, aglio, olio EVO",
+        "allergens": "Pesce",
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
         "categoryId": "cat4"
@@ -300,11 +438,13 @@
       {
         "id": "pr22",
         "name": "Tagliata di manzo",
-        "description": "Tagliata di manzo",
+        "description": "Tagliata di manzo con rucola e grana",
         "price": "€20",
         "imageUrl": "https://images.pexels.com/photos/1267210/pexels-photo-1267210.jpeg?auto=compress&cs=tinysrgb&w=400",
         "badge": "Manzo",
         "features": ["Tagliata", "Rucola", "Grana"],
+        "ingredients": "Manzo argentino, rucola, grana padano, aceto balsamico, olio al tartufo",
+        "allergens": "Latticini",
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
         "categoryId": "cat5"
@@ -312,11 +452,13 @@
       {
         "id": "pr23",
         "name": "Patatine fritte",
-        "description": "Patatine fritte",
+        "description": "Patatine fritte croccanti",
         "price": "€4",
         "imageUrl": "https://images.pexels.com/photos/1893558/pexels-photo-1893558.jpeg?auto=compress&cs=tinysrgb&w=400",
         "badge": "Classico",
         "features": ["Patatine", "Fritte"],
+        "ingredients": "Patate fresche, olio di semi di girasole, sale marino",
+        "allergens": "Nessuno",
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
         "categoryId": "cat7"
@@ -329,6 +471,8 @@
         "imageUrl": "https://images.pexels.com/photos/4110015/pexels-photo-4110015.jpeg?auto=compress&cs=tinysrgb&w=400",
         "badge": "Vegetariano",
         "features": ["Verdure", "Stagionali"],
+        "ingredients": "Zucchine, melanzane, peperoni, pomodorini, aglio, olio EVO",
+        "allergens": "Nessuno",
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
         "categoryId": "cat7"
@@ -336,11 +480,13 @@
       {
         "id": "pr25",
         "name": "Insalata mista",
-        "description": "Insalata mista fresca",
+        "description": "Insalata mista fresca di stagione",
         "price": "€4",
         "imageUrl": "https://images.pexels.com/photos/4110015/pexels-photo-4110015.jpeg?auto=compress&cs=tinysrgb&w=400",
         "badge": "Fresca",
         "features": ["Insalata", "Mista"],
+        "ingredients": "Lattuga, pomodorini, carote, mais, olive, cipolla rossa, olio EVO, aceto balsamico",
+        "allergens": "Nessuno",
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
         "categoryId": "cat7"
@@ -348,11 +494,13 @@
       {
         "id": "pr26",
         "name": "Patate arrosto",
-        "description": "Patate arrosto",
+        "description": "Patate arrosto con rosmarino",
         "price": "€4",
         "imageUrl": "https://images.pexels.com/photos/1893558/pexels-photo-1893558.jpeg?auto=compress&cs=tinysrgb&w=400",
         "badge": "Classico",
         "features": ["Patate", "Arrosto"],
+        "ingredients": "Patate, rosmarino, aglio, olio EVO, sale marino",
+        "allergens": "Nessuno",
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
         "categoryId": "cat7"
@@ -360,11 +508,13 @@
       {
         "id": "pr27",
         "name": "Mix verdure grigliate",
-        "description": "Mix verdure grigliate",
+        "description": "Verdure grigliate di stagione",
         "price": "€7",
         "imageUrl": "https://images.pexels.com/photos/4110015/pexels-photo-4110015.jpeg?auto=compress&cs=tinysrgb&w=400",
         "badge": "Griglia",
         "features": ["Verdure", "Grigliate"],
+        "ingredients": "Zucchine, melanzane, peperoni, funghi, cipolle, olio EVO, erbe aromatiche",
+        "allergens": "Nessuno",
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
         "categoryId": "cat7"
@@ -377,6 +527,8 @@
         "imageUrl": "https://images.pexels.com/photos/275345/pexels-photo-275345.jpeg?auto=compress&cs=tinysrgb&w=400",
         "badge": "Classica",
         "features": ["Pomodoro", "Mozzarella", "Basilico"],
+        "ingredients": "Pomodoro San Marzano, mozzarella di bufala, basilico fresco, olio EVO",
+        "allergens": "Glutine, Latticini",
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
         "categoryId": "cat6"
@@ -389,6 +541,8 @@
         "imageUrl": "https://images.pexels.com/photos/275345/pexels-photo-275345.jpeg?auto=compress&cs=tinysrgb&w=400",
         "badge": "Bufala",
         "features": ["Bufala", "Pomodorini", "Basilico"],
+        "ingredients": "Mozzarella di bufala campana DOP, pomodorini, basilico, olio EVO",
+        "allergens": "Glutine, Latticini",
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
         "categoryId": "cat6"
@@ -401,6 +555,8 @@
         "imageUrl": "https://images.pexels.com/photos/275345/pexels-photo-275345.jpeg?auto=compress&cs=tinysrgb&w=400",
         "badge": "Gourmet",
         "features": ["Barbabietola", "Radicchio", "Gorgonzola"],
+        "ingredients": "Mozzarella, barbabietola, radicchio, gorgonzola, noci, miele",
+        "allergens": "Glutine, Latticini, Frutta a guscio",
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
         "categoryId": "cat6"
@@ -413,6 +569,8 @@
         "imageUrl": "https://images.pexels.com/photos/275345/pexels-photo-275345.jpeg?auto=compress&cs=tinysrgb&w=400",
         "badge": "Pesce",
         "features": ["Gamberi", "Limone", "Rucola"],
+        "ingredients": "Mozzarella, gamberi freschi, rucola, scorza di limone, olio al limone",
+        "allergens": "Glutine, Latticini, Crostacei",
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
         "categoryId": "cat6"
@@ -425,6 +583,8 @@
         "imageUrl": "https://images.pexels.com/photos/275345/pexels-photo-275345.jpeg?auto=compress&cs=tinysrgb&w=400",
         "badge": "Pesce",
         "features": ["Acciughe", "Burrata", "Pomodori secchi"],
+        "ingredients": "Mozzarella, burrata, acciughe del Cantabrico, pomodori secchi, rucola",
+        "allergens": "Glutine, Latticini, Pesce",
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
         "categoryId": "cat6"
@@ -437,6 +597,8 @@
         "imageUrl": "https://images.pexels.com/photos/275345/pexels-photo-275345.jpeg?auto=compress&cs=tinysrgb&w=400",
         "badge": "Calda",
         "features": ["Salsiccia", "Pancetta", "Grana"],
+        "ingredients": "Pomodoro, mozzarella, salsiccia napoletana, pancetta, grana padano, origano",
+        "allergens": "Glutine, Latticini",
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
         "categoryId": "cat6"
@@ -449,6 +611,8 @@
         "imageUrl": "https://images.pexels.com/photos/275345/pexels-photo-275345.jpeg?auto=compress&cs=tinysrgb&w=400",
         "badge": "Veggy",
         "features": ["Zucchine", "Melanzane", "Peperoni"],
+        "ingredients": "Pomodoro, mozzarella, zucchine, melenzane, peperoni, funghi misti, olio EVO",
+        "allergens": "Glutine, Latticini",
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
         "categoryId": "cat6"
@@ -461,6 +625,8 @@
         "imageUrl": "https://images.pexels.com/photos/275345/pexels-photo-275345.jpeg?auto=compress&cs=tinysrgb&w=400",
         "badge": "Tradizionale",
         "features": ["Salsiccia", "Friarielli"],
+        "ingredients": "Mozzarella, salsiccia, friarielli (cime di rapa), aglio, olio EVO, peperoncino",
+        "allergens": "Glutine, Latticini",
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
         "categoryId": "cat6"
@@ -473,6 +639,8 @@
         "imageUrl": "https://images.pexels.com/photos/275345/pexels-photo-275345.jpeg?auto=compress&cs=tinysrgb&w=400",
         "badge": "Funghi",
         "features": ["Porcini", "Scamorza"],
+        "ingredients": "Mozzarella, funghi porcini freschi, scamorza affumicata, olio al tartufo",
+        "allergens": "Glutine, Latticini",
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
         "categoryId": "cat6"
@@ -485,6 +653,8 @@
         "imageUrl": "https://images.pexels.com/photos/275345/pexels-photo-275345.jpeg?auto=compress&cs=tinysrgb&w=400",
         "badge": "Salmone",
         "features": ["Salmone", "Noci", "Balsamico"],
+        "ingredients": "Mozzarella, salmone affumicato, noci, glassa all'aceto balsamico, rucola",
+        "allergens": "Glutine, Latticini, Pesce, Frutta a guscio",
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
         "categoryId": "cat6"
@@ -497,6 +667,8 @@
         "imageUrl": "https://images.pexels.com/photos/158491/food-italian-cooking-pizza-158491.jpeg?auto=compress&cs=tinysrgb&w=400",
         "badge": "Piccante",
         "features": ["Salame piccante", "Peperoni"],
+        "ingredients": "Pomodoro, mozzarella, salame piccante calabrese, peperoni, olio EVO",
+        "allergens": "Glutine, Latticini",
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
         "categoryId": "cat6"
@@ -509,6 +681,8 @@
         "imageUrl": "https://images.pexels.com/photos/275345/pexels-photo-275345.jpeg?auto=compress&cs=tinysrgb&w=400",
         "badge": "Mare",
         "features": ["Seppia", "Gamberi", "Cozze", "Vongole"],
+        "ingredients": "Pomodoro, seppia, gamberi, cozze, vongole, pomodorini, cipolla, aglio, olio EVO",
+        "allergens": "Glutine, Latticini, Crostacei, Molluschi",
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
         "categoryId": "cat6"
@@ -521,6 +695,8 @@
         "imageUrl": "https://images.pexels.com/photos/275345/pexels-photo-275345.jpeg?auto=compress&cs=tinysrgb&w=400",
         "badge": "Stagionali",
         "features": ["Salsiccia", "Carciofi", "Olive"],
+        "ingredients": "Pomodoro, mozzarella, salsiccia, carciofi, olive taggiasche, origano",
+        "allergens": "Glutine, Latticini",
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
         "categoryId": "cat6"
@@ -533,6 +709,8 @@
         "imageUrl": "https://images.pexels.com/photos/275345/pexels-photo-275345.jpeg?auto=compress&cs=tinysrgb&w=400",
         "badge": "Formaggi",
         "features": ["Scamorza", "Gorgonzola", "Grana"],
+        "ingredients": "Mozzarella, scamorza, gorgonzola dolce, grana padano, miele",
+        "allergens": "Glutine, Latticini",
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
         "categoryId": "cat6"
@@ -545,6 +723,8 @@
         "imageUrl": "https://images.pexels.com/photos/275345/pexels-photo-275345.jpeg?auto=compress&cs=tinysrgb&w=400",
         "badge": "Speciale",
         "features": ["Cipolla di Tropea", "Rucola", "Carciofi"],
+        "ingredients": "Mozzarella, cipolla di Tropea, rucola, salsa di carciofi, mozzarelline",
+        "allergens": "Glutine, Latticini",
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
         "categoryId": "cat6"
@@ -557,6 +737,8 @@
         "imageUrl": "https://images.pexels.com/photos/275345/pexels-photo-275345.jpeg?auto=compress&cs=tinysrgb&w=400",
         "badge": "Fresca",
         "features": ["Tacchino", "Cicoria", "Pomodorini"],
+        "ingredients": "Tacchino arrosto, cicoria, pomodorini, maionese, rucola",
+        "allergens": "Glutine, Latticini, Uova",
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
         "categoryId": "cat6"
@@ -569,6 +751,8 @@
         "imageUrl": "https://images.pexels.com/photos/275345/pexels-photo-275345.jpeg?auto=compress&cs=tinysrgb&w=400",
         "badge": "Chef",
         "features": ["Creazione dello chef"],
+        "ingredients": "Pomodoro, mozzarella e ingredienti scelti dal pizzaiolo secondo la stagione",
+        "allergens": "Glutine, Latticini",
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
         "categoryId": "cat6"
@@ -576,11 +760,13 @@
       {
         "id": "pr45",
         "name": "Cheesecake al mirtillo",
-        "description": "Cheesecake al mirtillo",
+        "description": "Cheesecake con mirtilli freschi",
         "price": "€5",
         "imageUrl": "https://images.pexels.com/photos/4109086/pexels-photo-4109086.jpeg?auto=compress&cs=tinysrgb&w=400",
         "badge": "Dolce",
         "features": ["Mirtillo", "Cheesecake"],
+        "ingredients": "Formaggio cremoso, panna, zucchero, mirtilli freschi, biscotti digestive",
+        "allergens": "Glutine, Latticini, Uova",
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
         "categoryId": "cat8"
@@ -588,11 +774,13 @@
       {
         "id": "pr46",
         "name": "Mousse al pistacchio",
-        "description": "Mousse al pistacchio",
+        "description": "Mousse di pistacchio cremosa",
         "price": "€5",
         "imageUrl": "https://images.pexels.com/photos/4109086/pexels-photo-4109086.jpeg?auto=compress&cs=tinysrgb&w=400",
         "badge": "Dolce",
         "features": ["Pistacchio", "Mousse"],
+        "ingredients": "Pistacchio di Bronte, panna, zucchero, uova",
+        "allergens": "Latticini, Uova, Frutta a guscio",
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
         "categoryId": "cat8"
@@ -605,6 +793,8 @@
         "imageUrl": "https://images.pexels.com/photos/4109086/pexels-photo-4109086.jpeg?auto=compress&cs=tinysrgb&w=400",
         "badge": "Caldo",
         "features": ["Cioccolato", "Gelato"],
+        "ingredients": "Cioccolato fondente, burro, uova, zucchero, gelato alla crema",
+        "allergens": "Glutine, Uova, Latticini",
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
         "categoryId": "cat8"
@@ -617,6 +807,8 @@
         "imageUrl": "https://images.pexels.com/photos/4109086/pexels-photo-4109086.jpeg?auto=compress&cs=tinysrgb&w=400",
         "badge": "Dolce",
         "features": ["Mascarpone", "Biscotti", "Frutti di bosco"],
+        "ingredients": "Mascarpone, panna, zucchero, savoiardi, frutti di bosco freschi",
+        "allergens": "Glutine, Latticini, Uova",
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
         "categoryId": "cat8"
@@ -629,6 +821,8 @@
         "imageUrl": "https://images.pexels.com/photos/209239/pexels-photo-209239.jpeg?auto=compress&cs=tinysrgb&w=400",
         "badge": "Bianco",
         "features": ["1/4: €3", "1/2: €5", "1 lt: €8"],
+        "ingredients": "Vino bianco locale delle Marche",
+        "allergens": "Solfiti",
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
         "categoryId": "cat9"
@@ -641,6 +835,8 @@
         "imageUrl": "https://images.pexels.com/photos/1552630/pexels-photo-1552630.jpeg?auto=compress&cs=tinysrgb&w=400",
         "badge": "Birra",
         "features": ["Piccola: €3", "Media: €5", "1 lt: €10"],
+        "ingredients": "Birra artigianale alla spina",
+        "allergens": "Glutine",
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
         "categoryId": "cat9"
@@ -698,7 +894,7 @@
       }
     ]
   },
-"testimonials": {
+  "testimonials": {
     "heading": "Cosa dicono i nostri clienti",
     "subheading": "Le recensioni reali dei nostri ospiti su Google",
     "layout": "grid",
@@ -856,7 +1052,7 @@
       }
     ]
   },
-"footer": {
+  "footer": {
     "logoText": "Ristorante Bota",
     "description": "Ristorante nel cuore di Fano, vicino al Santuario Madonna Del Ponte. Cucina marchigiana, pizza artigianale, pesce fresco e tagliatelle. Personale professionale e atmosfera spettacolare.",
     "columns": [
@@ -909,7 +1105,7 @@
     "acceptText": "Accetta",
     "declineText": "Rifiuta"
   },
-"seo": {
+  "seo": {
     "pageTitle": "Ristorante Bota — I Migliori Ristoranti a Fano | Cucina Marchigiana",
     "metaDescription": "Ristorante Bota è #97 di 359 ristoranti a Fano. Pizza, pesce fresco, tagliatelle e antipasti curatissimi. Personale professionale, prezzi ragionevoli e atmosfera spettacolare. Rating 4.4/5 su Google.",
     "ogImageUrl": ""

@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useCallback, useEffect } from 'react';
 import {
   LayoutGrid, Palette, Zap, Mail, Settings, Download, RotateCcw,
   ExternalLink, Globe, Package, FolderOpen, Upload,
@@ -80,7 +80,7 @@ export function AdminDashboard() {
   };
 
   // Media manager functions
-  const refreshMedia = async () => {
+  const refreshMedia = useCallback(async () => {
     setLoadingMedia(true);
     setMediaError(null);
     try {
@@ -91,7 +91,13 @@ export function AdminDashboard() {
     } finally {
       setLoadingMedia(false);
     }
-  };
+  }, []);
+
+  useEffect(() => {
+    if (tab === 'media') {
+      refreshMedia();
+    }
+  }, [tab, refreshMedia]);
 
   const handleMediaUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];

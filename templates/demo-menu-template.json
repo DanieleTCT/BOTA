@@ -108,45 +108,130 @@
     "layout": "grid",
     "columns": 3,
     "categories": [
-      { "id": "cat1", "name": "Antipasti", "description": "Per iniziare la cena nel modo giusto", "icon": "Utensils" },
-      { "id": "cat2", "name": "Primi Piatti", "description": "Pasta fresca fatta in casa", "icon": "Soup" },
-      { "id": "cat3", "name": "Secondi di Mare", "description": "Pesce fresco del giorno", "icon": "Fish" },
-      { "id": "cat4", "name": "Secondi di Terra", "description": "Carne di prima qualità", "icon": "Beef" },
-      { "id": "cat5", "name": "Pizze", "description": "Pizza napoletana tradizionale", "icon": "Pizza" },
-      { "id": "cat6", "name": "Dolci", "description": "Dolci fatti in casa", "icon": "Cake" },
-      { "id": "cat7", "name": "Bevande", "description": "Vini, birre e altro", "icon": "Wine" }
+      { "id": "cat1", "name": "Antipasti di Mare", "description": "Il meglio del nostro mare fresco", "icon": "Fish" },
+      { "id": "cat2", "name": "Antipasti di Terra", "description": "Salumi, formaggi e prodotti tipici", "icon": "Beef" },
+      { "id": "cat3", "name": "Primi Piatti", "description": "Pasta fresca fatta in casa", "icon": "Soup" },
+      { "id": "cat4", "name": "Secondi di Mare", "description": "Pesce fresco del giorno", "icon": "Fish" },
+      { "id": "cat5", "name": "Secondi di Terra", "description": "Carne di prima qualità", "icon": "Beef" },
+      { "id": "cat6", "name": "Pizze", "description": "Pizza napoletana tradizionale", "icon": "Pizza" },
+      { "id": "cat7", "name": "Dolci", "description": "Dolci fatti in casa", "icon": "Cake" },
+      { "id": "cat8", "name": "Bevande", "description": "Vini, birre e altro", "icon": "Wine" }
     ],
     "products": [
       {
         "id": "pr1",
-        "name": "Bruschetta al Pomodoro",
-        "description": "Pane tostato con pomodori freschi, aglio e basilico",
-        "price": "€6",
-        "imageUrl": "https://images.pexels.com/photos/1741717/pexels-photo-1741717.jpeg?auto=compress&cs=tinysrgb&w=400",
-        "badge": "Classico",
-        "features": ["Pomodorini freschi", "Basilico", "Aglio"],
-        "ingredients": "Pane artigianale, pomodorini San Marzano, aglio fresco, basilico genovese, olio EVO",
-        "allergens": "Glutine",
+        "name": "Gamberoni all'Arrabbiata",
+        "description": "Gamberoni freschi in salsa piccante con aglio e peperoncino",
+        "price": "€20",
+        "imageUrl": "https://images.pexels.com/photos/725992/pexels-photo-725992.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "badge": "Specialità",
+        "features": ["Gamberoni freschi", "Salsa piccante", "Aglio"],
+        "ingredients": "Gamberoni rossi mediterranei, aglio, peperoncino calabrese, vino bianco, prezzemolo, olio EVO",
+        "allergens": "Crostacei",
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
         "categoryId": "cat1"
       },
       {
         "id": "pr2",
-        "name": "Carpaccio di Manzo",
-        "description": "Sottile fetta di manzo con rucola e scaglie di grana",
+        "name": "Cozze alla Tarantina",
+        "description": "Cozze fresche in salsa di pomodoro piccante",
         "price": "€12",
-        "imageUrl": "https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg?auto=compress&cs=tinysrgb&w=400",
-        "badge": "Premium",
-        "features": ["Manzo fresco", "Rucola", "Grana"],
-        "ingredients": "Manzo affettato finemente, rucola, scaglie di grana, tartufo nero, olio al tartufo",
-        "allergens": "Latticini",
+        "imageUrl": "https://images.pexels.com/photos/725992/pexels-photo-725992.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "badge": "Classico",
+        "features": ["Cozze fresche", "Pomodoro", "Piccante"],
+        "ingredients": "Cozze fresche del mediterraneo, pomodorini San Marzano, aglio, peperoncino, vino bianco, prezzemolo",
+        "allergens": "Pesce, Molluschi",
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
         "categoryId": "cat1"
       },
       {
         "id": "pr3",
+        "name": "Antipasto Freddo",
+        "description": "Insalata di mare: gamberi, seppia, rucola, salmone affumicato, branzino, salsa tartare, carpaccio di pesce spada, cetrioli, salmone affumicato, formaggio spalmabile, noci e glassa all'aceto balsamico",
+        "price": "€18",
+        "imageUrl": "https://images.pexels.com/photos/725991/pexels-photo-725991.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "badge": "Fresco",
+        "features": ["Salmone", "Branzino", "Sashimi"],
+        "ingredients": "Salmone norvegese affumicato, branzino crudo, gamberi, seppia, rucola, salsa tartare, carpaccio di pesce spada, cetrioli, formaggio spalmabile, noci, glassa aceto balsamico",
+        "allergens": "Pesce, Crostacei, Molluschi",
+        "buttonText": "Ordina Ora",
+        "buttonHref": "#contact",
+        "categoryId": "cat1"
+      },
+      {
+        "id": "pr4",
+        "name": "Antipasto Caldo",
+        "description": "Soutè di cozze e vongole, gamberoni al brandy, polipetti alla contadina, bomboletti in brodetto",
+        "price": "€18",
+        "imageUrl": "https://images.pexels.com/photos/725992/pexels-photo-725992.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "badge": "Caldo",
+        "features": ["Gamberoni", "Cozze", "Brandy"],
+        "ingredients": "Cozze, vongole, gamberoni, brandy, polipetti, bomboletti, brodetto di pesce, aglio, peperoncino, vino bianco",
+        "allergens": "Crostacei, Molluschi, Glutine",
+        "buttonText": "Ordina Ora",
+        "buttonHref": "#contact",
+        "categoryId": "cat1"
+      },
+      {
+        "id": "pr5",
+        "name": "Antipasto Freddo e Caldo",
+        "description": "La nostra selezione: 5 antipasti freddi più 3 antipasti caldi",
+        "price": "€28",
+        "imageUrl": "https://images.pexels.com/photos/725991/pexels-photo-725991.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "badge": "Completo",
+        "features": ["Selezione mista", "Per 2 persone", "Chef seleziona"],
+        "ingredients": "La nostra selezione dei migliori antipasti di mare, freddi e caldi, secondo la freschezza del pescato del giorno",
+        "allergens": "Pesce, Crostacei, Molluschi",
+        "buttonText": "Ordina Ora",
+        "buttonHref": "#contact",
+        "categoryId": "cat1"
+      },
+      {
+        "id": "pr6",
+        "name": "Tagliere di Salumi",
+        "description": "Selezione di salumi italiani DOP con formaggi",
+        "price": "€14",
+        "imageUrl": "https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "badge": "Terra",
+        "features": ["Prosciutto", "Salsiccia", "Formaggi"],
+        "ingredients": "Prosciutto di Parma DOP, salame toscano, salsiccia di cinghiale, caciotta, pecorino, crostini",
+        "allergens": "Latticini, Glutine",
+        "buttonText": "Ordina Ora",
+        "buttonHref": "#contact",
+        "categoryId": "cat2"
+      },
+      {
+        "id": "pr7",
+        "name": "Formaggi Misti",
+        "description": "Selezione di formaggi italiani con miele e confetture",
+        "price": "€12",
+        "imageUrl": "https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "badge": "Formaggi",
+        "features": ["Parmigiano", "Gorgonzola", "Miele"],
+        "ingredients": "Parmigiano Reggiano 24 mesi, gorgonzola dolce, robiola, miele di castagno, confettura di fichi, noci",
+        "allergens": "Latticini",
+        "buttonText": "Ordina Ora",
+        "buttonHref": "#contact",
+        "categoryId": "cat2"
+      },
+      {
+        "id": "pr8",
+        "name": "Mix Fritto",
+        "description": "Fritto misto di verdure e olive",
+        "price": "€8",
+        "imageUrl": "https://images.pexels.com/photos/1893558/pexels-photo-1893558.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "badge": "Veggy",
+        "features": ["Verdure", "Olive", "Fritte"],
+        "ingredients": "Zucchine, melanzane, peperoni, funghi, olive ascolane, pastella leggera",
+        "allergens": "Glutine",
+        "buttonText": "Ordina Ora",
+        "buttonHref": "#contact",
+        "categoryId": "cat2"
+      },
+      {
+        "id": "pr9",
         "name": "Spaghetti Carbonara",
         "description": "La vera carbonara romana con guanciale e pecorino",
         "price": "€11",
@@ -157,10 +242,10 @@
         "allergens": "Glutine, Uova, Latticini",
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
-        "categoryId": "cat2"
+        "categoryId": "cat3"
       },
       {
-        "id": "pr4",
+        "id": "pr10",
         "name": "Risotto ai Funghi Porcini",
         "description": "Risotto cremoso con porcini freschi e tartufo",
         "price": "€14",
@@ -171,10 +256,10 @@
         "allergens": "Latticini",
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
-        "categoryId": "cat2"
+        "categoryId": "cat3"
       },
       {
-        "id": "pr5",
+        "id": "pr11",
         "name": "Tagliata di Salmone",
         "description": "Salmone fresco grigliato con verdure di stagione",
         "price": "€18",
@@ -185,10 +270,10 @@
         "allergens": "Pesce",
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
-        "categoryId": "cat3"
+        "categoryId": "cat4"
       },
       {
-        "id": "pr6",
+        "id": "pr12",
         "name": "Branzino al Forno",
         "description": "Branzino intero al forno con patate e olive",
         "price": "€22",
@@ -199,10 +284,10 @@
         "allergens": "Pesce",
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
-        "categoryId": "cat3"
+        "categoryId": "cat4"
       },
       {
-        "id": "pr7",
+        "id": "pr13",
         "name": "Bistecca Fiorentina",
         "description": "Chianina IGP alla griglia, 1kg per due persone",
         "price": "€45",
@@ -213,10 +298,10 @@
         "allergens": "Nessuno",
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
-        "categoryId": "cat4"
+        "categoryId": "cat5"
       },
       {
-        "id": "pr8",
+        "id": "pr14",
         "name": "Tagliata di Manzo",
         "description": "Manzo argentino con rucola e scaglie di grana",
         "price": "€19",
@@ -227,10 +312,10 @@
         "allergens": "Latticini",
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
-        "categoryId": "cat4"
+        "categoryId": "cat5"
       },
       {
-        "id": "pr9",
+        "id": "pr15",
         "name": "Margherita DOP",
         "description": "Pomodoro San Marzano, mozzarella di bufala, basilico",
         "price": "€8",
@@ -241,10 +326,10 @@
         "allergens": "Glutine, Latticini",
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
-        "categoryId": "cat5"
+        "categoryId": "cat6"
       },
       {
-        "id": "pr10",
+        "id": "pr16",
         "name": "Diavola",
         "description": "Pomodoro, mozzarella, salame piccante, peperoncino",
         "price": "€10",
@@ -255,10 +340,10 @@
         "allergens": "Glutine, Latticini",
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
-        "categoryId": "cat5"
+        "categoryId": "cat6"
       },
       {
-        "id": "pr11",
+        "id": "pr17",
         "name": "Quattro Formaggi",
         "description": "Mozzarella, gorgonzola, fontina, parmigiano",
         "price": "€11",
@@ -269,10 +354,10 @@
         "allergens": "Glutine, Latticini",
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
-        "categoryId": "cat5"
+        "categoryId": "cat6"
       },
       {
-        "id": "pr12",
+        "id": "pr18",
         "name": "Tiramisù",
         "description": "Il classico dolce italiano con mascarpone e caffè",
         "price": "€7",
@@ -283,10 +368,10 @@
         "allergens": "Glutine, Uova, Latticini",
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
-        "categoryId": "cat6"
+        "categoryId": "cat7"
       },
       {
-        "id": "pr13",
+        "id": "pr19",
         "name": "Panna Cotta",
         "description": "Panna cotta vaniglia con frutti di bosco",
         "price": "€6",
@@ -297,10 +382,10 @@
         "allergens": "Latticini",
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
-        "categoryId": "cat6"
+        "categoryId": "cat7"
       },
       {
-        "id": "pr14",
+        "id": "pr20",
         "name": "Vino della Casa",
         "description": "Selezione di vini bianchi, rossi e rosati",
         "price": "€5-12",
@@ -311,10 +396,10 @@
         "allergens": "Solfiti",
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
-        "categoryId": "cat7"
+        "categoryId": "cat8"
       },
       {
-        "id": "pr15",
+        "id": "pr21",
         "name": "Acqua Minerale",
         "description": "Acqua naturale o frizzante",
         "price": "€2",
@@ -325,7 +410,7 @@
         "allergens": "Nessuno",
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
-        "categoryId": "cat7"
+        "categoryId": "cat8"
       }
     ]
   },
