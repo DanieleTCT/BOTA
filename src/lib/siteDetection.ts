@@ -28,6 +28,7 @@ export async function getCurrentSiteId(): Promise<string> {
     const urlParams = new URLSearchParams(window.location.search);
     const siteIdFromUrl = urlParams.get('site_id');
     if (siteIdFromUrl) {
+      localStorage.setItem('current_site_id', siteIdFromUrl);
       return siteIdFromUrl;
     }
 
@@ -41,16 +42,19 @@ export async function getCurrentSiteId(): Promise<string> {
     const domain = window.location.hostname;
     const siteIdFromDomain = await getSiteIdByDomain(domain);
     if (siteIdFromDomain) {
+      localStorage.setItem('current_site_id', siteIdFromDomain);
       return siteIdFromDomain;
     }
 
     // 4. Check environment variable
     const envSiteId = import.meta.env.VITE_SITE_ID;
     if (envSiteId) {
+      localStorage.setItem('current_site_id', envSiteId);
       return envSiteId;
     }
 
     // 5. Fallback to default site
+    localStorage.setItem('current_site_id', DEFAULT_SITE_ID);
     return DEFAULT_SITE_ID;
   } catch (error) {
     console.error('Error detecting site:', error);
