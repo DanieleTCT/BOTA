@@ -361,6 +361,36 @@ export function ProductsManager({ config, ctx }: { config: SiteConfig; ctx: Admi
                             <option value="altro">Altro</option>
                           </select>
                         </div>
+                        <div className="sm:col-span-2">
+                          <label className="mb-1 block text-xs font-semibold text-slate-700">Giorni Disponibili (solo per pranzo)</label>
+                          <div className="flex flex-wrap gap-2">
+                            {['lun', 'mar', 'mer', 'gio', 'ven', 'sab', 'dom'].map((day, idx) => {
+                              const fullDay = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'] as const;
+                              const isSelected = product.availableDays?.includes(fullDay[idx]);
+                              return (
+                                <button
+                                  key={day}
+                                  type="button"
+                                  onClick={() => {
+                                    const currentDays = product.availableDays || [];
+                                    const newDays = isSelected
+                                      ? currentDays.filter(d => d !== fullDay[idx])
+                                      : [...currentDays, fullDay[idx]];
+                                    updateProduct(product.id, { availableDays: newDays });
+                                  }}
+                                  className={`rounded-lg px-3 py-1.5 text-xs font-semibold transition ${
+                                    isSelected
+                                      ? 'bg-blue-600 text-white'
+                                      : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+                                  }`}
+                                >
+                                  {day}
+                                </button>
+                              );
+                            })}
+                          </div>
+                          <p className="mt-1 text-xs text-slate-500">Lascia vuoto per tutti i giorni o seleziona i giorni specifici</p>
+                        </div>
                         <div>
                           <label className="mb-1 block text-xs font-semibold text-slate-700">Immagine URL</label>
                           <input

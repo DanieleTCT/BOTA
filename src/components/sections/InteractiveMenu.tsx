@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import type { SiteConfig, Product } from '@/types';
+import type { SiteConfig, Product, DayOfWeek } from '@/types';
 import { ProductModal } from './ProductModal';
-import { ChevronLeft, ChevronRight, BookOpen, Sun, Moon } from 'lucide-react';
+import { ChevronLeft, ChevronRight, BookOpen, Sun, Moon, Calendar } from 'lucide-react';
 
 const ICON_MAP: Record<string, string> = {
   Pizza: '🍕',
@@ -26,6 +26,7 @@ export function InteractiveMenu({ config }: { config: SiteConfig }) {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [selectedMeal, setSelectedMeal] = useState<'lunch' | 'dinner'>('lunch');
+  const [selectedDay, setSelectedDay] = useState<DayOfWeek | null>(null);
 
   if (!products || !config.sections.find(s => s.id === 'products')?.enabled) {
     return null;
@@ -43,9 +44,42 @@ export function InteractiveMenu({ config }: { config: SiteConfig }) {
     ? products.products.filter(p => p.meal === 'lunch' || p.meal === 'both')
     : products.products.filter(p => p.meal === 'dinner' || p.meal === 'both');
 
-  const filteredProducts = selectedCategory
-    ? mealFilteredProducts.filter(p => p.categoryId === selectedCategory)
+  // For lunch, further filter by day if selected
+  const dayFilteredProducts = selectedMeal === 'lunch' && selectedDay
+    ? mealFilteredProducts.filter(p => !p.availableDays || p.availableDays.includes(selectedDay))
     : mealFilteredProducts;
+
+  // Group lunch products by dish type (show max 2 per group)
+  const groupedLunchProducts = selectedMeal === 'lunch' && selectedDay
+    ? (() => {
+        const groups: Record<string, Product[]> = {};
+        const dishTypesOrder = ['antipasto', 'primo', 'contorno', 'dolce', 'bevanda', 'pizza', 'altro'];
+        
+        // Initialize groups
+        dishTypesOrder.forEach(type => {
+          groups[type] = [];
+        });
+        
+        // Group products
+        dayFilteredProducts.forEach(product => {
+          if (groups[product.dishType]) {
+            groups[product.dishType].push(product);
+          }
+        });
+        
+        // Flatten with max 2 per group
+        const result: Product[] = [];
+        dishTypesOrder.forEach(type => {
+          result.push(...groups[type].slice(0, 2));
+        });
+        
+        return result;
+      })()
+    : dayFilteredProducts;
+
+  const filteredProducts = selectedCategory
+    ? (selectedMeal === 'lunch' && selectedDay ? groupedLunchProducts : dayFilteredProducts).filter(p => p.categoryId === selectedCategory)
+    : (selectedMeal === 'lunch' && selectedDay ? groupedLunchProducts : dayFilteredProducts);
 
   const selectedCat = products.categories.find(c => c.id === selectedCategory);
 
@@ -73,6 +107,7 @@ export function InteractiveMenu({ config }: { config: SiteConfig }) {
               setSelectedMeal('lunch');
               setCurrentPage(0);
               setSelectedCategory(null);
+              setSelectedDay(null);
             }}
             className={`flex items-center gap-2 rounded-xl px-6 py-3 text-sm font-semibold transition ${
               selectedMeal === 'lunch'
@@ -88,6 +123,7 @@ export function InteractiveMenu({ config }: { config: SiteConfig }) {
               setSelectedMeal('dinner');
               setCurrentPage(0);
               setSelectedCategory(null);
+              setSelectedDay(null);
             }}
             className={`flex items-center gap-2 rounded-xl px-6 py-3 text-sm font-semibold transition ${
               selectedMeal === 'dinner'
@@ -99,6 +135,47 @@ export function InteractiveMenu({ config }: { config: SiteConfig }) {
             Menu Cena
           </button>
         </div>
+
+        {/* Day Selector - Only for lunch */}
+        {selectedMeal === 'lunch' && (
+          <div className="mb-10">
+            <div className="mb-3 flex items-center justify-center gap-2">
+              <Calendar className="h-5 w-5 text-slate-600" />
+              <h3 className="text-lg font-semibold text-slate-700">Seleziona il Giorno</h3>
+            </div>
+            <div className="flex flex-wrap justify-center gap-2">
+              {[
+                { id: 'monday' as DayOfWeek, label: 'Lunedì', short: 'Lun' },
+                { id: 'tuesday' as DayOfWeek, label: 'Martedì', short: 'Mar' },
+                { id: 'wednesday' as DayOfWeek, label: 'Mercoledì', short: 'Mer' },
+                { id: 'thursday' as DayOfWeek, label: 'Giovedì', short: 'Gio' },
+                { id: 'friday' as DayOfWeek, label: 'Venerdì', short: 'Ven' },
+                { id: 'saturday' as DayOfWeek, label: 'Sabato', short: 'Sab' },
+                { id: 'sunday' as DayOfWeek, label: 'Domenica', short: 'Dom' },
+              ].map((day) => {
+                const isSelected = selectedDay === day.id;
+                return (
+                  <button
+                    key={day.id}
+                    onClick={() => {
+                      setSelectedDay(isSelected ? null : day.id);
+                      setCurrentPage(0);
+                      setSelectedCategory(null);
+                    }}
+                    className={`rounded-xl px-4 py-2.5 text-sm font-semibold transition ${
+                      isSelected
+                        ? 'bg-blue-600 text-white shadow-lg'
+                        : 'bg-white text-slate-600 hover:bg-slate-100 border border-slate-200'
+                    }`}
+                  >
+                    <div className="text-xs opacity-75">{day.short}</div>
+                    <div className="text-xs">{day.label}</div>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+        )}
 
         {/* Menu Book Navigation */}
         <div className="mb-12">

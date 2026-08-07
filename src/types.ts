@@ -15,6 +15,7 @@ export type SectionId =
 
 export type MealType = 'lunch' | 'dinner' | 'both';
 export type DishType = 'antipasto' | 'primo' | 'contorno' | 'secondo' | 'dolce' | 'bevanda' | 'pizza' | 'altro';
+export type DayOfWeek = 'monday' | 'tuesday' | 'wednesday' | 'thursday' | 'friday' | 'saturday' | 'sunday';
 
 export interface SectionMeta {
   id: SectionId;
@@ -141,6 +142,7 @@ export interface Product {
   categoryId: string;
   meal: MealType;
   dishType: DishType;
+  availableDays?: DayOfWeek[];
 }
 
 export interface MenuCategory {
