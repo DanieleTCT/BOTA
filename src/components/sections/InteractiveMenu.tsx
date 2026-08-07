@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import type { SiteConfig, Product, DayOfWeek } from '@/types';
 import { ProductModal } from './ProductModal';
-import { ChevronLeft, ChevronRight, BookOpen, Sun, Moon, Calendar } from 'lucide-react';
+import { Sun, Moon } from 'lucide-react';
 
 const ICON_MAP: Record<string, string> = {
   Pizza: '🍕',
@@ -22,66 +22,64 @@ const ICON_MAP: Record<string, string> = {
 
 export function InteractiveMenu({ config }: { config: SiteConfig }) {
   const products = config.products;
-  const [currentPage, setCurrentPage] = useState(0);
-  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
-  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [selectedMeal, setSelectedMeal] = useState<'lunch' | 'dinner'>('lunch');
-  const [selectedDay, setSelectedDay] = useState<DayOfWeek | null>(null);
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
 
   if (!products || !config.sections.find(s => s.id === 'products')?.enabled) {
     return null;
   }
 
-  const itemsPerPage = 3;
-  const totalPages = Math.ceil(products.categories.length / itemsPerPage);
-  const currentCategories = products.categories.slice(
-    currentPage * itemsPerPage,
-    (currentPage + 1) * itemsPerPage
-  );
+  // Get lunch products (for weekly calendar)
+  const lunchProducts = products.products.filter(p => p.meal === 'lunch' || p.meal === 'both');
+  
+  // Get dinner products (alla carta)
+  const dinnerProducts = products.products.filter(p => p.meal === 'dinner' || p.meal === 'both');
 
-  // Filter products by meal type
-  const mealFilteredProducts = selectedMeal === 'lunch'
-    ? products.products.filter(p => p.meal === 'lunch' || p.meal === 'both')
-    : products.products.filter(p => p.meal === 'dinner' || p.meal === 'both');
+  const daysOfWeek: { id: DayOfWeek; label: string; short: string }[] = [
+    { id: 'monday', label: 'Lunedì', short: 'Lun' },
+    { id: 'tuesday', label: 'Martedì', short: 'Mar' },
+    { id: 'wednesday', label: 'Mercoledì', short: 'Mer' },
+    { id: 'thursday', label: 'Giovedì', short: 'Gio' },
+    { id: 'friday', label: 'Venerdì', short: 'Ven' },
+    { id: 'saturday', label: 'Sabato', short: 'Sab' },
+    { id: 'sunday', label: 'Domenica', short: 'Dom' },
+  ];
 
-  // For lunch, further filter by day if selected
-  const dayFilteredProducts = selectedMeal === 'lunch' && selectedDay
-    ? mealFilteredProducts.filter(p => !p.availableDays || p.availableDays.includes(selectedDay))
-    : mealFilteredProducts;
+  // Group lunch products by day and dish type
+  const getLunchProductsForDay = (day: DayOfWeek) => {
+    const dayProducts = lunchProducts.filter(p => !p.availableDays || p.availableDays.includes(day));
+    const groups: Record<string, Product[]> = {};
+    const dishTypesOrder = ['antipasto', 'primo', 'secondo', 'contorno', 'dolce', 'bevanda', 'pizza', 'altro'];
+    
+    dishTypesOrder.forEach(type => {
+      groups[type] = [];
+    });
+    
+    dayProducts.forEach(product => {
+      if (groups[product.dishType]) {
+        groups[product.dishType].push(product);
+      }
+    });
+    
+    return groups;
+  };
 
-  // Group lunch products by dish type (show max 2 per group)
-  const groupedLunchProducts = selectedMeal === 'lunch' && selectedDay
-    ? (() => {
-        const groups: Record<string, Product[]> = {};
-        const dishTypesOrder = ['antipasto', 'primo', 'contorno', 'dolce', 'bevanda', 'pizza', 'altro'];
-        
-        // Initialize groups
-        dishTypesOrder.forEach(type => {
-          groups[type] = [];
-        });
-        
-        // Group products
-        dayFilteredProducts.forEach(product => {
-          if (groups[product.dishType]) {
-            groups[product.dishType].push(product);
-          }
-        });
-        
-        // Flatten with max 2 per group
-        const result: Product[] = [];
-        dishTypesOrder.forEach(type => {
-          result.push(...groups[type].slice(0, 2));
-        });
-        
-        return result;
-      })()
-    : dayFilteredProducts;
+  // Group dinner products by category
+  const dinnerByCategory = products.categories.map(category => ({
+    category,
+    products: dinnerProducts.filter(p => p.categoryId === category.id)
+  })).filter(group => group.products.length > 0);
 
-  const filteredProducts = selectedCategory
-    ? (selectedMeal === 'lunch' && selectedDay ? groupedLunchProducts : dayFilteredProducts).filter(p => p.categoryId === selectedCategory)
-    : (selectedMeal === 'lunch' && selectedDay ? groupedLunchProducts : dayFilteredProducts);
-
-  const selectedCat = products.categories.find(c => c.id === selectedCategory);
+  const dishTypesLabels: Record<string, string> = {
+    antipasto: 'Antipasto',
+    primo: 'Primo',
+    secondo: 'Secondo',
+    contorno: 'Contorno',
+    dolce: 'Dolce',
+    bevanda: 'Bevanda',
+    pizza: 'Pizza',
+    altro: 'Altro'
+  };
 
   return (
     <section className="py-16 md:py-24 bg-gradient-to-b from-slate-50 to-white">
@@ -89,7 +87,7 @@ export function InteractiveMenu({ config }: { config: SiteConfig }) {
         {/* Header */}
         <div className="mb-12 text-center">
           <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-blue-100 px-4 py-2 text-sm font-semibold text-blue-700">
-            <BookOpen className="h-4 w-4" />
+            <span className="text-lg">🍽️</span>
             Menu Digitale
           </div>
           <h2 className="mb-4 text-3xl font-bold text-slate-900 md:text-4xl">
@@ -103,12 +101,7 @@ export function InteractiveMenu({ config }: { config: SiteConfig }) {
         {/* Meal Toggle */}
         <div className="mb-10 flex items-center justify-center gap-4">
           <button
-            onClick={() => {
-              setSelectedMeal('lunch');
-              setCurrentPage(0);
-              setSelectedCategory(null);
-              setSelectedDay(null);
-            }}
+            onClick={() => setSelectedMeal('lunch')}
             className={`flex items-center gap-2 rounded-xl px-6 py-3 text-sm font-semibold transition ${
               selectedMeal === 'lunch'
                 ? 'bg-amber-500 text-white shadow-lg'
@@ -119,12 +112,7 @@ export function InteractiveMenu({ config }: { config: SiteConfig }) {
             Menu Pranzo
           </button>
           <button
-            onClick={() => {
-              setSelectedMeal('dinner');
-              setCurrentPage(0);
-              setSelectedCategory(null);
-              setSelectedDay(null);
-            }}
+            onClick={() => setSelectedMeal('dinner')}
             className={`flex items-center gap-2 rounded-xl px-6 py-3 text-sm font-semibold transition ${
               selectedMeal === 'dinner'
                 ? 'bg-indigo-600 text-white shadow-lg'
@@ -136,196 +124,120 @@ export function InteractiveMenu({ config }: { config: SiteConfig }) {
           </button>
         </div>
 
-        {/* Day Selector - Only for lunch */}
+        {/* Lunch Section - Weekly Calendar */}
         {selectedMeal === 'lunch' && (
-          <div className="mb-10">
-            <div className="mb-3 flex items-center justify-center gap-2">
-              <Calendar className="h-5 w-5 text-slate-600" />
-              <h3 className="text-lg font-semibold text-slate-700">Seleziona il Giorno</h3>
+          <div className="mb-16">
+            <div className="mb-8 text-center">
+              <h3 className="text-2xl font-bold text-slate-800">Menu Pranzo - Settimana</h3>
+              <p className="mt-2 text-sm text-slate-600">Ogni giorno il nostro chef seleziona i migliori piatti</p>
             </div>
-            <div className="flex flex-wrap justify-center gap-2">
-              {[
-                { id: 'monday' as DayOfWeek, label: 'Lunedì', short: 'Lun' },
-                { id: 'tuesday' as DayOfWeek, label: 'Martedì', short: 'Mar' },
-                { id: 'wednesday' as DayOfWeek, label: 'Mercoledì', short: 'Mer' },
-                { id: 'thursday' as DayOfWeek, label: 'Giovedì', short: 'Gio' },
-                { id: 'friday' as DayOfWeek, label: 'Venerdì', short: 'Ven' },
-                { id: 'saturday' as DayOfWeek, label: 'Sabato', short: 'Sab' },
-                { id: 'sunday' as DayOfWeek, label: 'Domenica', short: 'Dom' },
-              ].map((day) => {
-                const isSelected = selectedDay === day.id;
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-7">
+              {daysOfWeek.map((day) => {
+                const dayProducts = getLunchProductsForDay(day.id);
+
                 return (
-                  <button
-                    key={day.id}
-                    onClick={() => {
-                      setSelectedDay(isSelected ? null : day.id);
-                      setCurrentPage(0);
-                      setSelectedCategory(null);
-                    }}
-                    className={`rounded-xl px-4 py-2.5 text-sm font-semibold transition ${
-                      isSelected
-                        ? 'bg-blue-600 text-white shadow-lg'
-                        : 'bg-white text-slate-600 hover:bg-slate-100 border border-slate-200'
-                    }`}
-                  >
-                    <div className="text-xs opacity-75">{day.short}</div>
-                    <div className="text-xs">{day.label}</div>
-                  </button>
+                  <div key={day.id} className="rounded-xl border border-slate-200 bg-white p-4">
+                    <div className="mb-3 text-center">
+                      <div className="text-xs font-semibold text-slate-500">{day.short}</div>
+                      <div className="text-sm font-bold text-slate-800">{day.label}</div>
+                    </div>
+                    <div className="space-y-3">
+                      {Object.entries(dayProducts).map(([dishType, dishes]) => {
+                        const dish = dishes[0]; // Show first dish of each type
+                        if (!dish) return null;
+                        
+                        return (
+                          <div key={dishType} className="text-xs">
+                            <div className="font-semibold text-slate-700">{dishTypesLabels[dishType] || dishType}</div>
+                            <div className="text-slate-600 line-clamp-1">{dish.name}</div>
+                            <div className="font-semibold text-blue-600">{dish.price}</div>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
                 );
               })}
             </div>
           </div>
         )}
 
-        {/* Menu Book Navigation */}
-        <div className="mb-12">
-          {/* Page Navigation */}
-          <div className="mb-6 flex items-center justify-center gap-4">
-            <button
-              onClick={() => {
-                setCurrentPage(p => Math.max(0, p - 1));
-                setSelectedCategory(null);
-              }}
-              disabled={currentPage === 0}
-              className="flex items-center gap-1.5 rounded-lg border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-700 transition hover:bg-slate-50 disabled:opacity-40 disabled:cursor-not-allowed"
-            >
-              <ChevronLeft className="h-4 w-4" />
-              Precedente
-            </button>
-            
-            <div className="flex items-center gap-2">
-              {Array.from({ length: totalPages }).map((_, idx) => (
-                <button
-                  key={idx}
-                  onClick={() => {
-                    setCurrentPage(idx);
-                    setSelectedCategory(null);
-                  }}
-                  className={`h-2.5 w-2.5 rounded-full transition ${
-                    currentPage === idx ? 'bg-blue-600 w-8' : 'bg-slate-300 hover:bg-slate-400'
-                  }`}
-                />
-              ))}
+        {/* Dinner Section - À la carte menu */}
+        {selectedMeal === 'dinner' && (
+          <div className="mb-16">
+            <div className="mb-8 text-center">
+              <h3 className="text-2xl font-bold text-slate-800">Menu Cena - Alla Carta</h3>
+              <p className="mt-2 text-sm text-slate-600">Tutti i nostri piatti della sera</p>
             </div>
-
-            <button
-              onClick={() => {
-                setCurrentPage(p => Math.min(totalPages - 1, p + 1));
-                setSelectedCategory(null);
-              }}
-              disabled={currentPage === totalPages - 1}
-              className="flex items-center gap-1.5 rounded-lg border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-700 transition hover:bg-slate-50 disabled:opacity-40 disabled:cursor-not-allowed"
-            >
-              Successiva
-              <ChevronRight className="h-4 w-4" />
-            </button>
-          </div>
-
-        {/* Category Buttons - Current Page */}
-          <div className="flex flex-wrap justify-center gap-3">
-            {currentCategories.map((category) => {
-              const icon = ICON_MAP[category.icon] || '📋';
-              const count = products.products.filter(p => p.categoryId === category.id).length;
-              return (
-                <button
-                  key={category.id}
-                  onClick={() => setSelectedCategory(category.id)}
-                  className={`flex items-center gap-2 rounded-xl px-6 py-3 text-sm font-semibold transition ${
-                    selectedCategory === category.id
-                      ? 'bg-blue-600 text-white shadow-lg'
-                      : 'bg-white text-slate-600 hover:bg-slate-100 border border-slate-200'
-                  }`}
-                >
-                  <span className="text-lg">{icon}</span>
-                  <span>{category.name}</span>
-                  <span className="text-xs opacity-75">({count})</span>
-                </button>
-              );
-            })}
-          </div>
-        </div>
-
-        {/* Category Description */}
-        {selectedCat && (
-          <div className="mb-8 rounded-xl border border-blue-100 bg-blue-50 p-4 text-center">
-            <p className="text-base text-slate-700">{selectedCat.description}</p>
-          </div>
-        )}
-
-        {/* Products List - Compact List */}
-        <div className="mx-auto max-w-4xl space-y-2">
-          {filteredProducts.map((product) => (
-            <div
-              key={product.id}
-              onClick={() => setSelectedProduct(product)}
-              className="group cursor-pointer overflow-hidden rounded-xl border border-slate-200 bg-white transition hover:border-blue-300 hover:shadow-md"
-            >
-              <div className="flex items-center gap-4 p-4">
-                {/* Price Badge */}
-                <div className="shrink-0 rounded-lg bg-blue-50 px-4 py-2 text-center">
-                  <div className="text-lg font-bold text-blue-600">{product.price}</div>
-                </div>
-
-                {/* Content */}
-                <div className="flex-1 min-w-0">
-                  <div className="flex items-center gap-2 mb-1">
-                    <h3 className="font-bold text-base text-slate-900 truncate">{product.name}</h3>
-                    {product.badge && (
-                      <span className="shrink-0 rounded-full bg-blue-100 px-2.5 py-0.5 text-xs font-semibold text-blue-700">
-                        {product.badge}
-                      </span>
-                    )}
+            <div className="mx-auto max-w-4xl space-y-6">
+              {dinnerByCategory.map(({ category, products: categoryProducts }) => (
+                <div key={category.id} className="rounded-xl border border-slate-200 bg-white p-6">
+                  <div className="mb-4 flex items-center gap-3">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-blue-50 text-2xl">
+                      {ICON_MAP[category.icon] || '📋'}
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-bold text-slate-900">{category.name}</h3>
+                      <p className="text-sm text-slate-600">{category.description}</p>
+                    </div>
                   </div>
-                  <p className="text-sm text-slate-600 line-clamp-1">{product.description}</p>
-                </div>
-
-                {/* Features */}
-                {product.features && product.features.length > 0 && (
-                  <div className="hidden md:flex flex-wrap gap-1.5">
-                    {product.features.slice(0, 2).map((feature, idx) => (
-                      <span
-                        key={idx}
-                        className="rounded-full bg-slate-100 px-2 py-1 text-xs text-slate-600"
+                  <div className="space-y-2">
+                    {categoryProducts.map((product) => (
+                      <div
+                        key={product.id}
+                        onClick={() => setSelectedProduct(product)}
+                        className="group cursor-pointer overflow-hidden rounded-xl border border-slate-100 bg-slate-50 transition hover:border-blue-300 hover:bg-white hover:shadow-md"
                       >
-                        {feature}
-                      </span>
+                        <div className="flex items-center gap-4 p-4">
+                          <div className="shrink-0 rounded-lg bg-blue-50 px-4 py-2 text-center">
+                            <div className="text-lg font-bold text-blue-600">{product.price}</div>
+                          </div>
+                          <div className="flex-1 min-w-0">
+                            <div className="flex items-center gap-2 mb-1">
+                              <h3 className="font-bold text-base text-slate-900 truncate">{product.name}</h3>
+                              {product.badge && (
+                                <span className="shrink-0 rounded-full bg-blue-100 px-2.5 py-0.5 text-xs font-semibold text-blue-700">
+                                  {product.badge}
+                                </span>
+                              )}
+                            </div>
+                            <p className="text-sm text-slate-600 line-clamp-1">{product.description}</p>
+                          </div>
+                          {product.features && product.features.length > 0 && (
+                            <div className="hidden md:flex flex-wrap gap-1.5">
+                              {product.features.slice(0, 2).map((feature, idx) => (
+                                <span
+                                  key={idx}
+                                  className="rounded-full bg-slate-100 px-2 py-1 text-xs text-slate-600"
+                                >
+                                  {feature}
+                                </span>
+                              ))}
+                            </div>
+                          )}
+                          <div className="shrink-0 text-slate-400 group-hover:text-blue-600 transition">
+                            <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
                     ))}
                   </div>
-                )}
-
-                {/* Arrow */}
-                <div className="shrink-0 text-slate-400 group-hover:text-blue-600 transition">
-                  <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
                 </div>
-              </div>
+              ))}
             </div>
-          ))}
-        </div>
-
-        {/* No products message */}
-        {filteredProducts.length === 0 && (
-          <div className="py-16 text-center text-slate-500">
-            <div className="mb-3 text-5xl">🍽️</div>
-            <p className="text-lg">Nessun piatto in questa categoria.</p>
-            <p className="mt-1 text-sm">Seleziona un'altra categoria o esplora tutte le nostre specialità.</p>
           </div>
         )}
 
-        {/* Page indicator */}
-        <div className="mt-12 text-center text-sm text-slate-500">
-          Pagina {currentPage + 1} di {totalPages} — {products.categories.length} categorie totali
-        </div>
+        {/* Product Modal */}
+        {selectedProduct && (
+          <ProductModal
+            product={selectedProduct}
+            onClose={() => setSelectedProduct(null)}
+          />
+        )}
       </div>
-
-      {/* Product Modal */}
-      {selectedProduct && (
-        <ProductModal
-          product={selectedProduct}
-          onClose={() => setSelectedProduct(null)}
-        />
-      )}
     </section>
   );
 }
