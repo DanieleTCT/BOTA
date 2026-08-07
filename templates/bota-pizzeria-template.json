@@ -30,8 +30,8 @@
     "radius": "lg",
     "shadow": "md"
   },
-  "announcement": {
-    "text": "🍕 Pizza artigianale cotta nel forno a legna — aperto tutte le sere da martedì a domenica!",
+"announcement": {
+    "text": "🍽️ Cucina marchigiana, pesce fresco e pizza artigianale — aperto tutte le sere da martedì a domenica!",
     "linkText": "Scopri il menu",
     "linkHref": "#products",
     "bg": "#b91c1c",
@@ -49,10 +49,10 @@
     "ctaHref": "#contact",
     "sticky": true
   },
-  "hero": {
-    "badge": "🍕 Pizzeria Ristorante — Fano",
-    "title": "Bota: la vera pizza marchigiana",
-    "subtitle": "Dal cuore di Fano, portiamo in tavola la passione per la pizza artigianale. Impasto a lunga lievitazione, ingredienti del territorio e forno a legna per un'esperienza autentica. Vieni a trovarci nel centro storico di Fano.",
+"hero": {
+    "badge": "🍽️ Ristorante — Fano",
+    "title": "Ristorante Bota: il migliore a Fano",
+    "subtitle": "Questo è il posto migliore vicino al Santuario Della Madonna Del Ponte. I curatissimi pizza, pesce e tagliatelle potrebbero farti una ottima impressione. Un servizio cordiale, personale professionale e atmosfera spettacolare ti aspettano.",
     "primaryCtaText": "Prenota Ora",
     "primaryCtaHref": "#contact",
     "secondaryCtaText": "Esplora il Menu",
@@ -60,200 +60,176 @@
     "bgType": "image",
     "gradientFrom": "#b91c1c",
     "gradientTo": "#f59e0b",
-    "imageUrl": "https://images.pexels.com/photos/1146704/pexels-photo-1146704.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "imageUrl": "https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg?auto=compress&cs=tinysrgb&w=1600",
     "overlayOpacity": 45
   },
-  "features": {
-    "heading": "Perché scegliere Bota",
-    "subheading": "Ogni dettaglio conta — dall'impasto al forno.",
+"features": {
+    "heading": "Perché scegliere Ristorante Bota",
+    "subheading": "Ogni dettaglio conta — dalla cucina all'atmosfera.",
     "columns": 3,
     "cards": [
       {
         "id": "f1",
         "icon": "Flame",
-        "title": "Forno a Legna",
-        "description": "Le nostre pizze sono cotte nel forno a legna a 450°C, per una crosta croccante e un cuore morbido.",
-        "badge": "Tradizione"
+        "title": "Pizza e Cucina",
+        "description": "Pizza, pesce fresco, tagliatelle e antipasti curatissimi. Un'esperienza gastronomica completa.",
+        "badge": "Cucina"
       },
       {
         "id": "f2",
-        "icon": "Leaf",
-        "title": "Ingredienti del Territorio",
-        "description": "Utilizziamo farine selezionate, pomodoro San Marzano e prodotti a km zero dalle Marche.",
-        "badge": "Km Zero"
+        "icon": "Users",
+        "title": "Personale Professionale",
+        "description": "Il nostro staff lavora con un atteggiamento positivo e rende questo posto fantastico.",
+        "badge": "Servizio"
       },
       {
         "id": "f3",
-        "icon": "Clock",
-        "title": "Lunga Lievitazione",
-        "description": "Il nostro impasto riposa per 48 ore, garantendo una pizza leggera e digeribile.",
-        "badge": "48h"
+        "icon": "Wine",
+        "title": "Atmosfera Spettacolare",
+        "description": "Un'atmosfera unica che rende ogni cena speciale, vicino al Santuario Madonna Del Ponte.",
+        "badge": "Atmosfera"
       },
       {
         "id": "f4",
-        "icon": "Users",
-        "title": "Ristorante Accogliente",
-        "description": "Un ambiente familiare e curato, perfetto per cene in famiglia o con amici.",
-        "badge": "Famiglia"
+        "icon": "Heart",
+        "title": "Prezzi Ragionevoli",
+        "description": "Piatti di qualità a prezzi accessibili. Il miglior rapporto qualità-prezzo a Fano.",
+        "badge": "Convenienza"
       },
       {
         "id": "f5",
-        "icon": "Wine",
-        "title": "Cantina Marchigiana",
-        "description": "Una selezione di vini locali: Verdicchio, Rosso Conero e spumanti delle Marche.",
-        "badge": "Vini Locali"
+        "icon": "Smile",
+        "title": "Cucina di Qualità",
+        "description": "Pesce freschissimo, pizza curata e specialità della tradizione marchigiana.",
+        "badge": "Qualità"
       },
       {
         "id": "f6",
-        "icon": "Heart",
-        "title": "Passione dal 1995",
-        "description": "Da oltre 25 anni portiamo avanti la tradizione della pizza marchigiana a Fano.",
-        "badge": "Dal 1995"
+        "icon": "Star",
+        "title": "Top a Fano",
+        "description": "#97 di 359 ristoranti a Fano. Il preferito dai visitatori vicino al Santuario.",
+        "badge": "Top Rated"
       }
     ]
   },
-  "about": {
+"about": {
     "heading": "La nostra storia",
-    "body": "Bota nasce a Fano nel 1995, nel cuore del centro storico, dalla passione di una famiglia per la vera pizza italiana. Da allora, portiamo avanti la tradizione con un impasto a lunga lievitazione, ingredienti selezionati e un forno a legna che regala alla nostra pizza quel sapore unico e inconfondibile. Oggi Bota è un punto di riferimento per gli amanti della buona cucina a Fano: non solo pizza, ma anche antipasti, primi piatti della tradizione marchigiana e dolci fatti in casa.",
-    "imageUrl": "https://images.pexels.com/photos/35518412/pexels-photo-35518412.jpeg?auto=compress&cs=tinysrgb&w=900",
-    "imageAlt": "L'accogliente sala interna del ristorante Bota a Fano",
+    "body": "Il Ristorante Bota (che in albanese significa 'mondo') si trova nel cuore di Fano, vicino al Santuario Della Madonna Del Ponte. Qui trovi la curatissima pizza, il pesce freschissimo e le tagliatelle allo scoglio. Il professionale personale lavora duramente con un atteggiamento positivo per rendere questo posto fantastico. I nostri clienti apprezzano il servizio eccellente e i prezzi ragionevoli. Un'atmosfera spettacolare che ti farà tornare.",
+    "imageUrl": "https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg?auto=compress&cs=tinysrgb&w=900",
+    "imageAlt": "L'accogliente sala interna del Ristorante Bota a Fano",
     "stats": [
-      { "id": "s1", "value": "25+", "label": "Anni di Storia" },
-      { "id": "s2", "value": "100k+", "label": "Pizze Sfornate" },
-      { "id": "s3", "value": "50+", "label": "Varietà di Pizze" },
-      { "id": "s4", "value": "4.8/5", "label": "Voto dei Clienti" }
+      { "id": "s1", "value": "4.4/5", "label": "Rating Google" },
+      { "id": "s2", "value": "288", "label": "Recensioni Google" },
+      { "id": "s3", "value": "#97", "label": "Su 359 Ristoranti" },
+      { "id": "s4", "value": "€20-30", "label": "Prezzo per Persona" }
     ]
   },
-  "products": {
+"products": {
     "heading": "Il Nostro Menu",
-    "subheading": "Pizze classiche, specialità della casa e prelibatezze del territorio",
+    "subheading": "Pizza, pesce fresco, tagliatelle e specialità marchigiane",
     "layout": "grid",
     "columns": 3,
     "categories": [
-      { "id": "cat1", "name": "Pizze Classiche", "description": "Le pizze tradizionali che hanno fatto la storia", "icon": "Pizza" },
-      { "id": "cat2", "name": "Specialità della Casa", "description": "Le nostre creazioni esclusive", "icon": "Star" },
+      { "id": "cat1", "name": "Pizze", "description": "Pizza artigianale e tradizionale", "icon": "Pizza" },
+      { "id": "cat2", "name": "Specialità", "description": "Le nostre creazioni esclusive", "icon": "Star" },
       { "id": "cat3", "name": "Antipasti", "description": "Per iniziare la serata", "icon": "Utensils" },
-      { "id": "cat4", "name": "Primi Piatti", "description": "La tradizione marchigiana", "icon": "Soup" },
-      { "id": "cat5", "name": "Dolci", "description": "Fatti in casa con passione", "icon": "Cake" },
+      { "id": "cat4", "name": "Primi Piatti", "description": "Tagliatelle, pasta e tradizione", "icon": "Soup" },
+      { "id": "cat5", "name": "Carne", "description": "Secondi piatti della tradizione", "icon": "Beef" },
       { "id": "cat6", "name": "Bevande", "description": "Vini, birre e molto altro", "icon": "Wine" }
     ],
     "products": [
       {
         "id": "pr1",
-        "name": "Margherita",
-        "description": "Pomodoro San Marzano, mozzarella fior di latte, basilico fresco, olio extravergine d'oliva.",
+        "name": "Pizza Margherita",
+        "description": "Pomodoro, mozzarella, basilico fresco e olio EVO. La classica napoletana.",
         "price": "€7,00",
         "imageUrl": "https://images.pexels.com/photos/275345/pexels-photo-275345.jpeg?auto=compress&cs=tinysrgb&w=400",
         "badge": "Classica",
-        "features": ["Pomodoro San Marzano", "Fior di latte", "Basilico fresco", "Olio EVO"],
+        "features": ["Pomodoro San Marzano", "Fior di latte", "Basilico fresco"],
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
         "categoryId": "cat1"
       },
       {
         "id": "pr2",
-        "name": "Marinara",
-        "description": "Pomodoro San Marzano, aglio, origano, olio extravergine d'oliva. La più semplice e genuina.",
+        "name": "Pizza Marinara",
+        "description": "Pomodoro, aglio, origano e olio EVO. La più semplice e genuina.",
         "price": "€6,00",
         "imageUrl": "https://images.pexels.com/photos/315755/pexels-photo-315755.jpeg?auto=compress&cs=tinysrgb&w=400",
         "badge": "Tradizionale",
-        "features": ["Pomodoro San Marzano", "Aglio", "Origano", "Olio EVO"],
+        "features": ["Pomodoro", "Aglio", "Origano", "Olio EVO"],
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
         "categoryId": "cat1"
       },
       {
         "id": "pr3",
-        "name": "Diavola",
-        "description": "Pomodoro, mozzarella, salame piccante, olive nere. Per chi ama il gusto deciso.",
-        "price": "€9,00",
-        "imageUrl": "https://images.pexels.com/photos/158491/food-italian-cooking-pizza-158491.jpeg?auto=compress&cs=tinysrgb&w=400",
-        "badge": "Piccante",
-        "features": ["Pomodoro", "Fior di latte", "Salame piccante", "Olive nere"],
+        "name": "Cozze alla Tarantina",
+        "description": "Cozze fresche in salsa piccante. Perfette per chi ama il piccante come consigliato dai nostri clienti.",
+        "price": "€12,00",
+        "imageUrl": "https://images.pexels.com/photos/725991/pexels-photo-725991.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "badge": "Speciale",
+        "features": ["Cozze fresche", "Salsa piccante", "Pomodoro", "Prezzemolo"],
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
-        "categoryId": "cat2"
+        "categoryId": "cat3"
       },
       {
         "id": "pr4",
-        "name": "Bota Speciale",
-        "description": "La nostra pizza signature: crema di tartufo, funghi porcini, prosciutto crudo e scaglie di parmigiano.",
+        "name": "Tagliatelle allo Scoglio",
+        "description": "Tagliatelle fresche con condimento ricco e saporito di pesce. Un piatto che ha conquistato tutti.",
         "price": "€14,00",
-        "imageUrl": "https://images.pexels.com/photos/905847/pexels-photo-905847.jpeg?auto=compress&cs=tinysrgb&w=400",
-        "badge": "Signature",
-        "features": ["Crema di tartufo", "Funghi porcini", "Prosciutto crudo", "Parmigiano"],
+        "imageUrl": "https://images.pexels.com/photos/4518598/pexels-photo-4518598.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "badge": "Primi",
+        "features": ["Tagliatelle fresche", "Frutti di mare", "Vino bianco", "Prezzemolo"],
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
-        "categoryId": "cat2"
+        "categoryId": "cat4"
       },
       {
         "id": "pr5",
-        "name": "Quattro Formaggi",
-        "description": "Mozzarella, gorgonzola, taleggio e parmigiano su base di pomodoro e origano.",
-        "price": "€10,50",
-        "imageUrl": "https://images.pexels.com/photos/1566837/pexels-photo-1566837.jpeg?auto=compress&cs=tinysrgb&w=400",
-        "badge": "Gourmet",
-        "features": ["Mozzarella", "Gorgonzola", "Taleggio", "Parmigiano"],
-        "buttonText": "Ordina Ora",
-        "buttonHref": "#contact",
-        "categoryId": "cat2"
-      },
-      {
-        "id": "pr6",
-        "name": "Prosciutto e Rucola",
-        "description": "Pomodoro, mozzarella, prosciutto crudo di Parma e rucola fresca. Un classico intramontabile.",
-        "price": "€11,00",
-        "imageUrl": "https://images.pexels.com/photos/2085949/pexels-photo-2085949.jpeg?auto=compress&cs=tinysrgb&w=400",
-        "badge": "Classica",
-        "features": ["Pomodoro", "Fior di latte", "Prosciutto di Parma", "Rucola fresca"],
+        "name": "Pizza Diavola",
+        "description": "Pomodoro, mozzarella, salame piccante, olive nere. Per chi ama il gusto deciso.",
+        "price": "€10,00",
+        "imageUrl": "https://images.pexels.com/photos/158491/food-italian-cooking-pizza-158491.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "badge": "Piccante",
+        "features": ["Pomodoro", "Mozzarella", "Salame piccante", "Olive nere"],
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
         "categoryId": "cat1"
       },
       {
+        "id": "pr6",
+        "name": "Bistecca alla Griglia",
+        "description": "Carne selezionata cotta alla griglia, contorni di stagione.",
+        "price": "€18,00",
+        "imageUrl": "https://images.pexels.com/photos/1267210/pexels-photo-1267210.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "badge": "Carne",
+        "features": ["Carne italiana", "Griglia", "Contorni freschi"],
+        "buttonText": "Ordina Ora",
+        "buttonHref": "#contact",
+        "categoryId": "cat5"
+      },
+      {
         "id": "pr7",
-        "name": "Bruschetta al Pomodoro",
-        "description": "Pane bruscato con pomodori freschi, aglio e basilico. Antipasto perfetto per iniziare.",
-        "price": "€6,50",
+        "name": "Antipasto Misto",
+        "description": "Selezione di antipasti di mare e terra per iniziare la serata.",
+        "price": "€15,00",
         "imageUrl": "https://images.pexels.com/photos/3271581/pexels-photo-3271581.jpeg?auto=compress&cs=tinysrgb&w=400",
-        "badge": "Vegetariano",
-        "features": ["Pomodori freschi", "Aglio", "Basilico", "Olio EVO"],
+        "badge": "Condivisione",
+        "features": ["Prosciutto", "Formaggi", "Verdure", "Olive"],
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
         "categoryId": "cat3"
       },
       {
         "id": "pr8",
-        "name": "Risotto ai Funghi Porcini",
-        "description": "Riso carnaroli, funghi porcini freschi, parmigiano reggiano e burro di malga.",
-        "price": "€12,00",
-        "imageUrl": "https://images.pexels.com/photos/2098211/pexels-photo-2098211.jpeg?auto=compress&cs=tinysrgb&w=400",
-        "badge": "Chef",
-        "features": ["Riso Carnaroli", "Funghi Porcini", "Parmigiano", "Burro di malga"],
-        "buttonText": "Ordina Ora",
-        "buttonHref": "#contact",
-        "categoryId": "cat4"
-      },
-      {
-        "id": "pr9",
-        "name": "Tiramisù Classico",
-        "description": "Mascarpone, caffè espresso, savoiardi e cacao amaro. Il dolce italiano per eccellenza.",
-        "price": "€7,00",
-        "imageUrl": "https://images.pexels.com/photos/4109086/pexels-photo-4109086.jpeg?auto=compress&cs=tinysrgb&w=400",
-        "badge": "Fatto in Casa",
-        "features": ["Mascarpone", "Caffè espresso", "Savoiardi", "Cacao"],
-        "buttonText": "Ordina Ora",
-        "buttonHref": "#contact",
-        "categoryId": "cat5"
-      },
-      {
-        "id": "pr10",
-        "name": "Vino Verdicchio DOC",
+        "name": "Verdicchio DOC",
         "description": "Vino bianco marchigiano, secco e aromatico. Perfetto con pesce e antipasti.",
         "price": "€18,00",
         "imageUrl": "https://images.pexels.com/photos/209239/pexels-photo-209239.jpeg?auto=compress&cs=tinysrgb&w=400",
         "badge": "DOP",
-        "features": ["Verdicchio DOC", "Marchigiano", "Secco", "8° alcol"],
+        "features": ["Verdicchio DOC", "Marchigiano", "Secco"],
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
         "categoryId": "cat6"
@@ -311,42 +287,42 @@
       }
     ]
   },
-  "testimonials": {
+"testimonials": {
     "heading": "Cosa dicono i nostri clienti",
-    "subheading": "Le recensioni di chi ha già vissuto l'esperienza Bota.",
+    "subheading": "Le recensioni reali dei nostri ospiti su Google",
     "layout": "grid",
     "items": [
       {
         "id": "t1",
-        "name": "Marco R.",
-        "role": "Cliente abituale",
-        "avatar": "https://i.pravatar.cc/200?u=marco",
+        "name": "Mario Dimmito",
+        "role": "Recensore Google",
+        "avatar": "https://i.pravatar.cc/200?u=mario",
         "rating": 5,
-        "text": "La migliore pizza di Fano! L'impasto è leggero e digeribile, cotto nel forno a legna alla perfezione. La Bota Speciale con tartufo è semplicemente eccezionale."
+        "text": "Ho cenato 10 mesi fa, cibo ottimo ci ritorno sicuramente."
       },
       {
         "id": "t2",
-        "name": "Giulia B.",
-        "role": "Turista",
-        "avatar": "https://i.pravatar.cc/200?u=giulia",
+        "name": "Alice Marcotulli",
+        "role": "Recensore Google",
+        "avatar": "https://i.pravatar.cc/200?u=alice",
         "rating": 5,
-        "text": "Abbiamo scoperto Bota durante una vacanza a Fano. Ambiente accogliente, personale gentile e una pizza che non dimenticheremo. Torneremo sicuramente!"
+        "text": "Esperienza davvero piacevole. Cucina di qualità, pesce freschissimo, ambiente accogliente e staff molto gentile. Super consigliato!!"
       },
       {
         "id": "t3",
-        "name": "Alessandro C.",
-        "role": "Critico gastronomico",
-        "avatar": "https://i.pravatar.cc/200?u=alessandro",
+        "name": "Diego Picciorillo",
+        "role": "Recensore Google",
+        "avatar": "https://i.pravatar.cc/200?u=diego",
         "rating": 5,
-        "text": "Un'autentica pizzeria marchigiana. La lievitazione è perfetta, la scelta degli ingredienti è curata e la cantina offre ottimi vini locali. Consigliatissima."
+        "text": "Le cozze alla tarantina sono davvero ottime, perfette per chi ama il piccante, e anche le tagliatelle allo scoglio sono molto buone. Le porzioni sono abbondanti, si spende il giusto e la gentilezza del personale è davvero top."
       },
       {
         "id": "t4",
-        "name": "Sara M.",
-        "role": "Recensora Google",
-        "avatar": "https://i.pravatar.cc/200?u=sara",
-        "rating": 4,
-        "text": "Pizza ottima e servizio veloce. Il locale è carino anche se un po' piccolo nei weekend. La quattro formaggi è da provare!"
+        "name": "Cliente Google",
+        "role": "Ospite",
+        "avatar": "https://i.pravatar.cc/200?u=cliente",
+        "rating": 5,
+        "text": "Il posto migliore vicino al Santuario Della Madonna Del Ponte. Servizio eccellente e prezzi ragionevoli."
       }
     ]
   },
@@ -469,45 +445,45 @@
       }
     ]
   },
-  "footer": {
-    "logoText": "Bota",
-    "description": "Pizzeria Ristorante nel cuore di Fano. Pizza artigianale cotta nel forno a legna, cucina marchigiana e vini del territorio. Dal 1995.",
+"footer": {
+    "logoText": "Ristorante Bota",
+    "description": "Ristorante nel cuore di Fano, vicino al Santuario Madonna Del Ponte. Cucina marchigiana, pizza artigianale, pesce fresco e tagliatelle. Personale professionale e atmosfera spettacolare.",
     "columns": [
       {
         "id": "fc1",
         "title": "Menu",
         "links": [
-          { "id": "fl1", "label": "Le Nostre Pizze", "href": "#products" },
+          { "id": "fl1", "label": "Pizza e Cucina", "href": "#products" },
           { "id": "fl2", "label": "Chi Siamo", "href": "#about" },
           { "id": "fl3", "label": "FAQ", "href": "#faq" }
         ]
       },
       {
         "id": "fc2",
-        "title": "Contatti",
+        "title": "Info",
         "links": [
           { "id": "fl4", "label": "Prenota un Tavolo", "href": "#contact" },
-          { "id": "fl5", "label": "Tel: 0721 000000", "href": "tel:+390721000000" },
-          { "id": "fl6", "label": "info@botafano.it", "href": "mailto:info@botafano.it" }
+          { "id": "fl5", "label": "Recensioni Google", "href": "https://google.com/maps" },
+          { "id": "fl6", "label": "FAQ", "href": "#faq" }
         ]
       },
       {
         "id": "fc3",
         "title": "Dove Siamo",
         "links": [
-          { "id": "fl7", "label": "Via Arco d'Augusto, 12", "href": "https://maps.google.com/?q=Via+Arco+d'Augusto+12+Fano" },
-          { "id": "fl8", "label": "61032 Fano (PU)", "href": "https://maps.google.com/?q=Fano+PU" },
-          { "id": "fl9", "label": "Marche, Italia", "href": "https://maps.google.com/?q=Fano+PU" }
+          { "id": "fl7", "label": "Fano, Marche", "href": "https://maps.google.com/?q=Fano+Marche" },
+          { "id": "fl8", "label": "Vicino Santuario Madonna Del Ponte", "href": "https://maps.google.com/?q=Santuario+Madonna+Del+Ponte+Fano" },
+          { "id": "fl9", "label": "Italia", "href": "https://maps.google.com/?q=Italia" }
         ]
       }
     ],
     "socials": [
       { "id": "so1", "icon": "Instagram", "href": "https://instagram.com/botafano" },
       { "id": "so2", "icon": "Facebook", "href": "https://facebook.com/botafano" },
-      { "id": "so3", "icon": "Twitter", "href": "#" },
+      { "id": "so3", "icon": "Google", "href": "https://google.com/maps" },
       { "id": "so4", "icon": "Youtube", "href": "#" }
     ],
-    "copyright": "© 2024 Bota Pizzeria Ristorante — Fano. Tutti i diritti riservati.",
+    "copyright": "© 2024 Ristorante Bota — Fano. Tutti i diritti riservati.",
     "showLegalDisclaimer": false,
     "legalText": ""
   },
@@ -522,9 +498,9 @@
     "acceptText": "Accetta",
     "declineText": "Rifiuta"
   },
-  "seo": {
-    "pageTitle": "Bota — Pizzeria Ristorante a Fano | Pizza Artigianale",
-    "metaDescription": "Bota è la pizzeria ristorante di Fano. Pizza artigianale cotta nel forno a legna, cucina marchigiana, vini del territorio. Prenota ora nel centro storico di Fano.",
+"seo": {
+    "pageTitle": "Ristorante Bota — I Migliori Ristoranti a Fano | Cucina Marchigiana",
+    "metaDescription": "Ristorante Bota è #97 di 359 ristoranti a Fano. Pizza, pesce fresco, tagliatelle e antipasti curatissimi. Personale professionale, prezzi ragionevoli e atmosfera spettacolare. Rating 4.4/5 su Google.",
     "ogImageUrl": ""
   },
   "code": {
