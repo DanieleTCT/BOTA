@@ -154,7 +154,7 @@
         "badge": "Tradizionale",
         "features": ["Guanciale", "Pecorino", "Tuorlo"],
         "ingredients": "Spaghetti di grano duro, guanciale croccante, pecorino romano, tuorli d'uovo, pepe nero",
-        "allergeni": "Glutine, Uova, Latticini",
+        "allergens": "Glutine, Uova, Latticini",
         "buttonText": "Ordina Ora",
         "buttonHref": "#contact",
         "categoryId": "cat2"

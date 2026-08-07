@@ -104,18 +104,8 @@ export function InteractiveMenu({ config }: { config: SiteConfig }) {
             </button>
           </div>
 
-          {/* Category Buttons - Current Page */}
+        {/* Category Buttons - Current Page */}
           <div className="flex flex-wrap justify-center gap-3">
-            <button
-              onClick={() => setSelectedCategory(null)}
-              className={`rounded-xl px-6 py-3 text-sm font-semibold transition ${
-                selectedCategory === null
-                  ? 'bg-blue-600 text-white shadow-lg'
-                  : 'bg-white text-slate-600 hover:bg-slate-100 border border-slate-200'
-              }`}
-            >
-              📋 Tutti i Piatti
-            </button>
             {currentCategories.map((category) => {
               const icon = ICON_MAP[category.icon] || '📋';
               const count = products.products.filter(p => p.categoryId === category.id).length;
@@ -145,54 +135,40 @@ export function InteractiveMenu({ config }: { config: SiteConfig }) {
           </div>
         )}
 
-        {/* Products List - Enhanced Grid */}
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {filteredProducts.map((product, idx) => (
+        {/* Products List - Compact List */}
+        <div className="mx-auto max-w-4xl space-y-2">
+          {filteredProducts.map((product) => (
             <div
               key={product.id}
               onClick={() => setSelectedProduct(product)}
-              className="group cursor-pointer overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition hover:shadow-xl hover:-translate-y-1"
-              style={{ animationDelay: `${idx * 50}ms` }}
+              className="group cursor-pointer overflow-hidden rounded-xl border border-slate-200 bg-white transition hover:border-blue-300 hover:shadow-md"
             >
-              {/* Image */}
-              <div className="relative h-56 overflow-hidden bg-slate-100">
-                {product.imageUrl ? (
-                  <img
-                    src={product.imageUrl}
-                    alt={product.name}
-                    className="h-full w-full object-cover transition group-hover:scale-110"
-                  />
-                ) : (
-                  <div className="flex h-full w-full items-center justify-center text-6xl text-slate-300">
-                    🍽️
+              <div className="flex items-center gap-4 p-4">
+                {/* Price Badge */}
+                <div className="shrink-0 rounded-lg bg-blue-50 px-4 py-2 text-center">
+                  <div className="text-lg font-bold text-blue-600">{product.price}</div>
+                </div>
+
+                {/* Content */}
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center gap-2 mb-1">
+                    <h3 className="font-bold text-base text-slate-900 truncate">{product.name}</h3>
+                    {product.badge && (
+                      <span className="shrink-0 rounded-full bg-blue-100 px-2.5 py-0.5 text-xs font-semibold text-blue-700">
+                        {product.badge}
+                      </span>
+                    )}
                   </div>
-                )}
-                {product.badge && (
-                  <span className="absolute right-3 top-3 rounded-full bg-blue-600 px-4 py-1.5 text-xs font-bold text-white shadow-lg">
-                    {product.badge}
-                  </span>
-                )}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 transition group-hover:opacity-100" />
-                <div className="absolute bottom-3 left-3 right-3 translate-y-4 opacity-0 transition group-hover:translate-y-0 group-hover:opacity-100">
-                  <span className="text-xs font-semibold text-white">Clicca per dettagli →</span>
+                  <p className="text-sm text-slate-600 line-clamp-1">{product.description}</p>
                 </div>
-              </div>
 
-              {/* Content */}
-              <div className="p-5">
-                <div className="mb-3 flex items-start justify-between gap-2">
-                  <h3 className="font-bold text-lg text-slate-900 leading-tight">{product.name}</h3>
-                  <span className="shrink-0 text-xl font-bold text-blue-600">{product.price}</span>
-                </div>
-                <p className="mb-4 line-clamp-2 text-sm text-slate-600 leading-relaxed">{product.description}</p>
-
-                {/* Features preview */}
+                {/* Features */}
                 {product.features && product.features.length > 0 && (
-                  <div className="mb-4 flex flex-wrap gap-1.5">
-                    {product.features.slice(0, 3).map((feature, idx) => (
+                  <div className="hidden md:flex flex-wrap gap-1.5">
+                    {product.features.slice(0, 2).map((feature, idx) => (
                       <span
                         key={idx}
-                        className="rounded-full bg-slate-100 px-2.5 py-1 text-xs font-medium text-slate-700"
+                        className="rounded-full bg-slate-100 px-2 py-1 text-xs text-slate-600"
                       >
                         {feature}
                       </span>
@@ -200,16 +176,12 @@ export function InteractiveMenu({ config }: { config: SiteConfig }) {
                   </div>
                 )}
 
-                {/* Action Button */}
-                <button
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
-                  }}
-                  className="w-full rounded-lg bg-blue-600 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-blue-700 active:scale-95"
-                >
-                  {product.buttonText}
-                </button>
+                {/* Arrow */}
+                <div className="shrink-0 text-slate-400 group-hover:text-blue-600 transition">
+                  <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </div>
               </div>
             </div>
           ))}
