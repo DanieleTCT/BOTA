@@ -81,7 +81,11 @@ export function InteractiveMenu({ config }: { config: SiteConfig }) {
         )}
 
         {/* Products Grid */}
-        <div className={`grid grid-cols-1 gap-6 sm:grid-cols-${products.columns}`}>
+        <div className={`grid grid-cols-1 gap-6 ${
+          products.columns === 2 ? 'sm:grid-cols-2' :
+          products.columns === 3 ? 'sm:grid-cols-3' :
+          'sm:grid-cols-4'
+        }`}>
           {filteredProducts.map((product) => (
             <div key={product.id} className="rounded-xl border border-slate-200 bg-white p-6 transition hover:shadow-lg">
               {product.imageUrl && (

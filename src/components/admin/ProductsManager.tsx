@@ -77,6 +77,16 @@ export function ProductsManager({ config, ctx }: { config: SiteConfig; ctx: Admi
     }));
   };
 
+  const moveCategory = (index: number, direction: 'up' | 'down') => {
+    const newIndex = direction === 'up' ? index - 1 : index + 1;
+    if (newIndex < 0 || newIndex >= products.categories.length) return;
+    
+    const newCategories = [...products.categories];
+    [newCategories[index], newCategories[newIndex]] = [newCategories[newIndex], newCategories[index]];
+    
+    updateProducts(p => ({ ...p, categories: newCategories }));
+  };
+
   const moveProduct = (index: number, direction: 'up' | 'down') => {
     const newIndex = direction === 'up' ? index - 1 : index + 1;
     if (newIndex < 0 || newIndex >= products.products.length) return;
@@ -155,10 +165,10 @@ export function ProductsManager({ config, ctx }: { config: SiteConfig; ctx: Admi
       <div className="mb-8 space-y-4">
         {products.categories.map((category, idx) => (
           <div key={category.id} className="rounded-xl border border-slate-200 bg-white p-4">
-            <div className="mb-3 flex items-center gap-2">
-              <div className="flex flex-col gap-0.5">
+              <div className="mb-3 flex items-center gap-2">
+                <div className="flex flex-col gap-0.5">
                 <button
-                  onClick={() => moveProduct(idx, 'up')}
+                  onClick={() => moveCategory(idx, 'up')}
                   disabled={idx === 0}
                   className="rounded p-0.5 text-slate-400 hover:bg-slate-100 hover:text-slate-700 disabled:opacity-30"
                 >
