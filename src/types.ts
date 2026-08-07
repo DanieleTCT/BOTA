@@ -131,6 +131,8 @@ export interface Product {
   imageUrl: string;
   badge?: string;
   features: string[];
+  ingredients: string;
+  allergens: string;
   buttonText: string;
   buttonHref: string;
   categoryId: string;

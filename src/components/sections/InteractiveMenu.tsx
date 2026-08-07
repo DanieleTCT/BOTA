@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import type { SiteConfig } from '@/types';
+import type { SiteConfig, Product } from '@/types';
+import { ProductModal } from './ProductModal';
 
 const ICON_MAP: Record<string, string> = {
   Pizza: '🍕',
@@ -18,6 +19,7 @@ const ICON_MAP: Record<string, string> = {
 export function InteractiveMenu({ config }: { config: SiteConfig }) {
   const products = config.products;
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
 
   if (!products || !config.sections.find(s => s.id === 'products')?.enabled) {
     return null;
@@ -87,7 +89,11 @@ export function InteractiveMenu({ config }: { config: SiteConfig }) {
           'sm:grid-cols-4'
         }`}>
           {filteredProducts.map((product) => (
-            <div key={product.id} className="rounded-xl border border-slate-200 bg-white p-6 transition hover:shadow-lg">
+            <div
+              key={product.id}
+              onClick={() => setSelectedProduct(product)}
+              className="cursor-pointer rounded-xl border border-slate-200 bg-white p-6 transition hover:shadow-lg"
+            >
               {product.imageUrl && (
                 <img src={product.imageUrl} alt={product.name} className="mb-4 h-48 w-full rounded-lg object-cover" />
               )}
@@ -116,7 +122,10 @@ export function InteractiveMenu({ config }: { config: SiteConfig }) {
               <div className="flex items-center justify-between">
                 <div className="text-xl font-bold text-slate-900">{product.price}</div>
                 <button
-                  onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                  }}
                   className="rounded-lg bg-blue-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-blue-700"
                 >
                   {product.buttonText}
@@ -133,6 +142,14 @@ export function InteractiveMenu({ config }: { config: SiteConfig }) {
           </div>
         )}
       </div>
+
+      {/* Product Modal */}
+      {selectedProduct && (
+        <ProductModal
+          product={selectedProduct}
+          onClose={() => setSelectedProduct(null)}
+        />
+      )}
     </section>
   );
 }

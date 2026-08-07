@@ -129,6 +129,14 @@
     "subheading": "Pizze classiche, specialità della casa e prelibatezze del territorio",
     "layout": "grid",
     "columns": 3,
+    "categories": [
+      { "id": "cat1", "name": "Pizze Classiche", "description": "Le pizze tradizionali che hanno fatto la storia", "icon": "Pizza" },
+      { "id": "cat2", "name": "Specialità della Casa", "description": "Le nostre creazioni esclusive", "icon": "Star" },
+      { "id": "cat3", "name": "Antipasti", "description": "Per iniziare la serata", "icon": "Utensils" },
+      { "id": "cat4", "name": "Primi Piatti", "description": "La tradizione marchigiana", "icon": "Soup" },
+      { "id": "cat5", "name": "Dolci", "description": "Fatti in casa con passione", "icon": "Cake" },
+      { "id": "cat6", "name": "Bevande", "description": "Vini, birre e molto altro", "icon": "Wine" }
+    ],
     "products": [
       {
         "id": "pr1",
@@ -139,7 +147,8 @@
         "badge": "Classica",
         "features": ["Pomodoro San Marzano", "Fior di latte", "Basilico fresco", "Olio EVO"],
         "buttonText": "Ordina Ora",
-        "buttonHref": "#contact"
+        "buttonHref": "#contact",
+        "categoryId": "cat1"
       },
       {
         "id": "pr2",
@@ -150,7 +159,8 @@
         "badge": "Tradizionale",
         "features": ["Pomodoro San Marzano", "Aglio", "Origano", "Olio EVO"],
         "buttonText": "Ordina Ora",
-        "buttonHref": "#contact"
+        "buttonHref": "#contact",
+        "categoryId": "cat1"
       },
       {
         "id": "pr3",
@@ -161,7 +171,8 @@
         "badge": "Piccante",
         "features": ["Pomodoro", "Fior di latte", "Salame piccante", "Olive nere"],
         "buttonText": "Ordina Ora",
-        "buttonHref": "#contact"
+        "buttonHref": "#contact",
+        "categoryId": "cat2"
       },
       {
         "id": "pr4",
@@ -172,7 +183,8 @@
         "badge": "Signature",
         "features": ["Crema di tartufo", "Funghi porcini", "Prosciutto crudo", "Parmigiano"],
         "buttonText": "Ordina Ora",
-        "buttonHref": "#contact"
+        "buttonHref": "#contact",
+        "categoryId": "cat2"
       },
       {
         "id": "pr5",
@@ -183,7 +195,8 @@
         "badge": "Gourmet",
         "features": ["Mozzarella", "Gorgonzola", "Taleggio", "Parmigiano"],
         "buttonText": "Ordina Ora",
-        "buttonHref": "#contact"
+        "buttonHref": "#contact",
+        "categoryId": "cat2"
       },
       {
         "id": "pr6",
@@ -194,7 +207,56 @@
         "badge": "Classica",
         "features": ["Pomodoro", "Fior di latte", "Prosciutto di Parma", "Rucola fresca"],
         "buttonText": "Ordina Ora",
-        "buttonHref": "#contact"
+        "buttonHref": "#contact",
+        "categoryId": "cat1"
+      },
+      {
+        "id": "pr7",
+        "name": "Bruschetta al Pomodoro",
+        "description": "Pane bruscato con pomodori freschi, aglio e basilico. Antipasto perfetto per iniziare.",
+        "price": "€6,50",
+        "imageUrl": "https://images.pexels.com/photos/3271581/pexels-photo-3271581.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "badge": "Vegetariano",
+        "features": ["Pomodori freschi", "Aglio", "Basilico", "Olio EVO"],
+        "buttonText": "Ordina Ora",
+        "buttonHref": "#contact",
+        "categoryId": "cat3"
+      },
+      {
+        "id": "pr8",
+        "name": "Risotto ai Funghi Porcini",
+        "description": "Riso carnaroli, funghi porcini freschi, parmigiano reggiano e burro di malga.",
+        "price": "€12,00",
+        "imageUrl": "https://images.pexels.com/photos/2098211/pexels-photo-2098211.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "badge": "Chef",
+        "features": ["Riso Carnaroli", "Funghi Porcini", "Parmigiano", "Burro di malga"],
+        "buttonText": "Ordina Ora",
+        "buttonHref": "#contact",
+        "categoryId": "cat4"
+      },
+      {
+        "id": "pr9",
+        "name": "Tiramisù Classico",
+        "description": "Mascarpone, caffè espresso, savoiardi e cacao amaro. Il dolce italiano per eccellenza.",
+        "price": "€7,00",
+        "imageUrl": "https://images.pexels.com/photos/4109086/pexels-photo-4109086.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "badge": "Fatto in Casa",
+        "features": ["Mascarpone", "Caffè espresso", "Savoiardi", "Cacao"],
+        "buttonText": "Ordina Ora",
+        "buttonHref": "#contact",
+        "categoryId": "cat5"
+      },
+      {
+        "id": "pr10",
+        "name": "Vino Verdicchio DOC",
+        "description": "Vino bianco marchigiano, secco e aromatico. Perfetto con pesce e antipasti.",
+        "price": "€18,00",
+        "imageUrl": "https://images.pexels.com/photos/209239/pexels-photo-209239.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "badge": "DOP",
+        "features": ["Verdicchio DOC", "Marchigiano", "Secco", "8° alcol"],
+        "buttonText": "Ordina Ora",
+        "buttonHref": "#contact",
+        "categoryId": "cat6"
       }
     ]
   },

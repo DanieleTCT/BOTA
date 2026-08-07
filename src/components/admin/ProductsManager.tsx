@@ -56,6 +56,8 @@ export function ProductsManager({ config, ctx }: { config: SiteConfig; ctx: Admi
       imageUrl: '',
       badge: '',
       features: ['Feature 1'],
+      ingredients: '',
+      allergens: '',
       buttonText: 'Learn More',
       buttonHref: '#contact',
       categoryId: products.categories[0]?.id || '',
@@ -300,6 +302,25 @@ export function ProductsManager({ config, ctx }: { config: SiteConfig; ctx: Admi
                     <option key={cat.id} value={cat.id}>{cat.name}</option>
                   ))}
                 </select>
+              </div>
+              <div>
+                <label className="mb-1 block text-xs font-semibold text-slate-700">Ingredienti</label>
+                <textarea
+                  value={product.ingredients}
+                  onChange={(e) => updateProduct(product.id, { ingredients: e.target.value })}
+                  rows={2}
+                  className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none focus:border-blue-500"
+                />
+              </div>
+              <div>
+                <label className="mb-1 block text-xs font-semibold text-slate-700">Allergeni</label>
+                <input
+                  type="text"
+                  value={product.allergens}
+                  onChange={(e) => updateProduct(product.id, { allergens: e.target.value })}
+                  placeholder="es. Glutine, lattosio, uova"
+                  className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none focus:border-blue-500"
+                />
               </div>
               <div>
                 <label className="mb-1 block text-xs font-semibold text-slate-700">Badge (opzionale)</label>
