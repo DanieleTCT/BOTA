@@ -131,17 +131,20 @@ export function InteractiveMenu({ config }: { config: SiteConfig }) {
               <h3 className="text-2xl font-bold text-slate-800">Menu Pranzo - Settimana</h3>
               <p className="mt-2 text-sm text-slate-600">Ogni giorno il nostro chef seleziona i migliori piatti</p>
             </div>
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-7">
+            <div className="space-y-4">
               {daysOfWeek.map((day) => {
                 const dayProducts = getLunchProductsForDay(day.id);
+                const hasProducts = Object.values(dayProducts).some(dishes => dishes.length > 0);
+
+                if (!hasProducts) return null;
 
                 return (
                   <div key={day.id} className="rounded-xl border border-slate-200 bg-white p-4">
-                    <div className="mb-3 text-center">
+                    <div className="mb-3">
                       <div className="text-xs font-semibold text-slate-500">{day.short}</div>
                       <div className="text-sm font-bold text-slate-800">{day.label}</div>
                     </div>
-                    <div className="space-y-3">
+                    <div className="flex flex-wrap gap-3">
                       {Object.entries(dayProducts).map(([dishType, dishes]) => {
                         const dish = dishes[0]; // Show first dish of each type
                         if (!dish) return null;
@@ -150,10 +153,10 @@ export function InteractiveMenu({ config }: { config: SiteConfig }) {
                           <div
                             key={dishType}
                             onClick={() => setSelectedProduct(dish)}
-                            className="cursor-pointer rounded-lg border border-slate-100 bg-slate-50 p-2 transition hover:border-blue-300 hover:bg-white hover:shadow-sm"
+                            className="cursor-pointer rounded-lg border border-slate-100 bg-slate-50 p-3 transition hover:border-blue-300 hover:bg-white hover:shadow-sm min-w-[140px]"
                           >
-                            <div className="font-semibold text-slate-700">{dishTypesLabels[dishType] || dishType}</div>
-                            <div className="text-slate-600 line-clamp-1">{dish.name}</div>
+                            <div className="font-semibold text-slate-700 text-xs mb-1">{dishTypesLabels[dishType] || dishType}</div>
+                            <div className="text-slate-600 text-sm">{dish.name}</div>
                           </div>
                         );
                       })}
