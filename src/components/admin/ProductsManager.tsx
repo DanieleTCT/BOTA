@@ -1,6 +1,23 @@
-import { Plus, Trash2, GripVertical } from 'lucide-react';
+import { Plus, Trash2, GripVertical, BookOpen } from 'lucide-react';
 import type { SiteConfig, Product, ProductsConfig, MenuCategory } from '@/types';
 import type { AdminContext } from './AdminDashboard';
+
+const ICON_MAP: Record<string, string> = {
+  Pizza: '🍕',
+  Star: '⭐',
+  Utensils: '🍴',
+  Soup: '🍲',
+  Cake: '🍰',
+  Wine: '🍷',
+  Flame: '🔥',
+  Leaf: '🌿',
+  Clock: '⏰',
+  Users: '👥',
+  Heart: '❤️',
+  Fish: '🐟',
+  Beef: '🥩',
+  Carrot: '🥕',
+};
 
 const DEFAULT_PRODUCTS: ProductsConfig = {
   heading: 'Il Nostro Menu',
@@ -26,13 +43,14 @@ export function ProductsManager({ config, ctx }: { config: SiteConfig; ctx: Admi
     const newCat: MenuCategory = {
       id: `cat${Date.now()}`,
       name: 'Nuova Categoria',
-      description: 'Descrizione categoria',
+      description: 'Descrizione della categoria',
       icon: 'Pizza',
     };
     updateProducts(p => ({ ...p, categories: [...p.categories, newCat] }));
   };
 
   const removeCategory = (id: string) => {
+    if (!confirm('Sei sicuro di voler eliminare questa categoria e tutti i suoi prodotti?')) return;
     updateProducts(p => ({
       ...p,
       categories: p.categories.filter(c => c.id !== id),
@@ -50,15 +68,15 @@ export function ProductsManager({ config, ctx }: { config: SiteConfig; ctx: Admi
   const addProduct = (categoryId?: string) => {
     const newProduct: Product = {
       id: `pr${Date.now()}`,
-      name: 'New Product',
-      description: 'Product description',
-      price: '$0',
+      name: 'Nuovo Prodotto',
+      description: 'Descrizione del prodotto',
+      price: '€0',
       imageUrl: '',
       badge: '',
-      features: ['Feature 1'],
+      features: [],
       ingredients: '',
       allergens: '',
-      buttonText: 'Learn More',
+      buttonText: 'Ordina Ora',
       buttonHref: '#contact',
       categoryId: categoryId || products.categories[0]?.id || '',
     };
@@ -66,6 +84,7 @@ export function ProductsManager({ config, ctx }: { config: SiteConfig; ctx: Admi
   };
 
   const removeProduct = (id: string) => {
+    if (!confirm('Sei sicuro di voler eliminare questo prodotto?')) return;
     updateProducts(p => ({
       ...p,
       products: p.products.filter((pr: Product) => pr.id !== id)
@@ -104,29 +123,40 @@ export function ProductsManager({ config, ctx }: { config: SiteConfig; ctx: Admi
 
   return (
     <div>
-      <h2 className="mb-1 text-xl font-bold text-slate-800">Products Manager</h2>
-      <p className="mb-6 text-sm text-slate-500">Manage your product catalog. Add, edit, and organize your products.</p>
+      <div className="mb-6 rounded-xl border border-blue-100 bg-blue-50 p-4">
+        <div className="flex items-start gap-3">
+          <BookOpen className="h-5 w-5 shrink-0 text-blue-600 mt-0.5" />
+          <div>
+            <h3 className="text-sm font-semibold text-blue-900">Menu Digitale Sfogliabile</h3>
+            <p className="mt-1 text-xs text-blue-700">
+              Gestisci categorie e prodotti. Il menu pubblico mostrerà le categorie in pagine sfogliabili con 3 categorie per pagina. Clicca su qualsiasi prodotto per vedere i dettagli completi.
+            </p>
+          </div>
+        </div>
+      </div>
 
       {/* Products Settings */}
       <div className="mb-6 rounded-xl border border-slate-200 bg-white p-6">
-        <h3 className="mb-4 text-lg font-semibold text-slate-800">Section Settings</h3>
+        <h3 className="mb-4 text-lg font-semibold text-slate-800">Impostazioni Menu</h3>
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
           <div>
-            <label className="mb-1 block text-sm font-semibold text-slate-700">Heading</label>
+            <label className="mb-1 block text-sm font-semibold text-slate-700">Titolo Menu</label>
             <input
               type="text"
               value={products.heading}
               onChange={(e) => updateProducts(p => ({ ...p, heading: e.target.value }))}
               className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none focus:border-blue-500"
+              placeholder="Es: Il Nostro Menu"
             />
           </div>
           <div>
-            <label className="mb-1 block text-sm font-semibold text-slate-700">Subheading</label>
+            <label className="mb-1 block text-sm font-semibold text-slate-700">Sottotitolo</label>
             <input
               type="text"
               value={products.subheading}
               onChange={(e) => updateProducts(p => ({ ...p, subheading: e.target.value }))}
               className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none focus:border-blue-500"
+              placeholder="Es: Le nostre specialità"
             />
           </div>
           <div>
@@ -136,20 +166,20 @@ export function ProductsManager({ config, ctx }: { config: SiteConfig; ctx: Admi
               onChange={(e) => updateProducts(p => ({ ...p, layout: e.target.value as 'grid' | 'list' }))}
               className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none focus:border-blue-500"
             >
-              <option value="grid">Grid</option>
-              <option value="list">List</option>
+              <option value="grid">Griglia</option>
+              <option value="list">Lista</option>
             </select>
           </div>
           <div>
-            <label className="mb-1 block text-sm font-semibold text-slate-700">Columns (Grid only)</label>
+            <label className="mb-1 block text-sm font-semibold text-slate-700">Colonne (solo griglia)</label>
             <select
               value={products.columns}
               onChange={(e) => updateProducts(p => ({ ...p, columns: parseInt(e.target.value) as 2 | 3 | 4 }))}
               className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none focus:border-blue-500"
             >
-              <option value="2">2 Columns</option>
-              <option value="3">3 Columns</option>
-              <option value="4">4 Columns</option>
+              <option value="2">2 Colonne</option>
+              <option value="3">3 Colonne</option>
+              <option value="4">4 Colonne</option>
             </select>
           </div>
         </div>
@@ -157,7 +187,10 @@ export function ProductsManager({ config, ctx }: { config: SiteConfig; ctx: Admi
 
       {/* Categories List */}
       <div className="mb-4 flex items-center justify-between">
-        <h3 className="text-lg font-semibold text-slate-800">Categorie Menu ({products.categories.length})</h3>
+        <div>
+          <h3 className="text-lg font-semibold text-slate-800">Categorie Menu</h3>
+          <p className="text-xs text-slate-500 mt-0.5">3 categorie per pagina — totale: {products.categories.length} categorie e {products.products.length} prodotti</p>
+        </div>
         <button
           onClick={addCategory}
           className="flex items-center gap-1.5 rounded-lg bg-blue-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-blue-700"
@@ -180,17 +213,22 @@ export function ProductsManager({ config, ctx }: { config: SiteConfig; ctx: Admi
                     onClick={() => moveCategory(idx, 'up')}
                     disabled={idx === 0}
                     className="rounded p-0.5 text-slate-400 hover:bg-slate-100 hover:text-slate-700 disabled:opacity-30"
+                    title="Sposta su"
                   >
                     <GripVertical className="h-4 w-4" />
                   </button>
                 </div>
-                <div className="flex-1">
-                  <div className="text-sm font-bold text-slate-800">{category.name}</div>
-                  <div className="text-xs text-slate-500">{category.icon} - {categoryProducts.length} prodotti</div>
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-white border border-slate-200 text-2xl">
+                  {ICON_MAP[category.icon] || '📋'}
+                </div>
+                <div className="flex-1 min-w-0">
+                  <div className="text-sm font-bold text-slate-900 truncate">{category.name}</div>
+                  <div className="text-xs text-slate-500">{categoryProducts.length} prodotti</div>
                 </div>
                 <button
                   onClick={() => removeCategory(category.id)}
                   className="rounded p-1.5 text-rose-400 transition hover:bg-rose-50 hover:text-rose-600"
+                  title="Elimina categoria"
                 >
                   <Trash2 className="h-4 w-4" />
                 </button>
@@ -206,6 +244,7 @@ export function ProductsManager({ config, ctx }: { config: SiteConfig; ctx: Admi
                       value={category.name}
                       onChange={(e) => updateCategory(category.id, { name: e.target.value })}
                       className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none focus:border-blue-500"
+                      placeholder="Es: Antipasti di Mare"
                     />
                   </div>
                   <div>
@@ -231,13 +270,14 @@ export function ProductsManager({ config, ctx }: { config: SiteConfig; ctx: Admi
                       <option value="Carrot">🥕 Carrot</option>
                     </select>
                   </div>
-                  <div>
+                  <div className="sm:col-span-3">
                     <label className="mb-1 block text-xs font-semibold text-slate-700">Descrizione</label>
                     <input
                       type="text"
                       value={category.description}
                       onChange={(e) => updateCategory(category.id, { description: e.target.value })}
                       className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none focus:border-blue-500"
+                      placeholder="Es: Per iniziare la serata con il pesce fresco"
                     />
                   </div>
                 </div>
@@ -263,6 +303,7 @@ export function ProductsManager({ config, ctx }: { config: SiteConfig; ctx: Admi
                         <button
                           onClick={() => removeProduct(product.id)}
                           className="rounded p-1 text-rose-400 transition hover:bg-rose-50 hover:text-rose-600"
+                          title="Elimina prodotto"
                         >
                           <Trash2 className="h-3 w-3" />
                         </button>
@@ -270,12 +311,13 @@ export function ProductsManager({ config, ctx }: { config: SiteConfig; ctx: Admi
 
                       <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
                         <div>
-                          <label className="mb-1 block text-xs font-semibold text-slate-700">Nome</label>
+                          <label className="mb-1 block text-xs font-semibold text-slate-700">Nome Prodotto</label>
                           <input
                             type="text"
                             value={product.name}
                             onChange={(e) => updateProduct(product.id, { name: e.target.value })}
                             className="w-full rounded-lg border border-slate-300 px-2 py-1.5 text-sm outline-none focus:border-blue-500"
+                            placeholder="Es: Margherita"
                           />
                         </div>
                         <div>
@@ -285,6 +327,17 @@ export function ProductsManager({ config, ctx }: { config: SiteConfig; ctx: Admi
                             value={product.price}
                             onChange={(e) => updateProduct(product.id, { price: e.target.value })}
                             className="w-full rounded-lg border border-slate-300 px-2 py-1.5 text-sm outline-none focus:border-blue-500"
+                            placeholder="Es: €8"
+                          />
+                        </div>
+                        <div>
+                          <label className="mb-1 block text-xs font-semibold text-slate-700">Immagine URL</label>
+                          <input
+                            type="text"
+                            value={product.imageUrl}
+                            onChange={(e) => updateProduct(product.id, { imageUrl: e.target.value })}
+                            className="w-full rounded-lg border border-slate-300 px-2 py-1.5 text-sm outline-none focus:border-blue-500"
+                            placeholder="https://..."
                           />
                         </div>
                         <div>
@@ -294,15 +347,37 @@ export function ProductsManager({ config, ctx }: { config: SiteConfig; ctx: Admi
                             value={product.badge || ''}
                             onChange={(e) => updateProduct(product.id, { badge: e.target.value })}
                             className="w-full rounded-lg border border-slate-300 px-2 py-1.5 text-sm outline-none focus:border-blue-500"
+                            placeholder="Es: Classica, Gourmet"
                           />
                         </div>
-                        <div>
+                        <div className="sm:col-span-2">
                           <label className="mb-1 block text-xs font-semibold text-slate-700">Descrizione</label>
                           <input
                             type="text"
                             value={product.description}
                             onChange={(e) => updateProduct(product.id, { description: e.target.value })}
                             className="w-full rounded-lg border border-slate-300 px-2 py-1.5 text-sm outline-none focus:border-blue-500"
+                            placeholder="Descrizione breve del piatto"
+                          />
+                        </div>
+                        <div className="sm:col-span-2">
+                          <label className="mb-1 block text-xs font-semibold text-slate-700">Ingredienti</label>
+                          <textarea
+                            value={product.ingredients}
+                            onChange={(e) => updateProduct(product.id, { ingredients: e.target.value })}
+                            className="w-full rounded-lg border border-slate-300 px-2 py-1.5 text-sm outline-none focus:border-blue-500"
+                            placeholder="Pomodoro, mozzarella, basilico..."
+                            rows={2}
+                          />
+                        </div>
+                        <div className="sm:col-span-2">
+                          <label className="mb-1 block text-xs font-semibold text-slate-700">Allergeni</label>
+                          <input
+                            type="text"
+                            value={product.allergens}
+                            onChange={(e) => updateProduct(product.id, { allergens: e.target.value })}
+                            className="w-full rounded-lg border border-slate-300 px-2 py-1.5 text-sm outline-none focus:border-blue-500"
+                            placeholder="Es: Glutine, Latticini"
                           />
                         </div>
                       </div>
