@@ -156,6 +156,7 @@ function mergeWithDefaults(partial: Partial<SiteConfig>): SiteConfig {
     hero: { ...base.hero, ...(partial.hero ?? {}) },
     features: { ...base.features, ...(partial.features ?? {}) },
     about: { ...base.about, ...(partial.about ?? {}) },
+    products: { ...base.products, ...(partial.products ?? {}) },
     pricing: { ...base.pricing, ...(partial.pricing ?? {}) },
     testimonials: { ...base.testimonials, ...(partial.testimonials ?? {}) },
     faq: { ...base.faq, ...(partial.faq ?? {}) },
