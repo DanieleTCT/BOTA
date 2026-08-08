@@ -25,6 +25,18 @@ export function InteractiveMenu({ config }: { config: SiteConfig }) {
   const [selectedMeal, setSelectedMeal] = useState<'lunch' | 'dinner'>('lunch');
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
 
+  const nightTheme = products?.nightModeTheme || {
+    enabled: true,
+    background: '#0f172a',
+    cardBackground: '#1e293b',
+    textPrimary: '#f1f5f9',
+    textSecondary: '#94a3b8',
+    borderColor: '#334155',
+    accentColor: '#38bdf8',
+    badgeBackground: '#1e293b',
+    badgeText: '#38bdf8',
+  };
+
   if (!products || !config.sections.find(s => s.id === 'products')?.enabled) {
     return null;
   }
@@ -82,7 +94,6 @@ export function InteractiveMenu({ config }: { config: SiteConfig }) {
   };
 
   const isDinner = selectedMeal === 'dinner';
-  const nightTheme = config.products.nightModeTheme;
 
   return (
     <section
