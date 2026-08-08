@@ -92,6 +92,7 @@ function HeaderEditor({ config, ctx }: { config: SiteConfig; ctx: AdminContext }
   return (
     <Section>
       <TextField label="Logo Text" value={c.logoText} onChange={(v) => set('logoText', v)} />
+      <ImageUploadField label="Logo Image URL" value={c.logoUrl} onChange={(v) => set('logoUrl', v)} />
       <TextField label="CTA Button Text" value={c.ctaText} onChange={(v) => set('ctaText', v)} />
       <TextField label="CTA Button URL" value={c.ctaHref} onChange={(v) => set('ctaHref', v)} />
       <Toggle label="Sticky Header" checked={c.sticky} onChange={(v) => set('sticky', v)} />

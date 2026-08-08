@@ -45,6 +45,7 @@ export const DEFAULT_CONFIG: SiteConfig = {
   },
   header: {
     logoText: 'Bota',
+    logoUrl: '',
     links: [
       { id: 'l1', label: 'Storia', href: '#about' },
       { id: 'l2', label: 'Menu', href: '#products' },
@@ -115,23 +116,23 @@ export const DEFAULT_CONFIG: SiteConfig = {
       {
         id: 'f6',
         icon: 'Heart',
-        title: 'Passione dal 1995',
-        description: 'Da oltre 25 anni portiamo avanti la tradizione della pizza marchigiana a Fano.',
-        badge: 'Dal 1995',
+        title: 'Esperienza Memorabile',
+        description: "Un'atmosfera spettacolare e un servizio encomiabile per rendere ogni tua visita indimenticabile.",
+        badge: 'Qualità',
       },
     ],
   },
   about: {
     heading: 'La nostra storia',
-    body: 'Bota nasce a Fano nel 1995, nel cuore del centro storico, dalla passione di una famiglia per la vera pizza italiana. Da allora, portiamo avanti la tradizione con un impasto a lunga lievitazione, ingredienti selezionati e un forno a legna che regala alla nostra pizza quel sapore unico e inconfondibile. Oggi Bota è un punto di riferimento per gli amanti della buona cucina a Fano: non solo pizza, ma anche antipasti, primi piatti della tradizione marchigiana e dolci fatti in casa.',
+    body: 'Ristorante e pizzeria specializzato in pesce e carne, situato in Viale Piceno a Fano. Il professionale personale lavora duramente con un atteggiamento positivo, rendendo questo posto fantastico. Se vuoi goderti un encomiabile servizio, dovresti venire a trovarci. I nostri piatti vengono proposti a prezzi ragionevoli e molti clienti sono affezionati alla spettacolare atmosfera del locale.',
     imageUrl:
       'https://images.pexels.com/photos/35518412/pexels-photo-35518412.jpeg?auto=compress&cs=tinysrgb&w=900',
     imageAlt: 'L\'accogliente sala interna del ristorante Bota a Fano',
     stats: [
-      { id: 's1', value: '25+', label: 'Anni di Storia' },
-      { id: 's2', value: '100k+', label: 'Pizze Sfornate' },
-      { id: 's3', value: '50+', label: 'Varietà di Pizze' },
-      { id: 's4', value: '4.8/5', label: 'Voto dei Clienti' },
+      { id: 's1', value: '100', label: 'Coperti' },
+      { id: 's2', value: 'Carne, Pesce, Pizza', label: 'Tipologie' },
+      { id: 's3', value: '4.4/5', label: 'Recensioni' },
+      { id: 's4', value: '4.4', label: 'Voto Google' },
     ],
   },
   products: {
@@ -358,7 +359,7 @@ export const DEFAULT_CONFIG: SiteConfig = {
   },
   footer: {
     logoText: 'Bota',
-    description: 'Pizzeria Ristorante nel cuore di Fano. Pizza artigianale cotta nel forno a legna, cucina marchigiana e vini del territorio. Dal 1995.',
+    description: 'Ristorante e pizzeria a Fano, specializzato in cucina di pesce e carne. Ambiente accogliente in Viale Piceno.',
     columns: [
       {
         id: 'fc1',

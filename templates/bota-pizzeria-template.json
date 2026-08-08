@@ -70,6 +70,7 @@
   },
   "header": {
     "logoText": "Bota",
+    "logoUrl": "",
     "links": [
       {
         "id": "l1",
@@ -98,8 +99,8 @@
   },
   "hero": {
     "badge": "🍕 Pizzeria Ristorante — Fano",
-    "title": "Bota: la vera pizza marchigiana",
-    "subtitle": "Dal cuore di Fano, portiamo in tavola la passione per la pizza artigianale. Impasto a lunga lievitazione, ingredienti del territorio e forno a legna per un'esperienza autentica.",
+    "title": "Bota: pizza e specialità di pesce",
+    "subtitle": "Il posto migliore vicino al Santuario Della Madonna Del Ponte. I curatissimi pizza, pesce e tagliatelle potrebbero farti una ottima impressione. In base all'opinione degli ospiti, qui propongono un cordiale davvero ottimo.",
     "primaryCtaText": "Prenota Ora",
     "primaryCtaHref": "#contact",
     "secondaryCtaText": "Esplora il Menu",
@@ -153,47 +154,116 @@
       {
         "id": "f6",
         "icon": "Heart",
-        "badge": "Dal 1995",
-        "title": "Passione dal 1995",
-        "description": "Da oltre 25 anni portiamo avanti la tradizione della pizza marchigiana a Fano."
+        "badge": "Qualità",
+        "title": "Esperienza Memorabile",
+        "description": "Un'atmosfera spettacolare e un servizio encomiabile per rendere ogni tua visita indimenticabile."
       }
     ]
   },
   "about": {
     "heading": "La nostra storia",
-    "body": "Bota nasce a Fano nel 1995, nel cuore del centro storico, dalla passione di una famiglia per la vera pizza italiana. Da allora, portiamo avanti la tradizione con un impasto a lunga lievitazione, ingredienti selezionati e un forno a legna che regala alla nostra pizza quel sapore unico e inconfondibile. Oggi Bota è un punto di riferimento per gli amanti della buona cucina a Fano: non solo pizza, ma anche antipasti, primi piatti della tradizione marchigiana e dolci fatti in casa.",
+    "body": "Ristorante e pizzeria specializzato in pesce e carne, situato in Viale Piceno a Fano. Il professionale personale lavora duramente con un atteggiamento positivo, rendendo questo posto fantastico. Se vuoi goderti un encomiabile servizio, dovresti venire a trovarci. I nostri piatti vengono proposti a prezzi ragionevoli e molti clienti sono affezionati alla spettacolare atmosfera del locale.",
     "imageUrl": "https://mthxayxywvyjrnvuqkow.supabase.co/storage/v1/object/public/img-bota/bota/images/1786171309312_Screenshot%202026-08-08%20084129.png",
     "imageAlt": "L'accogliente sala interna del ristorante Bota a Fano",
     "stats": [
       {
         "id": "s1",
-        "label": "Anni di Storia",
-        "value": "25+"
+        "label": "Coperti",
+        "value": "100"
       },
       {
         "id": "s2",
-        "label": "Pizze Sfornate",
-        "value": "100k+"
+        "label": "Tipologie",
+        "value": "Carne, Pesce, Pizza"
       },
       {
         "id": "s3",
-        "label": "Varietà di Pizze",
-        "value": "50+"
+        "label": "Recensioni",
+        "value": "4.4/5"
       },
       {
         "id": "s4",
-        "label": "Voto dei Clienti",
-        "value": "4.8/5"
+        "label": "Voto Google",
+        "value": "4.4"
       }
     ]
   },
   "products": {
-    "heading": "Il Nostro Menu",
-    "subheading": "Pizze classiche, specialità della casa e prelibatezze del territorio",
     "layout": "grid",
     "columns": 3,
-    "categories": [],
-    "products": []
+    "heading": "Il Nostro Menu",
+    "products": [
+      {
+        "id": "pr1786182018803",
+        "name": "frittura di pesce",
+        "description": "Descrizione del prodotto",
+        "price": "€0",
+        "imageUrl": "https://mthxayxywvyjrnvuqkow.supabase.co/storage/v1/object/public/img-bota/bota/images/Screenshot%202026-08-08%20084610.png",
+        "badge": "",
+        "features": [],
+        "ingredients": "",
+        "allergens": "",
+        "buttonText": "Ordina Ora",
+        "buttonHref": "#contact",
+        "categoryId": "cat1786181919608",
+        "meal": "both",
+        "dishType": "antipasto",
+        "availableDays": [
+          "monday",
+          "wednesday",
+          "friday",
+          "sunday"
+        ]
+      },
+      {
+        "id": "pr1786182047394",
+        "name": "tagliere di carne",
+        "description": "Descrizione del prodotto",
+        "price": "€0",
+        "imageUrl": "https://mthxayxywvyjrnvuqkow.supabase.co/storage/v1/object/public/img-bota/bota/images/Screenshot%202026-08-08%20084746.png",
+        "badge": "",
+        "features": [],
+        "ingredients": "",
+        "allergens": "",
+        "buttonText": "Ordina Ora",
+        "buttonHref": "#contact",
+        "categoryId": "cat1786181935815",
+        "meal": "both",
+        "dishType": "antipasto",
+        "availableDays": [
+          "tuesday",
+          "thursday",
+          "saturday"
+        ]
+      }
+    ],
+    "categories": [
+      {
+        "id": "cat1786181919608",
+        "name": "antipasti di pesce",
+        "description": "Descrizione della categoria",
+        "icon": "Flame"
+      },
+      {
+        "id": "cat1786181935815",
+        "name": "antipasti di carne",
+        "description": "Descrizione della categoria",
+        "icon": "Soup"
+      },
+      {
+        "id": "cat1786181951075",
+        "name": "primi di carne",
+        "description": "Descrizione della categoria",
+        "icon": "Beef"
+      },
+      {
+        "id": "cat1786181964939",
+        "name": "primi di pesce",
+        "description": "Descrizione della categoria",
+        "icon": "Fish"
+      }
+    ],
+    "subheading": "Pizze classiche, specialità della casa e prelibatezze del territorio"
   },
   "pricing": {
     "heading": "Menu Degustazione",
@@ -320,7 +390,7 @@
       },
       {
         "id": "q5",
-        "answer": "Siamo aperti dal martedì alla domenica, dalle 18:30 alle 23:00. Il lunedì il ristorante è chiuso. A pranzo siamo aperti il sabato e la domenica dalle 12:30 alle 14:30.",
+        "answer": "Siamo aperti tutti i giorni. A pranzo: 12:00 – 14:30. A cena: 19:00 – 23:30 (fino alle 23:00 la domenica).",
         "category": "Ristorante",
         "question": "Quali sono gli orari di apertura?"
       }
@@ -333,51 +403,51 @@
       {
         "id": "o1",
         "day": "Lunedì",
-        "lunch": "Chiuso",
-        "closed": true,
-        "dinner": "Chiuso"
+        "lunch": "12:00 – 14:30",
+        "closed": false,
+        "dinner": "19:00 – 23:30"
       },
       {
         "id": "o2",
         "day": "Martedì",
-        "lunch": "Chiuso",
+        "lunch": "12:00 – 14:30",
         "closed": false,
-        "dinner": "18:30 – 23:00"
+        "dinner": "19:00 – 23:30"
       },
       {
         "id": "o3",
         "day": "Mercoledì",
-        "lunch": "Chiuso",
+        "lunch": "12:00 – 14:30",
         "closed": false,
-        "dinner": "18:30 – 23:00"
+        "dinner": "19:00 – 23:30"
       },
       {
         "id": "o4",
         "day": "Giovedì",
-        "lunch": "Chiuso",
+        "lunch": "12:00 – 14:30",
         "closed": false,
-        "dinner": "18:30 – 23:00"
+        "dinner": "19:00 – 23:30"
       },
       {
         "id": "o5",
         "day": "Venerdì",
-        "lunch": "Chiuso",
+        "lunch": "12:00 – 14:30",
         "closed": false,
-        "dinner": "18:30 – 23:00"
+        "dinner": "19:00 – 23:30"
       },
       {
         "id": "o6",
         "day": "Sabato",
-        "lunch": "12:30 – 14:30",
+        "lunch": "12:00 – 14:30",
         "closed": false,
-        "dinner": "18:30 – 23:00"
+        "dinner": "19:00 – 23:30"
       },
       {
         "id": "o7",
         "day": "Domenica",
-        "lunch": "12:30 – 14:30",
+        "lunch": "12:00 – 14:30",
         "closed": false,
-        "dinner": "18:30 – 23:00"
+        "dinner": "19:00 – 23:00"
       }
     ],
     "note": "La cucina chiude 30 minuti prima dell'orario indicato. Per il weekend consigliamo la prenotazione."
@@ -480,7 +550,7 @@
   },
   "footer": {
     "logoText": "Bota",
-    "description": "Pizzeria Ristorante nel cuore di Fano. Pizza artigianale cotta nel forno a legna, cucina marchigiana e vini del territorio. Dal 1995.",
+    "description": "Ristorante e pizzeria a Fano, specializzato in cucina di pesce e carne. Ambiente accogliente in Viale Piceno.",
     "columns": [
       {
         "id": "fc1",
@@ -513,13 +583,13 @@
           },
           {
             "id": "fl5",
-            "href": "tel:+390721000000",
-            "label": "Tel: 0721 000000"
+            "href": "tel:+39344142441",
+            "label": "Tel: 344 414 2441"
           },
           {
             "id": "fl6",
-            "href": "mailto:info@botafano.it",
-            "label": "info@botafano.it"
+            "href": "mailto:ristorantebota@gmail.com",
+            "label": "ristorantebota@gmail.com"
           }
         ],
         "title": "Contatti"
@@ -529,8 +599,8 @@
         "links": [
           {
             "id": "fl7",
-            "href": "https://maps.google.com/?q=Via+Arco+d'Augusto+12+Fano",
-            "label": "Via Arco d'Augusto, 12"
+            "href": "https://maps.google.com/?q=viale+Piceno+178/A+Fano",
+            "label": "viale Piceno 178/A"
           },
           {
             "id": "fl8",
@@ -568,13 +638,13 @@
         "icon": "Youtube"
       }
     ],
-    "copyright": "© 2024 Bota Pizzeria Ristorante — Fano. Tutti i diritti riservati.",
+    "copyright": "© 2024 Ristorante Bota — Fano. Tutti i diritti riservati.",
     "showLegalDisclaimer": false,
     "legalText": ""
   },
   "whatsapp": {
     "enabled": true,
-    "phone": "393331234567",
+    "phone": "3444142441",
     "message": "Ciao Bota! Vorrei prenotare un tavolo."
   },
   "cookie": {

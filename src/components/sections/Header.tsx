@@ -25,8 +25,14 @@ export function Header({ config }: { config: HeaderConfig }) {
       style={{ borderBottom: scrolled ? `1px solid var(--color-border)` : 'none' }}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 lg:px-8">
-        <a href="#" className="text-xl font-extrabold tracking-tight" style={{ color: 'var(--color-primary)' }}>
-          {config.logoText}
+        <a href="#" className="flex items-center gap-2">
+          {config.logoUrl ? (
+            <img src={config.logoUrl} alt={config.logoText} className="h-10 w-auto object-contain" />
+          ) : (
+            <span className="text-xl font-extrabold tracking-tight" style={{ color: 'var(--color-primary)' }}>
+              {config.logoText}
+            </span>
+          )}
         </a>
 
         <nav className="hidden items-center gap-8 md:flex">

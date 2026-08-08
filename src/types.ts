@@ -59,6 +59,7 @@ export interface AnnouncementConfig {
 
 export interface HeaderConfig {
   logoText: string;
+  logoUrl: string;
   links: NavLink[];
   ctaText: string;
   ctaHref: string;
