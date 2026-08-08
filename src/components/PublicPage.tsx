@@ -32,7 +32,8 @@ const SECTION_RENDERERS: Record<SectionId, (config: SiteConfig) => React.ReactNo
 };
 
 export function PublicPage({ config }: { config: SiteConfig }) {
-  const enabled = config.sections.filter((s) => s.enabled);
+  const sections = config.sections || [];
+  const enabled = sections.filter((s) => s.enabled);
 
   return (
     <div className="min-h-screen" style={{ backgroundColor: 'var(--color-bg)' }}>

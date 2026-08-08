@@ -148,10 +148,15 @@ function mergeWithDefaults(partial: Partial<SiteConfig>): SiteConfig {
   const base = structuredClone(DEFAULT_CONFIG);
   if (!partial || typeof partial !== 'object') return base;
   
-  // For products, if partial.products is explicitly provided, use it as-is
-  // This ensures that if admin deletes all products, the empty array is respected
+  // For products, if partial.products is explicitly provided, merge it carefully
+  // ensuring nested arrays remain arrays even if missing from the partial
   const productsConfig = partial.products !== undefined 
-    ? partial.products 
+    ? {
+        ...base.products,
+        ...partial.products,
+        categories: (partial.products as Partial<SiteConfig['products']>).categories ?? base.products.categories,
+        products: (partial.products as Partial<SiteConfig['products']>).products ?? base.products.products,
+      }
     : base.products;
   
   return {

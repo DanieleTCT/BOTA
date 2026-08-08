@@ -25,6 +25,10 @@ export function InteractiveMenu({ config }: { config: SiteConfig }) {
   const [selectedMeal, setSelectedMeal] = useState<'lunch' | 'dinner'>('lunch');
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
 
+  // Defensive defaults in case arrays are missing from config
+  const categories = products?.categories || [];
+  const productList = products?.products || [];
+
   const nightTheme = products?.nightModeTheme || {
     enabled: true,
     background: '#0f172a',
@@ -42,10 +46,10 @@ export function InteractiveMenu({ config }: { config: SiteConfig }) {
   }
 
   // Get lunch products (for weekly calendar)
-  const lunchProducts = products.products.filter(p => p.meal === 'lunch' || p.meal === 'both');
-  
+  const lunchProducts = productList.filter(p => p.meal === 'lunch' || p.meal === 'both');
+
   // Get dinner products (alla carta)
-  const dinnerProducts = products.products.filter(p => p.meal === 'dinner' || p.meal === 'both');
+  const dinnerProducts = productList.filter(p => p.meal === 'dinner' || p.meal === 'both');
 
   const daysOfWeek: { id: DayOfWeek; label: string; short: string }[] = [
     { id: 'monday', label: 'Lunedì', short: 'Lun' },
@@ -77,7 +81,7 @@ export function InteractiveMenu({ config }: { config: SiteConfig }) {
   };
 
   // Group dinner products by category
-  const dinnerByCategory = products.categories.map(category => ({
+  const dinnerByCategory = categories.map(category => ({
     category,
     products: dinnerProducts.filter(p => p.categoryId === category.id)
   })).filter(group => group.products.length > 0);
