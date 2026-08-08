@@ -147,6 +147,13 @@ export function importConfig(file: File): Promise<SiteConfig> {
 function mergeWithDefaults(partial: Partial<SiteConfig>): SiteConfig {
   const base = structuredClone(DEFAULT_CONFIG);
   if (!partial || typeof partial !== 'object') return base;
+  
+  // For products, if partial.products is explicitly provided, use it as-is
+  // This ensures that if admin deletes all products, the empty array is respected
+  const productsConfig = partial.products !== undefined 
+    ? partial.products 
+    : base.products;
+  
   return {
     ...base,
     ...partial,
@@ -156,7 +163,7 @@ function mergeWithDefaults(partial: Partial<SiteConfig>): SiteConfig {
     hero: { ...base.hero, ...(partial.hero ?? {}) },
     features: { ...base.features, ...(partial.features ?? {}) },
     about: { ...base.about, ...(partial.about ?? {}) },
-    products: { ...base.products, ...(partial.products ?? {}) },
+    products: productsConfig,
     pricing: { ...base.pricing, ...(partial.pricing ?? {}) },
     testimonials: { ...base.testimonials, ...(partial.testimonials ?? {}) },
     faq: { ...base.faq, ...(partial.faq ?? {}) },

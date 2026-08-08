@@ -194,322 +194,19 @@
     "columns": 3,
     "categories": [
       {
-        "id": "cat1",
-        "icon": "Pizza",
-        "name": "Pizze Classiche",
-        "description": "Le pizze tradizionali che hanno fatto la storia"
+        "id": "cat1786177183581",
+        "name": "Le nostre pizze",
+        "description": "Descrizione della categoria",
+        "icon": "Pizza"
       },
       {
-        "id": "cat2",
-        "icon": "Star",
-        "name": "Specialità della Casa",
-        "description": "Le nostre creazioni esclusive"
-      },
-      {
-        "id": "cat3",
-        "icon": "Utensils",
-        "name": "Antipasti",
-        "description": "Per iniziare la serata"
-      },
-      {
-        "id": "cat4",
-        "icon": "Soup",
-        "name": "Primi Piatti",
-        "description": "La tradizione marchigiana"
-      },
-      {
-        "id": "cat5",
-        "icon": "Cake",
-        "name": "Dolci",
-        "description": "Fatti in casa con passione"
-      },
-      {
-        "id": "cat6",
-        "icon": "Wine",
-        "name": "Bevande",
-        "description": "Vini, birre e molto altro"
+        "id": "cat1786177282798",
+        "name": "Primi di Mare",
+        "description": "Descrizione della categoria",
+        "icon": "Fish"
       }
     ],
     "products": [
-      {
-        "id": "pr1",
-        "meal": "both",
-        "name": "Margherita",
-        "badge": "Classica",
-        "price": "€7,00",
-        "dishType": "pizza",
-        "features": [
-          "Pomodoro San Marzano",
-          "Fior di latte",
-          "Basilico fresco",
-          "Olio EVO"
-        ],
-        "imageUrl": "https://mthxayxywvyjrnvuqkow.supabase.co/storage/v1/object/public/img-bota/bota/images/Screenshot%202026-08-06%20162124.png",
-        "allergens": "Lattosio, glutine",
-        "buttonHref": "#contact",
-        "buttonText": "Ordina Ora",
-        "categoryId": "cat1",
-        "description": "Pomodoro San Marzano, mozzarella fior di latte, basilico fresco, olio extravergine d'oliva.",
-        "ingredients": "Pomodoro San Marzano DOP, mozzarella fior di latte, basilico fresco, olio extravergine d'oliva italiano."
-      },
-      {
-        "id": "pr2",
-        "meal": "both",
-        "name": "Marinara",
-        "badge": "Tradizionale",
-        "price": "€6,00",
-        "dishType": "pizza",
-        "features": [
-          "Pomodoro San Marzano",
-          "Aglio",
-          "Origano",
-          "Olio EVO"
-        ],
-        "imageUrl": "https://mthxayxywvyjrnvuqkow.supabase.co/storage/v1/object/public/img-bota/bota/images/Screenshot%202026-08-06%20171543.png",
-        "allergens": "Glutine",
-        "buttonHref": "#contact",
-        "buttonText": "Ordina Ora",
-        "categoryId": "cat1",
-        "description": "Pomodoro San Marzano, aglio, origano, olio extravergine d'oliva. La più semplice e genuina.",
-        "ingredients": "Pomodoro San Marzano DOP, aglio fresco, origano, olio extravergine d'oliva."
-      },
-      {
-        "id": "pr3",
-        "meal": "both",
-        "name": "Diavola",
-        "badge": "Piccante",
-        "price": "€9,00",
-        "dishType": "pizza",
-        "features": [
-          "Pomodoro",
-          "Fior di latte",
-          "Salame piccante",
-          "Olive nere"
-        ],
-        "imageUrl": "https://mthxayxywvyjrnvuqkow.supabase.co/storage/v1/object/public/img-bota/bota/images/Screenshot%202026-08-08%20084127.png",
-        "allergens": "Lattosio, glutine, sedano",
-        "buttonHref": "#contact",
-        "buttonText": "Ordina Ora",
-        "categoryId": "cat2",
-        "description": "Pomodoro, mozzarella, salame piccante, olive nere. Per chi ama il gusto deciso.",
-        "ingredients": "Pomodoro San Marzano, mozzarella fior di latte, salame piccante artigianale, olive nere denocciolate."
-      },
-      {
-        "id": "pr4",
-        "meal": "both",
-        "name": "Bota Speciale",
-        "badge": "Signature",
-        "price": "€14,00",
-        "dishType": "pizza",
-        "features": [
-          "Crema di tartufo",
-          "Funghi porcini",
-          "Prosciutto crudo",
-          "Parmigiano"
-        ],
-        "imageUrl": "https://mthxayxywvyjrnvuqkow.supabase.co/storage/v1/object/public/img-bota/bota/images/Screenshot%202026-08-08%20084525.png",
-        "allergens": "Lattosio, glutine",
-        "buttonHref": "#contact",
-        "buttonText": "Ordina Ora",
-        "categoryId": "cat2",
-        "description": "La nostra pizza signature: crema di tartufo, funghi porcini, prosciutto crudo e scaglie di parmigiano.",
-        "ingredients": "Crema di tartufo, funghi porcini freschi, prosciutto crudo di Parma, scaglie di parmigiano 36 mesi, mozzarella."
-      },
-      {
-        "id": "pr5",
-        "meal": "both",
-        "name": "Quattro Formaggi",
-        "badge": "Gourmet",
-        "price": "€10,50",
-        "dishType": "pizza",
-        "features": [
-          "Mozzarella",
-          "Gorgonzola",
-          "Taleggio",
-          "Parmigiano"
-        ],
-        "imageUrl": "https://mthxayxywvyjrnvuqkow.supabase.co/storage/v1/object/public/img-bota/bota/images/Screenshot%202026-08-08%20084536.png",
-        "allergens": "Lattosio, glutine",
-        "buttonHref": "#contact",
-        "buttonText": "Ordina Ora",
-        "categoryId": "cat2",
-        "description": "Mozzarella, gorgonzola, taleggio e parmigiano su base di pomodoro e origano.",
-        "ingredients": "Mozzarella, gorgonzola DOP, taleggio, parmigiano reggiano 24 mesi, pomodoro San Marzano."
-      },
-      {
-        "id": "pr6",
-        "meal": "both",
-        "name": "Prosciutto e Rucola",
-        "badge": "Classica",
-        "price": "€11,00",
-        "dishType": "pizza",
-        "features": [
-          "Pomodoro",
-          "Fior di latte",
-          "Prosciutto di Parma",
-          "Rucola fresca"
-        ],
-        "imageUrl": "https://mthxayxywvyjrnvuqkow.supabase.co/storage/v1/object/public/img-bota/bota/images/Screenshot%202026-08-08%20084542.png",
-        "allergens": "Lattosio, glutine",
-        "buttonHref": "#contact",
-        "buttonText": "Ordina Ora",
-        "categoryId": "cat1",
-        "description": "Pomodoro, mozzarella, prosciutto crudo di Parma e rucola fresca. Un classico intramontabile.",
-        "ingredients": "Pomodoro San Marzano, mozzarella fior di latte, prosciutto crudo di Parma 18 mesi, rucola fresca."
-      },
-      {
-        "id": "pr7",
-        "meal": "lunch",
-        "name": "Bruschetta al Pomodoro",
-        "badge": "Vegetariano",
-        "price": "€6,50",
-        "dishType": "antipasto",
-        "features": [
-          "Pomodori freschi",
-          "Aglio",
-          "Basilico",
-          "Olio EVO"
-        ],
-        "imageUrl": "https://mthxayxywvyjrnvuqkow.supabase.co/storage/v1/object/public/img-bota/bota/images/Screenshot%202026-08-08%20084553.png",
-        "allergens": "Glutine",
-        "buttonHref": "#contact",
-        "buttonText": "Ordina Ora",
-        "categoryId": "cat3",
-        "description": "Pane bruscato con pomodori freschi, aglio e basilico. Antipasto perfetto per iniziare.",
-        "ingredients": "Pane artigianale, pomodori San Marzano freschi, aglio fresco, basilico, olio extravergine d'oliva.",
-        "availableDays": [
-          "monday",
-          "tuesday",
-          "wednesday",
-          "thursday",
-          "friday"
-        ]
-      },
-      {
-        "id": "pr8",
-        "meal": "lunch",
-        "name": "Prosciutto e Melone",
-        "badge": "Stagionale",
-        "price": "€8,50",
-        "dishType": "antipasto",
-        "features": [
-          "Prosciutto di Parma",
-          "Melone fresco"
-        ],
-        "imageUrl": "https://mthxayxywvyjrnvuqkow.supabase.co/storage/v1/object/public/img-bota/bota/images/Screenshot%202026-08-08%20084602.png",
-        "allergens": "Nessuno",
-        "buttonHref": "#contact",
-        "buttonText": "Ordina Ora",
-        "categoryId": "cat3",
-        "description": "Prosciutto di Parma con melone fresco di stagione.",
-        "ingredients": "Prosciutto di Parma 18 mesi, melone fresco di stagione.",
-        "availableDays": [
-          "monday",
-          "tuesday",
-          "wednesday"
-        ]
-      },
-      {
-        "id": "pr9",
-        "meal": "lunch",
-        "name": "Insalata di Polpo",
-        "badge": "Fresco",
-        "price": "€10,00",
-        "dishType": "antipasto",
-        "features": [
-          "Polpo",
-          "Patate",
-          "Olive"
-        ],
-        "imageUrl": "https://mthxayxywvyjrnvuqkow.supabase.co/storage/v1/object/public/img-bota/bota/images/Screenshot%202026-08-08%20084610.png",
-        "allergens": "Pesce",
-        "buttonHref": "#contact",
-        "buttonText": "Ordina Ora",
-        "categoryId": "cat3",
-        "description": "Polpo tenero con patate, olive e pomodorini.",
-        "ingredients": "Polpo mediterraneo, patate, olive taggiasche, pomodorini, prezzemolo, olio EVO.",
-        "availableDays": [
-          "thursday",
-          "friday"
-        ]
-      },
-      {
-        "id": "pr10",
-        "meal": "lunch",
-        "name": "Risotto ai Funghi Porcini",
-        "badge": "Chef",
-        "price": "€12,00",
-        "dishType": "primo",
-        "features": [
-          "Riso Carnaroli",
-          "Funghi Porcini",
-          "Parmigiano",
-          "Burro di malga"
-        ],
-        "imageUrl": "https://mthxayxywvyjrnvuqkow.supabase.co/storage/v1/object/public/img-bota/bota/images/Screenshot%202026-08-08%20084627.png",
-        "allergens": "Lattosio",
-        "buttonHref": "#contact",
-        "buttonText": "Ordina Ora",
-        "categoryId": "cat4",
-        "description": "Riso carnaroli, funghi porcini freschi, parmigiano reggiano e burro di malga.",
-        "ingredients": "Riso Carnaroli, funghi porcini freschi, parmigiano reggiano 24 mesi, burro di malga, cipolla dorata.",
-        "availableDays": [
-          "monday",
-          "tuesday",
-          "wednesday",
-          "thursday",
-          "friday"
-        ]
-      },
-      {
-        "id": "pr11",
-        "meal": "lunch",
-        "name": "Spaghetti alla Carbonara",
-        "badge": "Classica",
-        "price": "€11,00",
-        "dishType": "primo",
-        "features": [
-          "Guanciale",
-          "Pecorino",
-          "Tuorlo d'uovo"
-        ],
-        "imageUrl": "https://mthxayxywvyjrnvuqkow.supabase.co/storage/v1/object/public/img-bota/bota/images/Screenshot%202026-08-08%20084634.png",
-        "allergens": "Glutine, Uova",
-        "buttonHref": "#contact",
-        "buttonText": "Ordina Ora",
-        "categoryId": "cat4",
-        "description": "La tradizione romana: guanciale, pecorino, tuorlo d'uovo e pepe nero.",
-        "ingredients": "Spaghetti di grano duro, guanciale artigianale, pecorino romano DOP, tuorli d'uovo freschi, pepe nero.",
-        "availableDays": [
-          "monday",
-          "wednesday",
-          "friday"
-        ]
-      },
-      {
-        "id": "pr12",
-        "meal": "lunch",
-        "name": "Penne all'Arrabbiata",
-        "badge": "Piccante",
-        "price": "€9,00",
-        "dishType": "primo",
-        "features": [
-          "Pomodoro",
-          "Peperoncino",
-          "Aglio"
-        ],
-        "imageUrl": "https://mthxayxywvyjrnvuqkow.supabase.co/storage/v1/object/public/img-bota/bota/images/Screenshot%202026-08-08%20084746.png",
-        "allergens": "Glutine",
-        "buttonHref": "#contact",
-        "buttonText": "Ordina Ora",
-        "categoryId": "cat4",
-        "description": "Pomodoro, aglio, peperoncino e prezzemolo. Il primo piccante della tradizione.",
-        "ingredients": "Penne di grano duro, pomodoro San Marzano, aglio fresco, peperoncino calabrese, prezzemolo, olio EVO.",
-        "availableDays": [
-          "tuesday",
-          "thursday"
-        ]
-      },
       {
         "id": "pr13",
         "meal": "lunch",
@@ -586,46 +283,47 @@
         ]
       },
       {
-        "id": "pr16",
-        "meal": "both",
-        "name": "Tiramisù Classico",
-        "badge": "Fatto in Casa",
-        "price": "€7,00",
-        "dishType": "dolce",
-        "features": [
-          "Mascarpone",
-          "Caffè espresso",
-          "Savoiardi",
-          "Cacao"
-        ],
+        "id": "pr1786177199462",
+        "name": "Diavola",
+        "description": "Descrizione del prodotto",
+        "price": "€8",
         "imageUrl": "https://mthxayxywvyjrnvuqkow.supabase.co/storage/v1/object/public/img-bota/bota/images/Screenshot%202026-08-08%20084724.png",
-        "allergens": "Glutine, lattosio, uova",
-        "buttonHref": "#contact",
+        "badge": "",
+        "features": [],
+        "ingredients": "",
+        "allergens": "",
         "buttonText": "Ordina Ora",
-        "categoryId": "cat5",
-        "description": "Mascarpone, caffè espresso, savoiardi e cacao amaro. Il dolce italiano per eccellenza.",
-        "ingredients": "Mascarpone fresco, caffè espresso, savoiardi, uova fresche, zucchero, cacao amaro."
+        "buttonHref": "#contact",
+        "categoryId": "cat1786177183581",
+        "meal": "dinner",
+        "dishType": "pizza",
+        "availableDays": [
+          "monday",
+          "wednesday",
+          "friday",
+          "sunday"
+        ]
       },
       {
-        "id": "pr17",
-        "meal": "both",
-        "name": "Vino Verdicchio DOC",
-        "badge": "DOP",
-        "price": "€18,00",
-        "dishType": "bevanda",
-        "features": [
-          "Verdicchio DOC",
-          "Marchigiano",
-          "Secco",
-          "8° alcol"
-        ],
-        "imageUrl": "https://mthxayxywvyjrnvuqkow.supabase.co/storage/v1/object/public/img-bota/bota/images/Screenshot%202026-08-08%20084738.png",
-        "allergens": "Solfiti",
-        "buttonHref": "#contact",
+        "id": "pr1786177326350",
+        "name": "Frittura di pesce misto",
+        "description": "Descrizione del prodotto",
+        "price": "€12",
+        "imageUrl": "https://mthxayxywvyjrnvuqkow.supabase.co/storage/v1/object/public/img-bota/bota/images/Screenshot%202026-08-08%20084610.png",
+        "badge": "",
+        "features": [],
+        "ingredients": "",
+        "allergens": "",
         "buttonText": "Ordina Ora",
-        "categoryId": "cat6",
-        "description": "Vino bianco marchigiano, secco e aromatico. Perfetto con pesce e antipasti.",
-        "ingredients": "Vino Verdicchio dei Castelli di Jesi DOC, 12% vol, servito a 8-10°C."
+        "buttonHref": "#contact",
+        "categoryId": "cat1786177282798",
+        "meal": "both",
+        "dishType": "primo",
+        "availableDays": [
+          "tuesday",
+          "thursday",
+          "saturday"
+        ]
       }
     ]
   },
