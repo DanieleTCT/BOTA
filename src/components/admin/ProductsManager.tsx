@@ -1,4 +1,4 @@
-import { Plus, Trash2, GripVertical, BookOpen } from 'lucide-react';
+import { Plus, Trash2, GripVertical, BookOpen, RotateCcw } from 'lucide-react';
 import type { SiteConfig, Product, ProductsConfig, MenuCategory } from '@/types';
 import type { AdminContext } from './AdminDashboard';
 
@@ -37,6 +37,15 @@ export function ProductsManager({ config, ctx }: { config: SiteConfig; ctx: Admi
   const updateProducts = (updater: (p: ProductsConfig) => ProductsConfig) => {
     const newProducts = updater(products);
     ctx.update('products', newProducts);
+  };
+
+  const clearAllProducts = () => {
+    if (!confirm('Sei sicuro di voler eliminare TUTTI i prodotti e le categorie? Questa operazione è irreversibile.')) return;
+    updateProducts(() => ({
+      ...products,
+      categories: [],
+      products: []
+    }));
   };
 
   const addCategory = () => {
@@ -193,13 +202,23 @@ export function ProductsManager({ config, ctx }: { config: SiteConfig; ctx: Admi
           <h3 className="text-lg font-semibold text-slate-800">Categorie Menu</h3>
           <p className="text-xs text-slate-500 mt-0.5">3 categorie per pagina — totale: {products.categories.length} categorie e {products.products.length} prodotti</p>
         </div>
-        <button
-          onClick={addCategory}
-          className="flex items-center gap-1.5 rounded-lg bg-blue-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-blue-700"
-        >
-          <Plus className="h-4 w-4" />
-          Aggiungi Categoria
-        </button>
+        <div className="flex gap-2">
+          <button
+            onClick={clearAllProducts}
+            className="flex items-center gap-1.5 rounded-lg border-2 border-rose-300 bg-white px-4 py-2 text-sm font-semibold text-rose-600 transition hover:bg-rose-50"
+            title="Cancella tutti i prodotti e le categorie"
+          >
+            <RotateCcw className="h-4 w-4" />
+            Reset Menu
+          </button>
+          <button
+            onClick={addCategory}
+            className="flex items-center gap-1.5 rounded-lg bg-blue-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-blue-700"
+          >
+            <Plus className="h-4 w-4" />
+            Aggiungi Categoria
+          </button>
+        </div>
       </div>
 
       <div className="mb-8 space-y-3">
