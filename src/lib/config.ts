@@ -25,11 +25,23 @@ export async function loadConfigFromSupabase(): Promise<SiteConfig> {
       .maybeSingle();
     
     if (error || !data || !data.data || Object.keys(data.data).length === 0) {
-      // No config exists for this site, return defaults
-      return structuredClone(DEFAULT_CONFIG);
+      // No config exists for this site, fall back to local config (if any)
+      return loadConfig();
     }
     
-    return mergeWithDefaults(data.data as Partial<SiteConfig>);
+    // If the remote config is identical to the default (not customized),
+    // prefer the local config if it exists (to avoid losing admin's local edits)
+    const remoteRaw = data.data as Partial<SiteConfig>;
+    const isDefault = JSON.stringify(remoteRaw) === JSON.stringify(DEFAULT_CONFIG);
+    if (isDefault) {
+      const local = loadConfig();
+      // Only use local if it differs from default (i.e. has customizations)
+      if (JSON.stringify(local) !== JSON.stringify(DEFAULT_CONFIG)) {
+        return local;
+      }
+    }
+    
+    return mergeWithDefaults(remoteRaw);
   } catch {
     return loadConfig();
   }

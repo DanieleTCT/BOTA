@@ -6,7 +6,7 @@ import {
 import type { SectionId } from '@/types';
 import { useConfig } from '@/hooks/useConfig';
 import { useToast } from '@/hooks/useToast';
-import { resetConfig, exportConfig, importConfig, initializeDefaultConfig } from '@/lib/config';
+import { resetConfig, exportConfig, importConfig } from '@/lib/config';
 import { SectionManager } from '@/components/admin/SectionManager';
 import { ThemeEditor } from '@/components/admin/ThemeEditor';
 import { ContentEditors } from '@/components/admin/ContentEditors';
@@ -29,9 +29,8 @@ const TABS: { id: Tab; label: string; icon: typeof LayoutGrid }[] = [
   { id: 'backup', label: 'Backup', icon: Download },
 ];
 
-export function AdminDashboard() {
-  const ctx = useConfig();
-  const { config } = ctx;
+export function AdminDashboard({ ctx }: { ctx: AdminContext }) {
+  const { config, saveStatus } = ctx;
   const { notify } = useToast();
   const [tab, setTab] = useState<Tab>('sections');
 
@@ -41,15 +40,6 @@ export function AdminDashboard() {
   const [mediaError, setMediaError] = useState<string | null>(null);
   const [uploading, setUploading] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
-
-  // Initialize default config in Supabase on mount if needed
-  const [initDone, setInitDone] = useState(false);
-  if (!initDone) {
-    initializeDefaultConfig().then((ok) => {
-      if (ok) notify('Configurazione online inizializzata', 'success');
-      setInitDone(true);
-    });
-  }
 
   const handleReset = () => {
     if (confirm('Reset tutti i contenuti e le impostazioni ai valori predefiniti? Operazione irreversibile.')) {
@@ -154,6 +144,33 @@ export function AdminDashboard() {
             </div>
           </div>
           <div className="flex items-center gap-2">
+            {/* Save status indicator */}
+            <div className="hidden items-center gap-1.5 rounded-lg border border-slate-200 px-3 py-1.5 text-xs font-semibold sm:flex">
+              {saveStatus === 'saving' && (
+                <>
+                  <span className="h-2 w-2 animate-pulse rounded-full bg-amber-500" />
+                  <span className="text-amber-600">Salvataggio...</span>
+                </>
+              )}
+              {saveStatus === 'saved' && (
+                <>
+                  <span className="h-2 w-2 rounded-full bg-emerald-500" />
+                  <span className="text-emerald-600">Salvato</span>
+                </>
+              )}
+              {saveStatus === 'error' && (
+                <>
+                  <span className="h-2 w-2 rounded-full bg-rose-500" />
+                  <span className="text-rose-600">Errore salvataggio</span>
+                </>
+              )}
+              {saveStatus === 'idle' && (
+                <>
+                  <span className="h-2 w-2 rounded-full bg-slate-300" />
+                  <span className="text-slate-400">Auto-save attivo</span>
+                </>
+              )}
+            </div>
             <a
               href="/"
               className="flex items-center gap-1.5 rounded-lg border border-slate-200 px-3 py-1.5 text-xs font-semibold text-slate-600 transition hover:bg-slate-50"

@@ -43,7 +43,7 @@ function AppContent({ isAdmin }: { isAdmin: boolean }) {
     );
   }
 
-  return isAdmin ? <AdminDashboard /> : <PublicPage config={config} />;
+  return isAdmin ? <AdminDashboard ctx={ctx} /> : <PublicPage config={config} />;
 }
 
 export default App;

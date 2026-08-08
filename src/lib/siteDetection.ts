@@ -32,25 +32,26 @@ export async function getCurrentSiteId(): Promise<string> {
       return siteIdFromUrl;
     }
 
-    // 2. Check for site ID in localStorage (for admin panel)
+    // 2. Check environment variable (highest priority for a single-site deployment)
+    //    This ensures admin and visitors always use the same site ID.
+    const envSiteId = import.meta.env.VITE_SITE_ID;
+    if (envSiteId) {
+      localStorage.setItem('current_site_id', envSiteId);
+      return envSiteId;
+    }
+
+    // 3. Check for site ID in localStorage (for admin panel multi-site switching)
     const storedSiteId = localStorage.getItem('current_site_id');
     if (storedSiteId) {
       return storedSiteId;
     }
 
-    // 3. Detect from domain/subdomain
+    // 4. Detect from domain/subdomain
     const domain = window.location.hostname;
     const siteIdFromDomain = await getSiteIdByDomain(domain);
     if (siteIdFromDomain) {
       localStorage.setItem('current_site_id', siteIdFromDomain);
       return siteIdFromDomain;
-    }
-
-    // 4. Check environment variable
-    const envSiteId = import.meta.env.VITE_SITE_ID;
-    if (envSiteId) {
-      localStorage.setItem('current_site_id', envSiteId);
-      return envSiteId;
     }
 
     // 5. Fallback to default site

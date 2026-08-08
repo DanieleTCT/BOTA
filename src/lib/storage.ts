@@ -21,7 +21,7 @@ export async function uploadSiteFile(path: string, file: File): Promise<string> 
   const fullPath = `${basePath}/${Date.now()}_${path}`;
   
   const { error } = await supabase.storage.from(BUCKET).upload(fullPath, file, {
-    cacheControl: '3600',
+    cacheControl: '60',
     upsert: true,
     contentType: file.type || 'application/octet-stream',
   });
@@ -41,7 +41,7 @@ export async function uploadImage(file: File): Promise<{ path: string; url: stri
     const path = `${basePath}/${crypto.randomUUID()}.${ext}`;
     
     const { error } = await supabase.storage.from(BUCKET).upload(path, file, {
-      cacheControl: '3600',
+      cacheControl: '60',
       upsert: false,
       contentType: file.type,
     });
@@ -58,7 +58,11 @@ export async function uploadImage(file: File): Promise<{ path: string; url: stri
 export function getSiteFilePublicUrl(path: string): string | null {
   if (!supabase) return null;
   const result = supabase.storage.from(BUCKET).getPublicUrl(path);
-  return result.data?.publicUrl || null;
+  const url = result.data?.publicUrl || null;
+  if (!url) return null;
+  // Add anti-cache query param so visitors always see the latest version
+  const separator = url.includes('?') ? '&' : '?';
+  return `${url}${separator}t=${Date.now()}`;
 }
 
 export async function listSiteFiles(prefix = ''): Promise<Array<{ name: string; url: string; id?: string; updated_at?: string }>> {

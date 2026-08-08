@@ -98,9 +98,9 @@
     "sticky": true
   },
   "hero": {
-    "badge": "🍕 Pizzeria Ristorante — Fano",
-    "title": "Bota: pizza e specialità di pesce",
-    "subtitle": "Il posto migliore vicino al Santuario Della Madonna Del Ponte. I curatissimi pizza, pesce e tagliatelle potrebbero farti una ottima impressione. In base all'opinione degli ospiti, qui propongono un cordiale davvero ottimo.",
+    "badge": " Ristorante e Pizzeria",
+    "title": "Bota: Un Mondo di bonta', dal Mare alle Montagne",
+    "subtitle": "Il posto migliore vicino al Santuario Della Madonna Del Ponte per degustare prodotti locali di alta qualita' e freschezza",
     "primaryCtaText": "Prenota Ora",
     "primaryCtaHref": "#contact",
     "secondaryCtaText": "Esplora il Menu",
@@ -189,25 +189,52 @@
     ]
   },
   "products": {
+    "heading": "Il Nostro Menu",
+    "subheading": "Pizze classiche, specialità della casa e prelibatezze del territorio",
     "layout": "grid",
     "columns": 3,
-    "heading": "Il Nostro Menu",
+    "categories": [
+      {
+        "id": "cat1786181919608",
+        "icon": "Flame",
+        "name": "antipasti di pesce",
+        "description": "Descrizione della categoria"
+      },
+      {
+        "id": "cat1786181935815",
+        "icon": "Soup",
+        "name": "antipasti di carne",
+        "description": "Descrizione della categoria"
+      },
+      {
+        "id": "cat1786181951075",
+        "icon": "Beef",
+        "name": "primi di carne",
+        "description": "Descrizione della categoria"
+      },
+      {
+        "id": "cat1786181964939",
+        "icon": "Fish",
+        "name": "primi di pesce",
+        "description": "Descrizione della categoria"
+      }
+    ],
     "products": [
       {
         "id": "pr1786182018803",
-        "name": "frittura di pesce",
-        "description": "Descrizione del prodotto",
-        "price": "€0",
-        "imageUrl": "https://mthxayxywvyjrnvuqkow.supabase.co/storage/v1/object/public/img-bota/bota/images/Screenshot%202026-08-08%20084610.png",
-        "badge": "",
-        "features": [],
-        "ingredients": "",
-        "allergens": "",
-        "buttonText": "Ordina Ora",
-        "buttonHref": "#contact",
-        "categoryId": "cat1786181919608",
         "meal": "both",
+        "name": "frittura di pesce",
+        "badge": "",
+        "price": "€0",
         "dishType": "antipasto",
+        "features": [],
+        "imageUrl": "https://mthxayxywvyjrnvuqkow.supabase.co/storage/v1/object/public/img-bota/bota/images/Screenshot%202026-08-08%20084610.png",
+        "allergens": "",
+        "buttonHref": "#contact",
+        "buttonText": "Ordina Ora",
+        "categoryId": "cat1786181919608",
+        "description": "Descrizione del prodotto",
+        "ingredients": "",
         "availableDays": [
           "monday",
           "wednesday",
@@ -217,19 +244,62 @@
       },
       {
         "id": "pr1786182047394",
-        "name": "tagliere di carne",
-        "description": "Descrizione del prodotto",
-        "price": "€0",
-        "imageUrl": "https://mthxayxywvyjrnvuqkow.supabase.co/storage/v1/object/public/img-bota/bota/images/Screenshot%202026-08-08%20084746.png",
-        "badge": "",
-        "features": [],
-        "ingredients": "",
-        "allergens": "",
-        "buttonText": "Ordina Ora",
-        "buttonHref": "#contact",
-        "categoryId": "cat1786181935815",
         "meal": "both",
+        "name": "tagliere di carne",
+        "badge": "",
+        "price": "€0",
         "dishType": "antipasto",
+        "features": [],
+        "imageUrl": "https://mthxayxywvyjrnvuqkow.supabase.co/storage/v1/object/public/img-bota/bota/images/Screenshot%202026-08-08%20084746.png",
+        "allergens": "",
+        "buttonHref": "#contact",
+        "buttonText": "Ordina Ora",
+        "categoryId": "cat1786181935815",
+        "description": "Descrizione del prodotto",
+        "ingredients": "",
+        "availableDays": [
+          "tuesday",
+          "thursday",
+          "saturday"
+        ]
+      },
+      {
+        "id": "pr1786189388306",
+        "meal": "both",
+        "name": "spaghetti allo scoglio",
+        "badge": "",
+        "price": "€0",
+        "dishType": "primo",
+        "features": [],
+        "imageUrl": "https://mthxayxywvyjrnvuqkow.supabase.co/storage/v1/object/public/img-bota/bota/images/Screenshot%202026-08-08%20084542.png",
+        "allergens": "",
+        "buttonHref": "#contact",
+        "buttonText": "Ordina Ora",
+        "categoryId": "cat1786181964939",
+        "description": "Descrizione del prodotto",
+        "ingredients": "",
+        "availableDays": [
+          "monday",
+          "wednesday",
+          "friday",
+          "sunday"
+        ]
+      },
+      {
+        "id": "pr1786189418939",
+        "meal": "both",
+        "name": "paccheroni all'astice",
+        "badge": "",
+        "price": "€0",
+        "dishType": "altro",
+        "features": [],
+        "imageUrl": "https://mthxayxywvyjrnvuqkow.supabase.co/storage/v1/object/public/img-bota/bota/images/Screenshot%202026-08-08%20084525.png",
+        "allergens": "",
+        "buttonHref": "#contact",
+        "buttonText": "Ordina Ora",
+        "categoryId": "cat1786181964939",
+        "description": "Descrizione del prodotto",
+        "ingredients": "",
         "availableDays": [
           "tuesday",
           "thursday",
@@ -237,33 +307,17 @@
         ]
       }
     ],
-    "categories": [
-      {
-        "id": "cat1786181919608",
-        "name": "antipasti di pesce",
-        "description": "Descrizione della categoria",
-        "icon": "Flame"
-      },
-      {
-        "id": "cat1786181935815",
-        "name": "antipasti di carne",
-        "description": "Descrizione della categoria",
-        "icon": "Soup"
-      },
-      {
-        "id": "cat1786181951075",
-        "name": "primi di carne",
-        "description": "Descrizione della categoria",
-        "icon": "Beef"
-      },
-      {
-        "id": "cat1786181964939",
-        "name": "primi di pesce",
-        "description": "Descrizione della categoria",
-        "icon": "Fish"
-      }
-    ],
-    "subheading": "Pizze classiche, specialità della casa e prelibatezze del territorio"
+    "nightModeTheme": {
+      "enabled": true,
+      "badgeText": "#38bdf8",
+      "background": "#0f172a",
+      "accentColor": "#38bdf8",
+      "borderColor": "#334155",
+      "textPrimary": "#f1f5f9",
+      "textSecondary": "#94a3b8",
+      "cardBackground": "#1e293b",
+      "badgeBackground": "#1e293b"
+    }
   },
   "pricing": {
     "heading": "Menu Degustazione",
