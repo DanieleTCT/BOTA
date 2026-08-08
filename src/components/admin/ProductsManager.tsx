@@ -29,6 +29,17 @@ const DEFAULT_PRODUCTS: ProductsConfig = {
     { id: 'cat2', name: 'Specialità della Casa', description: 'Le nostre creazioni esclusive', icon: 'Star' },
   ],
   products: [],
+  nightModeTheme: {
+    enabled: true,
+    background: '#0f172a',
+    cardBackground: '#1e293b',
+    textPrimary: '#f1f5f9',
+    textSecondary: '#94a3b8',
+    borderColor: '#334155',
+    accentColor: '#38bdf8',
+    badgeBackground: '#1e293b',
+    badgeText: '#38bdf8',
+  },
 };
 
 export function ProductsManager({ config, ctx }: { config: SiteConfig; ctx: AdminContext }) {
@@ -194,6 +205,162 @@ export function ProductsManager({ config, ctx }: { config: SiteConfig; ctx: Admi
             </select>
           </div>
         </div>
+      </div>
+
+      {/* Night Mode Theme Settings */}
+      <div className="mb-6 rounded-xl border border-slate-200 bg-white p-6">
+        <div className="mb-4 flex items-center justify-between">
+          <h3 className="text-lg font-semibold text-slate-800">Tema Night Mode (Menu Cena)</h3>
+          <label className="flex items-center gap-2 cursor-pointer">
+            <input
+              type="checkbox"
+              checked={products.nightModeTheme.enabled}
+              onChange={(e) => updateProducts(p => ({ ...p, nightModeTheme: { ...p.nightModeTheme, enabled: e.target.checked } }))}
+              className="w-4 h-4 rounded border-slate-300 text-blue-600 focus:ring-blue-500"
+            />
+            <span className="text-sm font-semibold text-slate-700">Abilitato</span>
+          </label>
+        </div>
+        {products.nightModeTheme.enabled && (
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <div>
+              <label className="mb-1 block text-xs font-semibold text-slate-700">Sfondo</label>
+              <div className="flex gap-2">
+                <input
+                  type="color"
+                  value={products.nightModeTheme.background}
+                  onChange={(e) => updateProducts(p => ({ ...p, nightModeTheme: { ...p.nightModeTheme, background: e.target.value } }))}
+                  className="h-10 w-14 rounded-lg border border-slate-300 cursor-pointer"
+                />
+                <input
+                  type="text"
+                  value={products.nightModeTheme.background}
+                  onChange={(e) => updateProducts(p => ({ ...p, nightModeTheme: { ...p.nightModeTheme, background: e.target.value } }))}
+                  className="flex-1 rounded-lg border border-slate-300 px-2 py-1.5 text-xs font-mono outline-none focus:border-blue-500"
+                />
+              </div>
+            </div>
+            <div>
+              <label className="mb-1 block text-xs font-semibold text-slate-700">Sfondo Card</label>
+              <div className="flex gap-2">
+                <input
+                  type="color"
+                  value={products.nightModeTheme.cardBackground}
+                  onChange={(e) => updateProducts(p => ({ ...p, nightModeTheme: { ...p.nightModeTheme, cardBackground: e.target.value } }))}
+                  className="h-10 w-14 rounded-lg border border-slate-300 cursor-pointer"
+                />
+                <input
+                  type="text"
+                  value={products.nightModeTheme.cardBackground}
+                  onChange={(e) => updateProducts(p => ({ ...p, nightModeTheme: { ...p.nightModeTheme, cardBackground: e.target.value } }))}
+                  className="flex-1 rounded-lg border border-slate-300 px-2 py-1.5 text-xs font-mono outline-none focus:border-blue-500"
+                />
+              </div>
+            </div>
+            <div>
+              <label className="mb-1 block text-xs font-semibold text-slate-700">Testo Primario</label>
+              <div className="flex gap-2">
+                <input
+                  type="color"
+                  value={products.nightModeTheme.textPrimary}
+                  onChange={(e) => updateProducts(p => ({ ...p, nightModeTheme: { ...p.nightModeTheme, textPrimary: e.target.value } }))}
+                  className="h-10 w-14 rounded-lg border border-slate-300 cursor-pointer"
+                />
+                <input
+                  type="text"
+                  value={products.nightModeTheme.textPrimary}
+                  onChange={(e) => updateProducts(p => ({ ...p, nightModeTheme: { ...p.nightModeTheme, textPrimary: e.target.value } }))}
+                  className="flex-1 rounded-lg border border-slate-300 px-2 py-1.5 text-xs font-mono outline-none focus:border-blue-500"
+                />
+              </div>
+            </div>
+            <div>
+              <label className="mb-1 block text-xs font-semibold text-slate-700">Testo Secondario</label>
+              <div className="flex gap-2">
+                <input
+                  type="color"
+                  value={products.nightModeTheme.textSecondary}
+                  onChange={(e) => updateProducts(p => ({ ...p, nightModeTheme: { ...p.nightModeTheme, textSecondary: e.target.value } }))}
+                  className="h-10 w-14 rounded-lg border border-slate-300 cursor-pointer"
+                />
+                <input
+                  type="text"
+                  value={products.nightModeTheme.textSecondary}
+                  onChange={(e) => updateProducts(p => ({ ...p, nightModeTheme: { ...p.nightModeTheme, textSecondary: e.target.value } }))}
+                  className="flex-1 rounded-lg border border-slate-300 px-2 py-1.5 text-xs font-mono outline-none focus:border-blue-500"
+                />
+              </div>
+            </div>
+            <div>
+              <label className="mb-1 block text-xs font-semibold text-slate-700">Bordi</label>
+              <div className="flex gap-2">
+                <input
+                  type="color"
+                  value={products.nightModeTheme.borderColor}
+                  onChange={(e) => updateProducts(p => ({ ...p, nightModeTheme: { ...p.nightModeTheme, borderColor: e.target.value } }))}
+                  className="h-10 w-14 rounded-lg border border-slate-300 cursor-pointer"
+                />
+                <input
+                  type="text"
+                  value={products.nightModeTheme.borderColor}
+                  onChange={(e) => updateProducts(p => ({ ...p, nightModeTheme: { ...p.nightModeTheme, borderColor: e.target.value } }))}
+                  className="flex-1 rounded-lg border border-slate-300 px-2 py-1.5 text-xs font-mono outline-none focus:border-blue-500"
+                />
+              </div>
+            </div>
+            <div>
+              <label className="mb-1 block text-xs font-semibold text-slate-700">Colore Accento</label>
+              <div className="flex gap-2">
+                <input
+                  type="color"
+                  value={products.nightModeTheme.accentColor}
+                  onChange={(e) => updateProducts(p => ({ ...p, nightModeTheme: { ...p.nightModeTheme, accentColor: e.target.value } }))}
+                  className="h-10 w-14 rounded-lg border border-slate-300 cursor-pointer"
+                />
+                <input
+                  type="text"
+                  value={products.nightModeTheme.accentColor}
+                  onChange={(e) => updateProducts(p => ({ ...p, nightModeTheme: { ...p.nightModeTheme, accentColor: e.target.value } }))}
+                  className="flex-1 rounded-lg border border-slate-300 px-2 py-1.5 text-xs font-mono outline-none focus:border-blue-500"
+                />
+              </div>
+            </div>
+            <div>
+              <label className="mb-1 block text-xs font-semibold text-slate-700">Badge Sfondo</label>
+              <div className="flex gap-2">
+                <input
+                  type="color"
+                  value={products.nightModeTheme.badgeBackground}
+                  onChange={(e) => updateProducts(p => ({ ...p, nightModeTheme: { ...p.nightModeTheme, badgeBackground: e.target.value } }))}
+                  className="h-10 w-14 rounded-lg border border-slate-300 cursor-pointer"
+                />
+                <input
+                  type="text"
+                  value={products.nightModeTheme.badgeBackground}
+                  onChange={(e) => updateProducts(p => ({ ...p, nightModeTheme: { ...p.nightModeTheme, badgeBackground: e.target.value } }))}
+                  className="flex-1 rounded-lg border border-slate-300 px-2 py-1.5 text-xs font-mono outline-none focus:border-blue-500"
+                />
+              </div>
+            </div>
+            <div>
+              <label className="mb-1 block text-xs font-semibold text-slate-700">Badge Testo</label>
+              <div className="flex gap-2">
+                <input
+                  type="color"
+                  value={products.nightModeTheme.badgeText}
+                  onChange={(e) => updateProducts(p => ({ ...p, nightModeTheme: { ...p.nightModeTheme, badgeText: e.target.value } }))}
+                  className="h-10 w-14 rounded-lg border border-slate-300 cursor-pointer"
+                />
+                <input
+                  type="text"
+                  value={products.nightModeTheme.badgeText}
+                  onChange={(e) => updateProducts(p => ({ ...p, nightModeTheme: { ...p.nightModeTheme, badgeText: e.target.value } }))}
+                  className="flex-1 rounded-lg border border-slate-300 px-2 py-1.5 text-xs font-mono outline-none focus:border-blue-500"
+                />
+              </div>
+            </div>
+          </div>
+        )}
       </div>
 
       {/* Categories List */}

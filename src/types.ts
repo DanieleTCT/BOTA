@@ -153,6 +153,18 @@ export interface MenuCategory {
   icon: string;
 }
 
+export interface NightModeTheme {
+  enabled: boolean;
+  background: string;
+  cardBackground: string;
+  textPrimary: string;
+  textSecondary: string;
+  borderColor: string;
+  accentColor: string;
+  badgeBackground: string;
+  badgeText: string;
+}
+
 export interface ProductsConfig {
   heading: string;
   subheading: string;
@@ -160,6 +172,7 @@ export interface ProductsConfig {
   columns: 2 | 3 | 4;
   categories: MenuCategory[];
   products: Product[];
+  nightModeTheme: NightModeTheme;
 }
 
 export interface Testimonial {

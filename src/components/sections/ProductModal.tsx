@@ -4,15 +4,27 @@ interface ProductModalProps {
   product: Product;
   onClose: () => void;
   isDinner?: boolean;
+  nightTheme?: import('@/types').NightModeTheme | null;
 }
 
-export function ProductModal({ product, onClose, isDinner = false }: ProductModalProps) {
-  const textPrimary = isDinner ? '#f1f5f9' : '#0f172a';
-  const textSecondary = isDinner ? '#94a3b8' : '#475569';
-  const bgCard = isDinner ? '#1e293b' : '#ffffff';
-  const bgInput = isDinner ? '#0f172a' : '#f8fafc';
-  const borderColor = isDinner ? '#334155' : '#e2e8f0';
-  const accentColor = isDinner ? '#38bdf8' : '#2563eb';
+export function ProductModal({ product, onClose, isDinner = false, nightTheme }: ProductModalProps) {
+  const theme = nightTheme || {
+    textPrimary: '#f1f5f9',
+    textSecondary: '#94a3b8',
+    cardBackground: '#1e293b',
+    background: '#0f172a',
+    borderColor: '#334155',
+    accentColor: '#38bdf8',
+    badgeBackground: '#1e293b',
+    badgeText: '#38bdf8',
+  };
+
+  const textPrimary = isDinner ? theme.textPrimary : '#0f172a';
+  const textSecondary = isDinner ? theme.textSecondary : '#475569';
+  const bgCard = isDinner ? theme.cardBackground : '#ffffff';
+  const bgInput = isDinner ? theme.background : '#f8fafc';
+  const borderColor = isDinner ? theme.borderColor : '#e2e8f0';
+  const accentColor = isDinner ? theme.accentColor : '#2563eb';
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
