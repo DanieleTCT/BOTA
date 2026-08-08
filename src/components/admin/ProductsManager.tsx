@@ -43,7 +43,14 @@ const DEFAULT_PRODUCTS: ProductsConfig = {
 };
 
 export function ProductsManager({ config, ctx }: { config: SiteConfig; ctx: AdminContext }) {
-  const products: ProductsConfig = config.products || DEFAULT_PRODUCTS;
+  const products: ProductsConfig = {
+    ...DEFAULT_PRODUCTS,
+    ...(config.products || {}),
+    nightModeTheme: {
+      ...DEFAULT_PRODUCTS.nightModeTheme,
+      ...(config.products?.nightModeTheme || {})
+    }
+  };
 
   const updateProducts = (updater: (p: ProductsConfig) => ProductsConfig) => {
     const newProducts = updater(products);
