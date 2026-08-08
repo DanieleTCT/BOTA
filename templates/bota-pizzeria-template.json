@@ -1,540 +1,631 @@
 {
   "version": 1,
   "sections": [
-    { "id": "announcement", "enabled": true },
-    { "id": "header", "enabled": true },
-    { "id": "hero", "enabled": true },
-    { "id": "features", "enabled": true },
-    { "id": "about", "enabled": true },
-    { "id": "products", "enabled": true },
-    { "id": "pricing", "enabled": false },
-    { "id": "testimonials", "enabled": true },
-    { "id": "faq", "enabled": true },
-    { "id": "orari", "enabled": true },
-    { "id": "galleria", "enabled": true },
-    { "id": "contact", "enabled": true },
-    { "id": "footer", "enabled": true }
+    {
+      "id": "announcement",
+      "enabled": true
+    },
+    {
+      "id": "header",
+      "enabled": false
+    },
+    {
+      "id": "hero",
+      "enabled": true
+    },
+    {
+      "id": "features",
+      "enabled": true
+    },
+    {
+      "id": "about",
+      "enabled": true
+    },
+    {
+      "id": "products",
+      "enabled": true
+    },
+    {
+      "id": "pricing",
+      "enabled": false
+    },
+    {
+      "id": "testimonials",
+      "enabled": true
+    },
+    {
+      "id": "faq",
+      "enabled": true
+    },
+    {
+      "id": "contact",
+      "enabled": true
+    },
+    {
+      "id": "footer",
+      "enabled": true
+    }
   ],
   "theme": {
     "mode": "light",
-    "primary": "#b91c1c",
-    "secondary": "#f59e0b",
+    "primary": "#510b0b",
+    "secondary": "#d6cdbd",
     "background": "#fef7ed",
-    "accent": "#dc2626",
+    "accent": "#ffffff",
     "text": "#1c1917",
     "mutedText": "#78716c",
     "card": "#ffffff",
-    "border": "#f3e8d3",
+    "border": "#a8a399",
     "fontPreset": "playfair",
     "baseFontSize": 16,
     "radius": "lg",
     "shadow": "md"
   },
   "announcement": {
-    "text": "⭐ BENVENUTO NEL TEMPLATE DEMO — Questo è un sito di esempio",
-    "linkText": "Scopri di più",
-    "linkHref": "#about",
-    "bg": "#f59e0b",
-    "fg": "#ffffff"
+    "text": "🍕 Pizza artigianale cotta nel forno a legna — aperto tutte le sere da martedì a domenica!",
+    "linkText": "Scopri il menu",
+    "linkHref": "#products",
+    "bg": "#332828",
+    "fg": "#e0e0e0"
   },
   "header": {
-    "logoText": "Template Ristorante",
+    "logoText": "Bota",
     "links": [
-      { "id": "l1", "label": "Chi Siamo", "href": "#about" },
-      { "id": "l2", "label": "Menu", "href": "#products" },
-      { "id": "l3", "label": "Orari", "href": "#orari" },
-      { "id": "l4", "label": "Galleria", "href": "#galleria" },
-      { "id": "l5", "label": "Contatti", "href": "#contact" }
+      {
+        "id": "l1",
+        "href": "#about",
+        "label": "Chi Siamo"
+      },
+      {
+        "id": "l2",
+        "href": "#products",
+        "label": "Il Menu"
+      },
+      {
+        "id": "l3",
+        "href": "#features",
+        "label": "Le Nostre Pizze"
+      },
+      {
+        "id": "l4",
+        "href": "#faq",
+        "label": "FAQ"
+      }
     ],
-    "ctaText": "Prenota",
+    "ctaText": "Prenota un Tavolo",
     "ctaHref": "#contact",
     "sticky": true
   },
   "hero": {
-    "badge": "🍝 Template Sito Ristorante",
-    "title": "Il Tuo Ristorante Perfetto",
-    "subtitle": "Un esempio di come presentare il tuo locale online. Cucina autentica, atmosfera accogliente e ingredienti selezionati. Questo è solo un template di dimostrazione.",
-    "primaryCtaText": "Contattaci",
+    "badge": "🍕 Pizzeria Ristorante — Fano",
+    "title": "Bota: la vera pizza marchigiana",
+    "subtitle": "Dal cuore di Fano, portiamo in tavola la passione per la pizza artigianale. Impasto a lunga lievitazione, ingredienti del territorio e forno a legna per un'esperienza autentica.",
+    "primaryCtaText": "Prenota Ora",
     "primaryCtaHref": "#contact",
-    "secondaryCtaText": "Vedi il Menu",
+    "secondaryCtaText": "Esplora il Menu",
     "secondaryCtaHref": "#products",
-    "bgType": "gradient",
+    "bgType": "image",
     "gradientFrom": "#b91c1c",
     "gradientTo": "#f59e0b",
-    "imageUrl": "",
-    "overlayOpacity": 45
+    "imageUrl": "https://mthxayxywvyjrnvuqkow.supabase.co/storage/v1/object/public/img-bota/bota/images/1786113970505_Screenshot%202026-08-06%20162124.png",
+    "overlayOpacity": 70
   },
   "features": {
-    "heading": "I Nostri Punti di Forza",
-    "subheading": "Cosa rende speciale la nostra cucina",
+    "heading": "Perché scegliere Bota",
+    "subheading": "Ogni dettaglio conta — dall'impasto al forno.",
     "columns": 3,
     "cards": [
       {
         "id": "f1",
         "icon": "Flame",
-        "title": "Cottura Perfetta",
-        "description": "Tecniche di cottura tradizionali per esaltare i sapori autentici di ogni piatto.",
-        "badge": "Tradizione"
+        "badge": "Tradizione",
+        "title": "Forno a Legna",
+        "description": "Le nostre pizze sono cotte nel forno a legna a 450°C, per una crosta croccante e un cuore morbido."
       },
       {
         "id": "f2",
         "icon": "Leaf",
-        "title": "Ingredienti Freschi",
-        "description": "Selezioniamo solo ingredienti di stagione e a km zero per garantire qualità e sapore.",
-        "badge": "Qualità"
+        "badge": "Km Zero",
+        "title": "Ingredienti del Territorio",
+        "description": "Utilizziamo farine selezionate, pomodoro San Marzano e prodotti a km zero dalle Marche."
       },
       {
         "id": "f3",
         "icon": "Clock",
-        "title": "Ricette Collaudate",
-        "description": "Piacere e gusto in ogni portata, seguendo ricette tramandate con passione.",
-        "badge": "Esperienza"
+        "badge": "48h",
+        "title": "Lunga Lievitazione",
+        "description": "Il nostro impasto riposa per 48 ore, garantendo una pizza leggera e digeribile."
       },
       {
         "id": "f4",
         "icon": "Users",
-        "title": "Atmosfera Unica",
-        "description": "Un ambiente caldo e accogliente, perfetto per ogni occasione speciale.",
-        "badge": "Ambiente"
+        "badge": "Famiglia",
+        "title": "Ristorante Accogliente",
+        "description": "Un ambiente familiare e curato, perfetto per cene in famiglia o con amici."
       },
       {
         "id": "f5",
         "icon": "Wine",
-        "title": "Cantina Selezionata",
-        "description": "Una curata selezione di vini e bevande per accompagnare i tuoi piatti preferiti.",
-        "badge": "Selezione"
+        "badge": "Vini Locali",
+        "title": "Cantina Marchigiana",
+        "description": "Una selezione di vini locali: Verdicchio, Rosso Conero e spumanti delle Marche."
       },
       {
         "id": "f6",
         "icon": "Heart",
-        "title": "Fatto con Passione",
-        "description": "Ogni piatto è preparato con dedizione e amore per la buona cucina.",
-        "badge": "Passione"
+        "badge": "Dal 1995",
+        "title": "Passione dal 1995",
+        "description": "Da oltre 25 anni portiamo avanti la tradizione della pizza marchigiana a Fano."
       }
     ]
   },
   "about": {
-    "heading": "La Nostra Storia",
-    "body": "Benvenuti nel nostro ristorante, un luogo dove la tradizione culinaria incontra l'innovazione. Fondato con la passione per la buona cucina, il nostro locale è diventato un punto di riferimento per gli amanti del buon cibo. Ogni piatto racconta una storia di ingredienti selezionati, ricette tramandate e amore per la qualità. Vieni a scoprire un'esperienza gastronomica unica, dove il gusto e l'ospitalità sono al primo posto.",
-    "imageUrl": "https://images.pexels.com/photos/1581384/pexels-photo-1581384.jpeg?auto=compress&cs=tinysrgb&w=900",
-    "imageAlt": "L'interno accogliente del ristorante",
+    "heading": "La nostra storia",
+    "body": "Bota nasce a Fano nel 1995, nel cuore del centro storico, dalla passione di una famiglia per la vera pizza italiana. Da allora, portiamo avanti la tradizione con un impasto a lunga lievitazione, ingredienti selezionati e un forno a legna che regala alla nostra pizza quel sapore unico e inconfondibile. Oggi Bota è un punto di riferimento per gli amanti della buona cucina a Fano: non solo pizza, ma anche antipasti, primi piatti della tradizione marchigiana e dolci fatti in casa.",
+    "imageUrl": "https://mthxayxywvyjrnvuqkow.supabase.co/storage/v1/object/public/img-bota/bota/images/1786171309312_Screenshot%202026-08-08%20084129.png",
+    "imageAlt": "L'accogliente sala interna del ristorante Bota a Fano",
     "stats": [
-      { "id": "s1", "value": "10+", "label": "Anni di Esperienza" },
-      { "id": "s2", "value": "50k+", "label": "Clienti Soddisfatti" },
-      { "id": "s3", "value": "100+", "label": "Piatti nel Menu" },
-      { "id": "s4", "value": "4.9/5", "label": "Recensioni Positive" }
+      {
+        "id": "s1",
+        "label": "Anni di Storia",
+        "value": "25+"
+      },
+      {
+        "id": "s2",
+        "label": "Pizze Sfornate",
+        "value": "100k+"
+      },
+      {
+        "id": "s3",
+        "label": "Varietà di Pizze",
+        "value": "50+"
+      },
+      {
+        "id": "s4",
+        "label": "Voto dei Clienti",
+        "value": "4.8/5"
+      }
     ]
   },
   "products": {
-    "heading": "Menu del Ristorante",
-    "subheading": "Scopri i nostri piatti: antipasti, primi, secondi e dolci",
+    "heading": "Il Nostro Menu",
+    "subheading": "Pizze classiche, specialità della casa e prelibatezze del territorio",
     "layout": "grid",
     "columns": 3,
     "categories": [
-      { "id": "cat1", "name": "Pizze Classiche", "description": "Le pizze tradizionali che hanno fatto la storia", "icon": "Pizza" },
-      { "id": "cat2", "name": "Specialità della Casa", "description": "Le nostre creazioni esclusive", "icon": "Star" },
-      { "id": "cat3", "name": "Antipasti", "description": "Per iniziare la serata", "icon": "Utensils" },
-      { "id": "cat4", "name": "Primi Piatti", "description": "La tradizione marchigiana", "icon": "Soup" },
-      { "id": "cat5", "name": "Secondi Piatti", "description": "Carne e pesce della tradizione", "icon": "Beef" },
-      { "id": "cat6", "name": "Contorni", "description": "Contorni freschi", "icon": "Carrot" },
-      { "id": "cat7", "name": "Dolci", "description": "Fatti in casa con passione", "icon": "Cake" },
-      { "id": "cat8", "name": "Bevande", "description": "Vini, birre e molto altro", "icon": "Wine" }
+      {
+        "id": "cat1",
+        "icon": "Pizza",
+        "name": "Pizze Classiche",
+        "description": "Le pizze tradizionali che hanno fatto la storia"
+      },
+      {
+        "id": "cat2",
+        "icon": "Star",
+        "name": "Specialità della Casa",
+        "description": "Le nostre creazioni esclusive"
+      },
+      {
+        "id": "cat3",
+        "icon": "Utensils",
+        "name": "Antipasti",
+        "description": "Per iniziare la serata"
+      },
+      {
+        "id": "cat4",
+        "icon": "Soup",
+        "name": "Primi Piatti",
+        "description": "La tradizione marchigiana"
+      },
+      {
+        "id": "cat5",
+        "icon": "Cake",
+        "name": "Dolci",
+        "description": "Fatti in casa con passione"
+      },
+      {
+        "id": "cat6",
+        "icon": "Wine",
+        "name": "Bevande",
+        "description": "Vini, birre e molto altro"
+      }
     ],
     "products": [
       {
         "id": "pr1",
-        "name": "Margherita",
-        "description": "Pomodoro San Marzano, mozzarella fior di latte, basilico fresco, olio extravergine d'oliva.",
-        "price": "€7,00",
-        "imageUrl": "https://images.pexels.com/photos/275345/pexels-photo-275345.jpeg?auto=compress&cs=tinysrgb&w=400",
-        "badge": "Classica",
-        "features": ["Pomodoro San Marzano", "Fior di latte", "Basilico fresco", "Olio EVO"],
-        "ingredients": "Pomodoro San Marzano DOP, mozzarella fior di latte, basilico fresco, olio extravergine d'oliva italiano.",
-        "allergens": "Lattosio, glutine",
-        "buttonText": "Ordina Ora",
-        "buttonHref": "#contact",
-        "categoryId": "cat1",
         "meal": "both",
-        "dishType": "pizza"
+        "name": "Margherita",
+        "badge": "Classica",
+        "price": "€7,00",
+        "dishType": "pizza",
+        "features": [
+          "Pomodoro San Marzano",
+          "Fior di latte",
+          "Basilico fresco",
+          "Olio EVO"
+        ],
+        "imageUrl": "img/Screenshot 2026-08-06 162124.png",
+        "allergens": "Lattosio, glutine",
+        "buttonHref": "#contact",
+        "buttonText": "Ordina Ora",
+        "categoryId": "cat1",
+        "description": "Pomodoro San Marzano, mozzarella fior di latte, basilico fresco, olio extravergine d'oliva.",
+        "ingredients": "Pomodoro San Marzano DOP, mozzarella fior di latte, basilico fresco, olio extravergine d'oliva italiano."
       },
       {
         "id": "pr2",
-        "name": "Marinara",
-        "description": "Pomodoro San Marzano, aglio, origano, olio extravergine d'oliva. La più semplice e genuina.",
-        "price": "€6,00",
-        "imageUrl": "https://images.pexels.com/photos/315755/pexels-photo-315755.jpeg?auto=compress&cs=tinysrgb&w=400",
-        "badge": "Tradizionale",
-        "features": ["Pomodoro San Marzano", "Aglio", "Origano", "Olio EVO"],
-        "ingredients": "Pomodoro San Marzano DOP, aglio fresco, origano, olio extravergine d'oliva.",
-        "allergens": "Glutine",
-        "buttonText": "Ordina Ora",
-        "buttonHref": "#contact",
-        "categoryId": "cat1",
         "meal": "both",
-        "dishType": "pizza"
+        "name": "Marinara",
+        "badge": "Tradizionale",
+        "price": "€6,00",
+        "dishType": "pizza",
+        "features": [
+          "Pomodoro San Marzano",
+          "Aglio",
+          "Origano",
+          "Olio EVO"
+        ],
+        "imageUrl": "img/Screenshot 2026-08-06 171543.png",
+        "allergens": "Glutine",
+        "buttonHref": "#contact",
+        "buttonText": "Ordina Ora",
+        "categoryId": "cat1",
+        "description": "Pomodoro San Marzano, aglio, origano, olio extravergine d'oliva. La più semplice e genuina.",
+        "ingredients": "Pomodoro San Marzano DOP, aglio fresco, origano, olio extravergine d'oliva."
       },
       {
         "id": "pr3",
-        "name": "Diavola",
-        "description": "Pomodoro, mozzarella, salame piccante, olive nere. Per chi ama il gusto deciso.",
-        "price": "€9,00",
-        "imageUrl": "https://images.pexels.com/photos/158491/food-italian-cooking-pizza-158491.jpeg?auto=compress&cs=tinysrgb&w=400",
-        "badge": "Piccante",
-        "features": ["Pomodoro", "Fior di latte", "Salame piccante", "Olive nere"],
-        "ingredients": "Pomodoro San Marzano, mozzarella fior di latte, salame piccante artigianale, olive nere denocciolate.",
-        "allergens": "Lattosio, glutine, sedano",
-        "buttonText": "Ordina Ora",
-        "buttonHref": "#contact",
-        "categoryId": "cat2",
         "meal": "both",
-        "dishType": "pizza"
+        "name": "Diavola",
+        "badge": "Piccante",
+        "price": "€9,00",
+        "dishType": "pizza",
+        "features": [
+          "Pomodoro",
+          "Fior di latte",
+          "Salame piccante",
+          "Olive nere"
+        ],
+        "imageUrl": "img/Screenshot 2026-08-08 084127.png",
+        "allergens": "Lattosio, glutine, sedano",
+        "buttonHref": "#contact",
+        "buttonText": "Ordina Ora",
+        "categoryId": "cat2",
+        "description": "Pomodoro, mozzarella, salame piccante, olive nere. Per chi ama il gusto deciso.",
+        "ingredients": "Pomodoro San Marzano, mozzarella fior di latte, salame piccante artigianale, olive nere denocciolate."
       },
       {
         "id": "pr4",
-        "name": "Bota Speciale",
-        "description": "La nostra pizza signature: crema di tartufo, funghi porcini, prosciutto crudo e scaglie di parmigiano.",
-        "price": "€14,00",
-        "imageUrl": "https://images.pexels.com/photos/905847/pexels-photo-905847.jpeg?auto=compress&cs=tinysrgb&w=400",
-        "badge": "Signature",
-        "features": ["Crema di tartufo", "Funghi porcini", "Prosciutto crudo", "Parmigiano"],
-        "ingredients": "Crema di tartufo, funghi porcini freschi, prosciutto crudo di Parma, scaglie di parmigiano 36 mesi, mozzarella.",
-        "allergens": "Lattosio, glutine",
-        "buttonText": "Ordina Ora",
-        "buttonHref": "#contact",
-        "categoryId": "cat2",
         "meal": "both",
-        "dishType": "pizza"
+        "name": "Bota Speciale",
+        "badge": "Signature",
+        "price": "€14,00",
+        "dishType": "pizza",
+        "features": [
+          "Crema di tartufo",
+          "Funghi porcini",
+          "Prosciutto crudo",
+          "Parmigiano"
+        ],
+        "imageUrl": "img/Screenshot 2026-08-08 084525.png",
+        "allergens": "Lattosio, glutine",
+        "buttonHref": "#contact",
+        "buttonText": "Ordina Ora",
+        "categoryId": "cat2",
+        "description": "La nostra pizza signature: crema di tartufo, funghi porcini, prosciutto crudo e scaglie di parmigiano.",
+        "ingredients": "Crema di tartufo, funghi porcini freschi, prosciutto crudo di Parma, scaglie di parmigiano 36 mesi, mozzarella."
       },
       {
         "id": "pr5",
-        "name": "Quattro Formaggi",
-        "description": "Mozzarella, gorgonzola, taleggio e parmigiano su base di pomodoro e origano.",
-        "price": "€10,50",
-        "imageUrl": "https://images.pexels.com/photos/1566837/pexels-photo-1566837.jpeg?auto=compress&cs=tinysrgb&w=400",
-        "badge": "Gourmet",
-        "features": ["Mozzarella", "Gorgonzola", "Taleggio", "Parmigiano"],
-        "ingredients": "Mozzarella, gorgonzola DOP, taleggio, parmigiano reggiano 24 mesi, pomodoro San Marzano.",
-        "allergens": "Lattosio, glutine",
-        "buttonText": "Ordina Ora",
-        "buttonHref": "#contact",
-        "categoryId": "cat2",
         "meal": "both",
-        "dishType": "pizza"
+        "name": "Quattro Formaggi",
+        "badge": "Gourmet",
+        "price": "€10,50",
+        "dishType": "pizza",
+        "features": [
+          "Mozzarella",
+          "Gorgonzola",
+          "Taleggio",
+          "Parmigiano"
+        ],
+        "imageUrl": "img/Screenshot 2026-08-08 084536.png",
+        "allergens": "Lattosio, glutine",
+        "buttonHref": "#contact",
+        "buttonText": "Ordina Ora",
+        "categoryId": "cat2",
+        "description": "Mozzarella, gorgonzola, taleggio e parmigiano su base di pomodoro e origano.",
+        "ingredients": "Mozzarella, gorgonzola DOP, taleggio, parmigiano reggiano 24 mesi, pomodoro San Marzano."
       },
       {
         "id": "pr6",
-        "name": "Prosciutto e Rucola",
-        "description": "Pomodoro, mozzarella, prosciutto crudo di Parma e rucola fresca. Un classico intramontabile.",
-        "price": "€11,00",
-        "imageUrl": "https://images.pexels.com/photos/2085949/pexels-photo-2085949.jpeg?auto=compress&cs=tinysrgb&w=400",
-        "badge": "Classica",
-        "features": ["Pomodoro", "Fior di latte", "Prosciutto di Parma", "Rucola fresca"],
-        "ingredients": "Pomodoro San Marzano, mozzarella fior di latte, prosciutto crudo di Parma 18 mesi, rucola fresca.",
-        "allergens": "Lattosio, glutine",
-        "buttonText": "Ordina Ora",
-        "buttonHref": "#contact",
-        "categoryId": "cat1",
         "meal": "both",
-        "dishType": "pizza"
+        "name": "Prosciutto e Rucola",
+        "badge": "Classica",
+        "price": "€11,00",
+        "dishType": "pizza",
+        "features": [
+          "Pomodoro",
+          "Fior di latte",
+          "Prosciutto di Parma",
+          "Rucola fresca"
+        ],
+        "imageUrl": "img/Screenshot 2026-08-08 084542.png",
+        "allergens": "Lattosio, glutine",
+        "buttonHref": "#contact",
+        "buttonText": "Ordina Ora",
+        "categoryId": "cat1",
+        "description": "Pomodoro, mozzarella, prosciutto crudo di Parma e rucola fresca. Un classico intramontabile.",
+        "ingredients": "Pomodoro San Marzano, mozzarella fior di latte, prosciutto crudo di Parma 18 mesi, rucola fresca."
       },
       {
         "id": "pr7",
-        "name": "Bruschetta al Pomodoro",
-        "description": "Pane bruscato con pomodori freschi, aglio e basilico.",
-        "price": "€6,50",
-        "imageUrl": "https://images.pexels.com/photos/3271581/pexels-photo-3271581.jpeg?auto=compress&cs=tinysrgb&w=400",
-        "badge": "Vegetariano",
-        "features": ["Pomodori freschi", "Aglio", "Basilico"],
-        "ingredients": "Pane artigianale, pomodori San Marzano freschi, aglio fresco, basilico, olio extravergine d'oliva.",
-        "allergens": "Glutine",
-        "buttonText": "Ordina Ora",
-        "buttonHref": "#contact",
-        "categoryId": "cat3",
         "meal": "lunch",
+        "name": "Bruschetta al Pomodoro",
+        "badge": "Vegetariano",
+        "price": "€6,50",
         "dishType": "antipasto",
-        "availableDays": ["monday", "tuesday", "wednesday", "thursday", "friday"]
+        "features": [
+          "Pomodori freschi",
+          "Aglio",
+          "Basilico",
+          "Olio EVO"
+        ],
+        "imageUrl": "img/Screenshot 2026-08-08 084553.png",
+        "allergens": "Glutine",
+        "buttonHref": "#contact",
+        "buttonText": "Ordina Ora",
+        "categoryId": "cat3",
+        "description": "Pane bruscato con pomodori freschi, aglio e basilico. Antipasto perfetto per iniziare.",
+        "ingredients": "Pane artigianale, pomodori San Marzano freschi, aglio fresco, basilico, olio extravergine d'oliva.",
+        "availableDays": [
+          "monday",
+          "tuesday",
+          "wednesday",
+          "thursday",
+          "friday"
+        ]
       },
       {
         "id": "pr8",
-        "name": "Prosciutto e Melone",
-        "description": "Prosciutto di Parma con melone fresco di stagione.",
-        "price": "€8,50",
-        "imageUrl": "https://images.pexels.com/photos/3295557/pexels-photo-3295557.jpeg?auto=compress&cs=tinysrgb&w=400",
-        "badge": "Stagionale",
-        "features": ["Prosciutto di Parma", "Melone fresco"],
-        "ingredients": "Prosciutto di Parma 18 mesi, melone fresco di stagione.",
-        "allergens": "Nessuno",
-        "buttonText": "Ordina Ora",
-        "buttonHref": "#contact",
-        "categoryId": "cat3",
         "meal": "lunch",
+        "name": "Prosciutto e Melone",
+        "badge": "Stagionale",
+        "price": "€8,50",
         "dishType": "antipasto",
-        "availableDays": ["monday", "tuesday", "wednesday"]
+        "features": [
+          "Prosciutto di Parma",
+          "Melone fresco"
+        ],
+        "imageUrl": "img/Screenshot 2026-08-08 084602.png",
+        "allergens": "Nessuno",
+        "buttonHref": "#contact",
+        "buttonText": "Ordina Ora",
+        "categoryId": "cat3",
+        "description": "Prosciutto di Parma con melone fresco di stagione.",
+        "ingredients": "Prosciutto di Parma 18 mesi, melone fresco di stagione.",
+        "availableDays": [
+          "monday",
+          "tuesday",
+          "wednesday"
+        ]
       },
       {
         "id": "pr9",
-        "name": "Insalata di Polpo",
-        "description": "Polpo tenero con patate, olive e pomodorini.",
-        "price": "€10,00",
-        "imageUrl": "https://images.pexels.com/photos/725992/pexels-photo-725992.jpeg?auto=compress&cs=tinysrgb&w=400",
-        "badge": "Fresco",
-        "features": ["Polpo", "Patate", "Olive"],
-        "ingredients": "Polpo mediterraneo, patate, olive taggiasche, pomodorini, prezzemolo, olio EVO.",
-        "allergens": "Pesce",
-        "buttonText": "Ordina Ora",
-        "buttonHref": "#contact",
-        "categoryId": "cat3",
         "meal": "lunch",
+        "name": "Insalata di Polpo",
+        "badge": "Fresco",
+        "price": "€10,00",
         "dishType": "antipasto",
-        "availableDays": ["thursday", "friday"]
+        "features": [
+          "Polpo",
+          "Patate",
+          "Olive"
+        ],
+        "imageUrl": "img/Screenshot 2026-08-08 084610.png",
+        "allergens": "Pesce",
+        "buttonHref": "#contact",
+        "buttonText": "Ordina Ora",
+        "categoryId": "cat3",
+        "description": "Polpo tenero con patate, olive e pomodorini.",
+        "ingredients": "Polpo mediterraneo, patate, olive taggiasche, pomodorini, prezzemolo, olio EVO.",
+        "availableDays": [
+          "thursday",
+          "friday"
+        ]
       },
       {
         "id": "pr10",
-        "name": "Risotto ai Funghi Porcini",
-        "description": "Riso carnaroli, funghi porcini freschi, parmigiano reggiano e burro di malga.",
-        "price": "€12,00",
-        "imageUrl": "https://images.pexels.com/photos/2098211/pexels-photo-2098211.jpeg?auto=compress&cs=tinysrgb&w=400",
-        "badge": "Chef",
-        "features": ["Riso Carnaroli", "Funghi Porcini", "Parmigiano", "Burro di malga"],
-        "ingredients": "Riso Carnaroli, funghi porcini freschi, parmigiano reggiano 24 mesi, burro di malga, cipolla dorata.",
-        "allergens": "Lattosio",
-        "buttonText": "Ordina Ora",
-        "buttonHref": "#contact",
-        "categoryId": "cat4",
         "meal": "lunch",
+        "name": "Risotto ai Funghi Porcini",
+        "badge": "Chef",
+        "price": "€12,00",
         "dishType": "primo",
-        "availableDays": ["monday", "tuesday", "wednesday", "thursday", "friday"]
+        "features": [
+          "Riso Carnaroli",
+          "Funghi Porcini",
+          "Parmigiano",
+          "Burro di malga"
+        ],
+        "imageUrl": "img/Screenshot 2026-08-08 084627.png",
+        "allergens": "Lattosio",
+        "buttonHref": "#contact",
+        "buttonText": "Ordina Ora",
+        "categoryId": "cat4",
+        "description": "Riso carnaroli, funghi porcini freschi, parmigiano reggiano e burro di malga.",
+        "ingredients": "Riso Carnaroli, funghi porcini freschi, parmigiano reggiano 24 mesi, burro di malga, cipolla dorata.",
+        "availableDays": [
+          "monday",
+          "tuesday",
+          "wednesday",
+          "thursday",
+          "friday"
+        ]
       },
       {
         "id": "pr11",
-        "name": "Spaghetti alla Carbonara",
-        "description": "La tradizione romana: guanciale, pecorino, tuorlo d'uovo e pepe nero.",
-        "price": "€11,00",
-        "imageUrl": "https://images.pexels.com/photos/4518598/pexels-photo-4518598.jpeg?auto=compress&cs=tinysrgb&w=400",
-        "badge": "Classica",
-        "features": ["Guanciale", "Pecorino", "Tuorlo d'uovo"],
-        "ingredients": "Spaghetti di grano duro, guanciale artigianale, pecorino romano DOP, tuorli d'uovo freschi, pepe nero.",
-        "allergens": "Glutine, Uova",
-        "buttonText": "Ordina Ora",
-        "buttonHref": "#contact",
-        "categoryId": "cat4",
         "meal": "lunch",
+        "name": "Spaghetti alla Carbonara",
+        "badge": "Classica",
+        "price": "€11,00",
         "dishType": "primo",
-        "availableDays": ["monday", "wednesday", "friday"]
+        "features": [
+          "Guanciale",
+          "Pecorino",
+          "Tuorlo d'uovo"
+        ],
+        "imageUrl": "img/Screenshot 2026-08-08 084634.png",
+        "allergens": "Glutine, Uova",
+        "buttonHref": "#contact",
+        "buttonText": "Ordina Ora",
+        "categoryId": "cat4",
+        "description": "La tradizione romana: guanciale, pecorino, tuorlo d'uovo e pepe nero.",
+        "ingredients": "Spaghetti di grano duro, guanciale artigianale, pecorino romano DOP, tuorli d'uovo freschi, pepe nero.",
+        "availableDays": [
+          "monday",
+          "wednesday",
+          "friday"
+        ]
       },
       {
         "id": "pr12",
-        "name": "Penne all'Arrabbiata",
-        "description": "Pomodoro, aglio, peperoncino e prezzemolo. Il primo piccante della tradizione.",
-        "price": "€9,00",
-        "imageUrl": "https://images.pexels.com/photos/4518598/pexels-photo-4518598.jpeg?auto=compress&cs=tinysrgb&w=400",
-        "badge": "Piccante",
-        "features": ["Pomodoro", "Peperoncino", "Aglio"],
-        "ingredients": "Penne di grano duro, pomodoro San Marzano, aglio fresco, peperoncino calabrese, prezzemolo, olio EVO.",
-        "allergens": "Glutine",
-        "buttonText": "Ordina Ora",
-        "buttonHref": "#contact",
-        "categoryId": "cat4",
         "meal": "lunch",
+        "name": "Penne all'Arrabbiata",
+        "badge": "Piccante",
+        "price": "€9,00",
         "dishType": "primo",
-        "availableDays": ["tuesday", "thursday"]
+        "features": [
+          "Pomodoro",
+          "Peperoncino",
+          "Aglio"
+        ],
+        "imageUrl": "img/Screenshot 2026-08-08 084746.png",
+        "allergens": "Glutine",
+        "buttonHref": "#contact",
+        "buttonText": "Ordina Ora",
+        "categoryId": "cat4",
+        "description": "Pomodoro, aglio, peperoncino e prezzemolo. Il primo piccante della tradizione.",
+        "ingredients": "Penne di grano duro, pomodoro San Marzano, aglio fresco, peperoncino calabrese, prezzemolo, olio EVO.",
+        "availableDays": [
+          "tuesday",
+          "thursday"
+        ]
       },
       {
         "id": "pr13",
-        "name": "Bistecca di Manzo",
-        "description": "Bistecca di manzo alla griglia con rosmarino.",
-        "price": "€18,00",
-        "imageUrl": "https://images.pexels.com/photos/1267210/pexels-photo-1267210.jpeg?auto=compress&cs=tinysrgb&w=400",
-        "badge": "Carne",
-        "features": ["Manzo", "Griglia", "Rosmarino"],
-        "ingredients": "Bistecca di manzo scelta, rosmarino, aglio, olio EVO, sale marino.",
-        "allergens": "Nessuno",
-        "buttonText": "Ordina Ora",
-        "buttonHref": "#contact",
-        "categoryId": "cat5",
         "meal": "lunch",
-        "dishType": "secondo",
-        "availableDays": ["monday", "tuesday", "wednesday", "thursday", "friday"]
+        "name": "Patate al Forno",
+        "badge": "Classico",
+        "price": "€4,00",
+        "dishType": "contorno",
+        "features": [
+          "Patate",
+          "Rosmarino"
+        ],
+        "imageUrl": "img/Screenshot 2026-08-08 084657.png",
+        "allergens": "Nessuno",
+        "buttonHref": "#contact",
+        "buttonText": "Ordina Ora",
+        "categoryId": "cat7",
+        "description": "Patate arrosto con rosmarino e aglio.",
+        "ingredients": "Patate fresche, rosmarino, aglio, olio EVO, sale marino.",
+        "availableDays": [
+          "monday",
+          "tuesday",
+          "wednesday",
+          "thursday",
+          "friday"
+        ]
       },
       {
         "id": "pr14",
-        "name": "Orata al Forno",
-        "description": "Orata intera al forno con patate e limone.",
-        "price": "€15,00",
-        "imageUrl": "https://images.pexels.com/photos/1267210/pexels-photo-1267210.jpeg?auto=compress&cs=tinysrgb&w=400",
-        "badge": "Pesce",
-        "features": ["Orata", "Al forno", "Limone"],
-        "ingredients": "Orata intera, patate, limone, prezzemolo, aglio, olio EVO.",
-        "allergens": "Pesce",
-        "buttonText": "Ordina Ora",
-        "buttonHref": "#contact",
-        "categoryId": "cat5",
         "meal": "lunch",
-        "dishType": "secondo",
-        "availableDays": ["wednesday", "thursday", "friday"]
+        "name": "Verdure Grigliate",
+        "badge": "Vegetariano",
+        "price": "€5,00",
+        "dishType": "contorno",
+        "features": [
+          "Zucchine",
+          "Melanzane",
+          "Peperoni"
+        ],
+        "imageUrl": "img/Screenshot 2026-08-08 084712.png",
+        "allergens": "Nessuno",
+        "buttonHref": "#contact",
+        "buttonText": "Ordina Ora",
+        "categoryId": "cat7",
+        "description": "Zucchine, melanzane e peperoni grigliati.",
+        "ingredients": "Zucchine, melanzane, peperoni, olio EVO, erbe aromatiche.",
+        "availableDays": [
+          "monday",
+          "wednesday",
+          "friday"
+        ]
       },
       {
         "id": "pr15",
-        "name": "Patate al Forno",
-        "description": "Patate arrosto con rosmarino e aglio.",
-        "price": "€4,00",
-        "imageUrl": "https://images.pexels.com/photos/1893558/pexels-photo-1893558.jpeg?auto=compress&cs=tinysrgb&w=400",
-        "badge": "Classico",
-        "features": ["Patate", "Rosmarino"],
-        "ingredients": "Patate fresche, rosmarino, aglio, olio EVO, sale marino.",
-        "allergens": "Nessuno",
-        "buttonText": "Ordina Ora",
-        "buttonHref": "#contact",
-        "categoryId": "cat6",
         "meal": "lunch",
+        "name": "Insalata Mista",
+        "badge": "Fresca",
+        "price": "€4,50",
         "dishType": "contorno",
-        "availableDays": ["monday", "tuesday", "wednesday", "thursday", "friday"]
+        "features": [
+          "Lattuga",
+          "Pomodorini",
+          "Olive"
+        ],
+        "imageUrl": "img/Screenshot 2026-08-08 084810.png",
+        "allergens": "Nessuno",
+        "buttonHref": "#contact",
+        "buttonText": "Ordina Ora",
+        "categoryId": "cat7",
+        "description": "Lattuga, pomodorini, carote, mais e olive.",
+        "ingredients": "Lattuga, pomodorini, carote, mais, olive, cipolla rossa, olio EVO, aceto balsamico.",
+        "availableDays": [
+          "tuesday",
+          "thursday"
+        ]
       },
       {
         "id": "pr16",
-        "name": "Verdure Grigliate",
-        "description": "Zucchine, melanzane e peperoni grigliati.",
-        "price": "€5,00",
-        "imageUrl": "https://images.pexels.com/photos/4110015/pexels-photo-4110015.jpeg?auto=compress&cs=tinysrgb&w=400",
-        "badge": "Vegetariano",
-        "features": ["Zucchine", "Melanzane", "Peperoni"],
-        "ingredients": "Zucchine, melanzane, peperoni, olio EVO, erbe aromatiche.",
-        "allergens": "Nessuno",
-        "buttonText": "Ordina Ora",
+        "meal": "both",
+        "name": "Tiramisù Classico",
+        "badge": "Fatto in Casa",
+        "price": "€7,00",
+        "dishType": "dolce",
+        "features": [
+          "Mascarpone",
+          "Caffè espresso",
+          "Savoiardi",
+          "Cacao"
+        ],
+        "imageUrl": "img/Screenshot 2026-08-08 084724.png",
+        "allergens": "Glutine, lattosio, uova",
         "buttonHref": "#contact",
-        "categoryId": "cat6",
-        "meal": "lunch",
-        "dishType": "contorno",
-        "availableDays": ["monday", "wednesday", "friday"]
+        "buttonText": "Ordina Ora",
+        "categoryId": "cat5",
+        "description": "Mascarpone, caffè espresso, savoiardi e cacao amaro. Il dolce italiano per eccellenza.",
+        "ingredients": "Mascarpone fresco, caffè espresso, savoiardi, uova fresche, zucchero, cacao amaro."
       },
       {
         "id": "pr17",
-        "name": "Tiramisù Classico",
-        "description": "Mascarpone, caffè espresso, savoiardi e cacao amaro.",
-        "price": "€7,00",
-        "imageUrl": "https://images.pexels.com/photos/4109086/pexels-photo-4109086.jpeg?auto=compress&cs=tinysrgb&w=400",
-        "badge": "Fatto in Casa",
-        "features": ["Mascarpone", "Caffè espresso", "Savoiardi"],
-        "ingredients": "Mascarpone fresco, caffè espresso, savoiardi, uova fresche, zucchero, cacao amaro.",
-        "allergens": "Glutine, lattosio, uova",
-        "buttonText": "Ordina Ora",
-        "buttonHref": "#contact",
-        "categoryId": "cat7",
-        "meal": "lunch",
-        "dishType": "dolce",
-        "availableDays": ["monday", "tuesday", "wednesday", "thursday", "friday"]
-      },
-      {
-        "id": "pr18",
-        "name": "Vino Verdicchio DOC",
-        "description": "Vino bianco marchigiano, secco e aromatico.",
-        "price": "€18,00",
-        "imageUrl": "https://images.pexels.com/photos/209239/pexels-photo-209239.jpeg?auto=compress&cs=tinysrgb&w=400",
-        "badge": "DOP",
-        "features": ["Verdicchio DOC", "Marchigiano", "Secco"],
-        "ingredients": "Vino Verdicchio dei Castelli di Jesi DOC, 12% vol, servito a 8-10°C.",
-        "allergens": "Solfiti",
-        "buttonText": "Ordina Ora",
-        "buttonHref": "#contact",
-        "categoryId": "cat8",
         "meal": "both",
-        "dishType": "bevanda"
-      },
-      {
-        "id": "pr19",
-        "name": "Gamberoni all'Arrabbiata",
-        "description": "Gamberoni freschi in salsa piccante con aglio e peperoncino.",
-        "price": "€20",
-        "imageUrl": "https://images.pexels.com/photos/725992/pexels-photo-725992.jpeg?auto=compress&cs=tinysrgb&w=400",
-        "badge": "Specialità",
-        "features": ["Gamberoni freschi", "Salsa piccante", "Aglio"],
-        "ingredients": "Gamberoni rossi mediterranei, aglio, peperoncino calabrese, vino bianco, prezzemolo, olio EVO",
-        "allergens": "Crostacei",
-        "buttonText": "Ordina Ora",
+        "name": "Vino Verdicchio DOC",
+        "badge": "DOP",
+        "price": "€18,00",
+        "dishType": "bevanda",
+        "features": [
+          "Verdicchio DOC",
+          "Marchigiano",
+          "Secco",
+          "8° alcol"
+        ],
+        "imageUrl": "img/Screenshot 2026-08-08 084738.png",
+        "allergens": "Solfiti",
         "buttonHref": "#contact",
-        "categoryId": "cat3",
-        "meal": "dinner",
-        "dishType": "antipasto"
-      },
-      {
-        "id": "pr20",
-        "name": "Cozze alla Tarantina",
-        "description": "Cozze fresche in salsa di pomodoro piccante.",
-        "price": "€12",
-        "imageUrl": "https://images.pexels.com/photos/725992/pexels-photo-725992.jpeg?auto=compress&cs=tinysrgb&w=400",
-        "badge": "Classico",
-        "features": ["Cozze fresche", "Pomodoro", "Piccante"],
-        "ingredients": "Cozze fresche del mediterraneo, pomodorini San Marzano, aglio, peperoncino, vino bianco, prezzemolo",
-        "allergens": "Pesce, Molluschi",
         "buttonText": "Ordina Ora",
-        "buttonHref": "#contact",
-        "categoryId": "cat3",
-        "meal": "dinner",
-        "dishType": "antipasto"
-      },
-      {
-        "id": "pr21",
-        "name": "Tagliatelle allo Scoglio",
-        "description": "Tagliatelle fresche con frutti di mare.",
-        "price": "€12",
-        "imageUrl": "https://images.pexels.com/photos/4518598/pexels-photo-4518598.jpeg?auto=compress&cs=tinysrgb&w=400",
-        "badge": "Fresche",
-        "features": ["Tagliatelle fresche", "Frutti di mare"],
-        "ingredients": "Tagliatelle fresche, cozze, vongole, gamberi, pomodorini, aglio, olio EVO, prezzemolo",
-        "allergens": "Crostacei, Molluschi, Glutine",
-        "buttonText": "Ordina Ora",
-        "buttonHref": "#contact",
-        "categoryId": "cat4",
-        "meal": "dinner",
-        "dishType": "primo"
-      },
-      {
-        "id": "pr22",
-        "name": "Bistecca di Manzo alla Brace",
-        "description": "Bistecca di manzo alla griglia.",
-        "price": "€20",
-        "imageUrl": "https://images.pexels.com/photos/1267210/pexels-photo-1267210.jpeg?auto=compress&cs=tinysrgb&w=400",
-        "badge": "Carne",
-        "features": ["Manzo", "Griglia", "Contorni"],
-        "ingredients": "Bistecca di manzo scelta, rosmarino, aglio, olio EVO, sale marino",
-        "allergens": "Nessuno",
-        "buttonText": "Ordina Ora",
-        "buttonHref": "#contact",
-        "categoryId": "cat5",
-        "meal": "dinner",
-        "dishType": "secondo"
-      },
-      {
-        "id": "pr23",
-        "name": "Patatine Fritte",
-        "description": "Patatine fritte croccanti.",
-        "price": "€4",
-        "imageUrl": "https://images.pexels.com/photos/1893558/pexels-photo-1893558.jpeg?auto=compress&cs=tinysrgb&w=400",
-        "badge": "Classico",
-        "features": ["Patatine", "Fritte"],
-        "ingredients": "Patate fresche, olio di semi di girasole, sale marino",
-        "allergens": "Nessuno",
-        "buttonText": "Ordina Ora",
-        "buttonHref": "#contact",
         "categoryId": "cat6",
-        "meal": "dinner",
-        "dishType": "contorno"
-      },
-      {
-        "id": "pr24",
-        "name": "Cheesecake al Mirtillo",
-        "description": "Cheesecake con mirtilli freschi.",
-        "price": "€5",
-        "imageUrl": "https://images.pexels.com/photos/4109086/pexels-photo-4109086.jpeg?auto=compress&cs=tinysrgb&w=400",
-        "badge": "Dolce",
-        "features": ["Mirtillo", "Cheesecake"],
-        "ingredients": "Formaggio cremoso, panna, zucchero, mirtilli freschi, biscotti digestive",
-        "allergens": "Glutine, Latticini, Uova",
-        "buttonText": "Ordina Ora",
-        "buttonHref": "#contact",
-        "categoryId": "cat7",
-        "meal": "dinner",
-        "dishType": "dolce"
+        "description": "Vino bianco marchigiano, secco e aromatico. Perfetto con pesce e antipasti.",
+        "ingredients": "Vino Verdicchio dei Castelli di Jesi DOC, 12% vol, servito a 8-10°C."
       }
     ]
   },
@@ -545,20 +636,23 @@
       {
         "id": "p1",
         "name": "Pranzo",
-        "monthlyPrice": "€25",
-        "yearlyPrice": "€250",
-        "description": "Antipasto, pizza, dolce e bevanda. Il menu perfetto per la pausa pranzo.",
-        "features": ["Antipasto del giorno", "Pizza classica", "Dolce della casa", "Bevanda inclusa"],
-        "buttonText": "Prenota",
+        "popular": false,
+        "features": [
+          "Antipasto del giorno",
+          "Pizza classica",
+          "Dolce della casa",
+          "Bevanda inclusa"
+        ],
         "buttonHref": "#contact",
-        "popular": false
+        "buttonText": "Prenota",
+        "description": "Antipasto, pizza, dolce e bevanda. Il menu perfetto per la pausa pranzo.",
+        "yearlyPrice": "€250",
+        "monthlyPrice": "€25"
       },
       {
         "id": "p2",
         "name": "Cena Completa",
-        "monthlyPrice": "€45",
-        "yearlyPrice": "€450",
-        "description": "Il percorso completo: antipasti, primo, pizza, dolce e vino delle Marche.",
+        "popular": true,
         "features": [
           "Antipasti di mare e terra",
           "Primo della tradizione",
@@ -566,16 +660,16 @@
           "Dolce artigianale",
           "Vino locale incluso"
         ],
-        "buttonText": "Prenota",
         "buttonHref": "#contact",
-        "popular": true
+        "buttonText": "Prenota",
+        "description": "Il percorso completo: antipasti, primo, pizza, dolce e vino delle Marche.",
+        "yearlyPrice": "€450",
+        "monthlyPrice": "€45"
       },
       {
         "id": "p3",
         "name": "Degustazione Gourmet",
-        "monthlyPrice": "€60",
-        "yearlyPrice": "€600",
-        "description": "Un'esperienza culinaria completa con le nostre pizze gourmet più esclusive.",
+        "popular": false,
         "features": [
           "Pizza signature Bota",
           "Selezione di formaggi",
@@ -583,226 +677,349 @@
           "Dolce del pasticcere",
           "Amaro o digestivo offerto"
         ],
-        "buttonText": "Prenota",
         "buttonHref": "#contact",
-        "popular": false
+        "buttonText": "Prenota",
+        "description": "Un'esperienza culinaria completa con le nostre pizze gourmet più esclusive.",
+        "yearlyPrice": "€600",
+        "monthlyPrice": "€60"
       }
     ]
   },
   "testimonials": {
-    "heading": "Recensioni dei Clienti",
-    "subheading": "Ecco cosa dicono i nostri ospiti",
+    "heading": "Cosa dicono i nostri clienti",
+    "subheading": "Le recensioni di chi ha già vissuto l'esperienza Bota.",
     "layout": "grid",
     "items": [
       {
         "id": "t1",
-        "name": "Marco Rossi",
+        "name": "Marco R.",
         "role": "Cliente abituale",
-        "avatar": "https://i.pravatar.cc/200?u=marcorossi",
-        "rating": 5,
-        "text": "Esperienza culinaria straordinaria! Piatti deliziosi e servizio impeccabile. Consigliatissimo per chi cerca qualità e autenticità."
+        "text": "La migliore pizza di Fano! L'impasto è leggero e digeribile, cotto nel forno a legna alla perfezione. La Bota Speciale con tartufo è semplicemente eccezionale.",
+        "avatar": "https://i.pravatar.cc/200?u=marco",
+        "rating": 5
       },
       {
         "id": "t2",
-        "name": "Giulia Bianchi",
-        "role": "Ospite",
-        "avatar": "https://i.pravatar.cc/200?u=giuliabianchi",
-        "rating": 5,
-        "text": "Atmosfera meravigliosa e cucina eccellente. Ogni piatto è una scoperta. Torneremo sicuramente!"
+        "name": "Giulia B.",
+        "role": "Turista",
+        "text": "Abbiamo scoperto Bota durante una vacanza a Fano. Ambiente accogliente, personale gentile e una pizza che non dimenticheremo. Torneremo sicuramente!",
+        "avatar": "https://i.pravatar.cc/200?u=giulia",
+        "rating": 5
       },
       {
         "id": "t3",
-        "name": "Antonio Verdi",
-        "role": "Cliente",
-        "avatar": "https://i.pravatar.cc/200?u=antonioverdi",
-        "rating": 4,
-        "text": "Ottimo ristorante con piatti della tradizione rivisitati in modo moderno. Ingredienti freschi e porzioni abbondanti."
+        "name": "Alessandro C.",
+        "role": "Critico gastronomico",
+        "text": "Un'autentica pizzeria marchigiana. La lievitazione è perfetta, la scelta degli ingredienti è curata e la cantina offre ottimi vini locali. Consigliatissima.",
+        "avatar": "https://i.pravatar.cc/200?u=alessandro",
+        "rating": 5
       },
       {
         "id": "t4",
-        "name": "Elena Neri",
-        "role": "Ospite occasionale",
-        "avatar": "https://i.pravatar.cc/200?u=elenaneri",
-        "rating": 5,
-        "text": "Personale gentilissimo e cibo delizioso. L'ambiente è perfetto per una cena romantica o una serata tra amici."
+        "name": "Sara M.",
+        "role": "Recensora Google",
+        "text": "Pizza ottima e servizio veloce. Il locale è carino anche se un po' piccolo nei weekend. La quattro formaggi è da provare!",
+        "avatar": "https://i.pravatar.cc/200?u=sara",
+        "rating": 4
       }
     ]
   },
   "faq": {
-    "heading": "Domande Frequenti",
-    "subheading": "Tutto quello che devi sapere prima di visitarci",
+    "heading": "Domande frequenti",
+    "subheading": "Tutto quello che devi sapere su Bota.",
     "items": [
       {
         "id": "q1",
+        "answer": "Puoi prenotare chiamando direttamente il ristorante al numero 0721 000000, oppure compilando il modulo di contatto nella sezione Contatti. Per i weekend consigliamo di prenotare con qualche giorno di anticipo.",
         "category": "Prenotazioni",
-        "question": "Come posso prenotare un tavolo?",
-        "answer": "Puoi prenotare telefonicamente al numero indicato nella sezione Contatti, oppure compilando il modulo online. Ti consigliamo di prenotare con anticipo per il weekend."
+        "question": "Come posso prenotare un tavolo?"
       },
       {
         "id": "q2",
+        "answer": "Sì, offriamo pizze senza glutine con impasto dedicato preparato in un'area separata per evitare contaminazioni. Il supplemento è di €2,50.",
         "category": "Menu",
-        "question": "Ci sono opzioni per vegetariani?",
-        "answer": "Sì, il nostro menu include diverse opzioni vegetariane e siamo disponibili a soddisfare richieste particolari. Chiedi al personale per consigli personalizzati."
+        "question": "Fate pizze senza glutine?"
       },
       {
         "id": "q3",
+        "answer": "Assolutamente sì! Abbiamo diverse pizze vegetariane e possiamo preparare versioni vegane con formaggio vegetale su richiesta. Il nostro menù è pensato per tutti i gusti.",
         "category": "Menu",
-        "question": "È possibile modificare i piatti?",
-        "answer": "Cerchiamo di accontentare tutte le richieste. Informa il personale di eventuali allergie o preferenze e faremo del nostro meglio."
+        "question": "Avete opzioni vegetariane e vegane?"
       },
       {
         "id": "q4",
+        "answer": "Sì, puoi ordinare da asporto chiamando il ristorante. La consegna a domicilio è disponibile nel centro di Fano e nelle zone limitrofe, dal martedì alla domenica dalle 18:30.",
         "category": "Ristorante",
-        "question": "Accettate pagamenti con carta?",
-        "answer": "Sì, accettiamo tutti i principali metodi di pagamento: contanti, carte di credito, bancomat e app di pagamento."
+        "question": "Fate anche asporto e consegna a domicilio?"
       },
       {
         "id": "q5",
+        "answer": "Siamo aperti dal martedì alla domenica, dalle 18:30 alle 23:00. Il lunedì il ristorante è chiuso. A pranzo siamo aperti il sabato e la domenica dalle 12:30 alle 14:30.",
         "category": "Ristorante",
-        "question": "C'è un parcheggio nelle vicinanze?",
-        "answer": "Sì, nelle vicinanze del ristorante sono disponibili parcheggi pubblici e aree di sosta per i clienti."
+        "question": "Quali sono gli orari di apertura?"
       }
     ]
   },
   "orari": {
     "heading": "Orari di Apertura",
-    "subheading": "Quando puoi trovarci",
+    "subheading": "Vieni a trovarci — ti aspettiamo!",
     "items": [
-      { "id": "o1", "day": "Lunedì", "lunch": "Chiuso", "dinner": "Chiuso", "closed": true },
-      { "id": "o2", "day": "Martedì", "lunch": "Chiuso", "dinner": "19:00 – 23:00", "closed": false },
-      { "id": "o3", "day": "Mercoledì", "lunch": "Chiuso", "dinner": "19:00 – 23:00", "closed": false },
-      { "id": "o4", "day": "Giovedì", "lunch": "Chiuso", "dinner": "19:00 – 23:00", "closed": false },
-      { "id": "o5", "day": "Venerdì", "lunch": "Chiuso", "dinner": "19:00 – 23:30", "closed": false },
-      { "id": "o6", "day": "Sabato", "lunch": "12:30 – 14:30", "dinner": "19:00 – 00:00", "closed": false },
-      { "id": "o7", "day": "Domenica", "lunch": "12:30 – 14:30", "dinner": "19:00 – 23:00", "closed": false }
+      {
+        "id": "o1",
+        "day": "Lunedì",
+        "lunch": "Chiuso",
+        "closed": true,
+        "dinner": "Chiuso"
+      },
+      {
+        "id": "o2",
+        "day": "Martedì",
+        "lunch": "Chiuso",
+        "closed": false,
+        "dinner": "18:30 – 23:00"
+      },
+      {
+        "id": "o3",
+        "day": "Mercoledì",
+        "lunch": "Chiuso",
+        "closed": false,
+        "dinner": "18:30 – 23:00"
+      },
+      {
+        "id": "o4",
+        "day": "Giovedì",
+        "lunch": "Chiuso",
+        "closed": false,
+        "dinner": "18:30 – 23:00"
+      },
+      {
+        "id": "o5",
+        "day": "Venerdì",
+        "lunch": "Chiuso",
+        "closed": false,
+        "dinner": "18:30 – 23:00"
+      },
+      {
+        "id": "o6",
+        "day": "Sabato",
+        "lunch": "12:30 – 14:30",
+        "closed": false,
+        "dinner": "18:30 – 23:00"
+      },
+      {
+        "id": "o7",
+        "day": "Domenica",
+        "lunch": "12:30 – 14:30",
+        "closed": false,
+        "dinner": "18:30 – 23:00"
+      }
     ],
-    "note": "La cucina chiude 30 minuti prima della chiusura. Prenotazione consigliata."
+    "note": "La cucina chiude 30 minuti prima dell'orario indicato. Per il weekend consigliamo la prenotazione."
   },
   "galleria": {
-    "heading": "Galleria Fotografica",
-    "subheading": "Uno sguardo all'interno del nostro locale",
+    "heading": "La Nostra Galleria",
+    "subheading": "Uno sguardo alla nostra cucina e ai nostri piatti",
     "images": [
       {
         "id": "g1",
-        "src": "https://images.pexels.com/photos/1581384/pexels-photo-1581384.jpeg?auto=compress&cs=tinysrgb&w=800",
-        "alt": "Interno del ristorante",
-        "caption": "L'ambiente accogliente"
+        "alt": "Pizza nel forno a legna",
+        "src": "https://images.pexels.com/photos/1146704/pexels-photo-1146704.jpeg?auto=compress&cs=tinysrgb&w=800",
+        "caption": "Il nostro forno a legna"
       },
       {
         "id": "g2",
-        "src": "https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg?auto=compress&cs=tinysrgb&w=800",
-        "alt": "Piatto gourmet",
-        "caption": "I nostri piatti"
+        "alt": "Pizza Margherita",
+        "src": "https://images.pexels.com/photos/275345/pexels-photo-275345.jpeg?auto=compress&cs=tinysrgb&w=800",
+        "caption": "La nostra Margherita"
       },
       {
         "id": "g3",
-        "src": "https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg?auto=compress&cs=tinysrgb&w=800",
         "alt": "Ingredienti freschi",
-        "caption": "Ingredienti selezionati"
+        "src": "https://images.pexels.com/photos/158491/food-italian-cooking-pizza-158491.jpeg?auto=compress&cs=tinysrgb&w=800",
+        "caption": "Ingredienti del territorio"
       },
       {
         "id": "g4",
-        "src": "https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg?auto=compress&cs=tinysrgb&w=800",
-        "alt": "Cucina",
-        "caption": "La nostra cucina"
+        "alt": "Pizza gourmet con tartufo",
+        "src": "https://images.pexels.com/photos/905847/pexels-photo-905847.jpeg?auto=compress&cs=tinysrgb&w=800",
+        "caption": "Bota Speciale al tartufo"
       },
       {
         "id": "g5",
-        "src": "https://images.pexels.com/photos/696218/pexels-photo-696218.jpeg?auto=compress&cs=tinysrgb&w=800",
-        "alt": "Piatto servito",
-        "caption": "Presentazione curata"
+        "alt": "Pizza in forno",
+        "src": "https://images.pexels.com/photos/1245449/pexels-photo-1245449.jpeg?auto=compress&cs=tinysrgb&w=800",
+        "caption": "Cottura a 450°C"
       },
       {
         "id": "g6",
-        "src": "https://images.pexels.com/photos/941861/pexels-photo-941861.jpeg?auto=compress&cs=tinysrgb&w=800",
-        "alt": "Sala pranzo",
-        "caption": "Perfetto per ogni occasione"
+        "alt": "Pizza servita al tavolo",
+        "src": "https://images.pexels.com/photos/2085949/pexels-photo-2085949.jpeg?auto=compress&cs=tinysrgb&w=800",
+        "caption": "Servita al tavolo"
       }
     ]
   },
   "contact": {
-    "heading": "Contattaci",
-    "subheading": "Hai domande o vuoi prenotare? Scrivici un messaggio",
-    "buttonText": "Invia Messaggio",
-    "successMessage": "Grazie per il tuo messaggio! Ti risponderemo presto.",
+    "heading": "Prenota il tuo tavolo",
+    "subheading": "Hai domande, vuoi prenotare o organizzare un evento? Scrivici e ti risponderemo al più presto.",
+    "buttonText": "Invia Richiesta",
+    "successMessage": "Grazie per averci contattato! Ti risponderemo entro 24 ore.",
     "fields": [
-      { "id": "cf1", "type": "text", "label": "Nome Completo", "placeholder": "Mario Rossi", "required": true, "options": [] },
-      { "id": "cf2", "type": "email", "label": "Email", "placeholder": "mario@esempio.com", "required": true, "options": [] },
-      { "id": "cf3", "type": "phone", "label": "Telefono", "placeholder": "+39 333 123 4567", "required": false, "options": [] },
+      {
+        "id": "cf1",
+        "type": "text",
+        "label": "Nome e Cognome",
+        "options": [],
+        "required": true,
+        "placeholder": "Mario Rossi"
+      },
+      {
+        "id": "cf2",
+        "type": "email",
+        "label": "Indirizzo Email",
+        "options": [],
+        "required": true,
+        "placeholder": "mario@esempio.com"
+      },
+      {
+        "id": "cf3",
+        "type": "phone",
+        "label": "Numero di Telefono",
+        "options": [],
+        "required": true,
+        "placeholder": "+39 333 123 4567"
+      },
       {
         "id": "cf4",
         "type": "select",
-        "label": "Motivo del contatto",
-        "placeholder": "Seleziona...",
+        "label": "Tipo di richiesta",
+        "options": [
+          "Prenotazione tavolo",
+          "Asporto",
+          "Eventi privati",
+          "Informazioni generali",
+          "Altro"
+        ],
         "required": false,
-        "options": ["Prenotazione", "Informazioni", "Evento", "Altro"]
+        "placeholder": "Seleziona un'opzione"
       },
       {
         "id": "cf5",
         "type": "textarea",
-        "label": "Messaggio",
-        "placeholder": "Scrivi qui il tuo messaggio...",
+        "label": "Il tuo messaggio",
+        "options": [],
         "required": true,
-        "options": []
+        "placeholder": "Numero di persone, data, ora e qualsiasi richiesta speciale..."
       }
     ]
   },
   "footer": {
-    "logoText": "Template Ristorante",
-    "description": "Un esempio di sito web per ristorante. Cucina autentica, ambiente accogliente e servizio di qualità.",
+    "logoText": "Bota",
+    "description": "Pizzeria Ristorante nel cuore di Fano. Pizza artigianale cotta nel forno a legna, cucina marchigiana e vini del territorio. Dal 1995.",
     "columns": [
       {
         "id": "fc1",
-        "title": "Navigazione",
         "links": [
-          { "id": "fl1", "label": "Chi Siamo", "href": "#about" },
-          { "id": "fl2", "label": "Menu", "href": "#products" },
-          { "id": "fl3", "label": "Galleria", "href": "#galleria" }
-        ]
+          {
+            "id": "fl1",
+            "href": "#products",
+            "label": "Le Nostre Pizze"
+          },
+          {
+            "id": "fl2",
+            "href": "#about",
+            "label": "Chi Siamo"
+          },
+          {
+            "id": "fl3",
+            "href": "#faq",
+            "label": "FAQ"
+          }
+        ],
+        "title": "Menu"
       },
       {
         "id": "fc2",
-        "title": "Informazioni",
         "links": [
-          { "id": "fl4", "label": "Prenotazioni", "href": "#contact" },
-          { "id": "fl5", "label": "FAQ", "href": "#faq" },
-          { "id": "fl6", "label": "Orari", "href": "#orari" }
-        ]
+          {
+            "id": "fl4",
+            "href": "#contact",
+            "label": "Prenota un Tavolo"
+          },
+          {
+            "id": "fl5",
+            "href": "tel:+390721000000",
+            "label": "Tel: 0721 000000"
+          },
+          {
+            "id": "fl6",
+            "href": "mailto:info@botafano.it",
+            "label": "info@botafano.it"
+          }
+        ],
+        "title": "Contatti"
       },
       {
         "id": "fc3",
-        "title": "Contatti",
         "links": [
-          { "id": "fl7", "label": "Email", "href": "mailto:info@ristorante.it" },
-          { "id": "fl8", "label": "Telefono", "href": "tel:+391234567890" },
-          { "id": "fl9", "label": "Indirizzo", "href": "https://maps.google.com" }
-        ]
+          {
+            "id": "fl7",
+            "href": "https://maps.google.com/?q=Via+Arco+d'Augusto+12+Fano",
+            "label": "Via Arco d'Augusto, 12"
+          },
+          {
+            "id": "fl8",
+            "href": "https://maps.google.com/?q=Fano+PU",
+            "label": "61032 Fano (PU)"
+          },
+          {
+            "id": "fl9",
+            "href": "https://maps.google.com/?q=Fano+PU",
+            "label": "Marche, Italia"
+          }
+        ],
+        "title": "Dove Siamo"
       }
     ],
     "socials": [
-      { "id": "so1", "icon": "Instagram", "href": "#" },
-      { "id": "so2", "icon": "Facebook", "href": "#" },
-      { "id": "so3", "icon": "Google", "href": "#" },
-      { "id": "so4", "icon": "Youtube", "href": "#" }
+      {
+        "id": "so1",
+        "href": "https://instagram.com/botafano",
+        "icon": "Instagram"
+      },
+      {
+        "id": "so2",
+        "href": "https://facebook.com/botafano",
+        "icon": "Facebook"
+      },
+      {
+        "id": "so3",
+        "href": "#",
+        "icon": "Twitter"
+      },
+      {
+        "id": "so4",
+        "href": "#",
+        "icon": "Youtube"
+      }
     ],
-    "copyright": "© 2024 Template Ristorante — Sito Demo. Tutti i diritti riservati.",
+    "copyright": "© 2024 Bota Pizzeria Ristorante — Fano. Tutti i diritti riservati.",
     "showLegalDisclaimer": false,
     "legalText": ""
   },
   "whatsapp": {
     "enabled": true,
     "phone": "393331234567",
-    "message": "Ciao! Vorrei informazioni sul ristorante."
+    "message": "Ciao Bota! Vorrei prenotare un tavolo."
   },
   "cookie": {
     "enabled": true,
-    "message": "Utilizziamo i cookie per migliorare la tua esperienza. Continuando a navigare accetti l'utilizzo dei cookie.",
+    "message": "Utilizziamo i cookie per migliorare la tua esperienza di navigazione. Continuando a visitare il sito accetti l'utilizzo dei cookie.",
     "acceptText": "Accetta",
     "declineText": "Rifiuta"
   },
   "seo": {
-    "pageTitle": "Template Sito Ristorante — Demo",
-    "metaDescription": "Esempio di sito web per ristorante. Questo è un template di dimostrazione con contenuti fittizi.",
+    "pageTitle": "Bota — Pizzeria Ristorante a Fano | Pizza Artigianale",
+    "metaDescription": "Bota è la pizzeria ristorante di Fano. Pizza artigianale cotta nel forno a legna, cucina marchigiana, vini del territorio. Prenota ora nel centro storico di Fano.",
     "ogImageUrl": ""
   },
   "code": {

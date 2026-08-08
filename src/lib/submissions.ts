@@ -9,7 +9,7 @@ let useSupabase = true;
 export async function saveSubmission(
   data: Record<string, string>,
 ): Promise<{ ok: boolean; error?: string }> {
-  const payload = { data, status: 'new' as const };
+  const payload = { data, status: 'received' as const };
 
   if (useSupabase && supabase) {
     try {

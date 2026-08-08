@@ -1,12 +1,13 @@
 import { useEffect, useState, useMemo } from 'react';
-import { Search, Download, Trash2, Mail, Inbox } from 'lucide-react';
+import { Search, Download, Trash2, Inbox } from 'lucide-react';
 import type { FormSubmission, SubmissionStatus } from '@/types';
 import { fetchSubmissions, updateSubmissionStatus, deleteSubmission, isUsingSupabase } from '@/lib/submissions';
 import { useToast } from '@/hooks/useToast';
 
 const STATUS_COLORS: Record<SubmissionStatus, string> = {
-  new: 'bg-blue-100 text-blue-700',
-  contacted: 'bg-amber-100 text-amber-700',
+  received: 'bg-blue-100 text-blue-700',
+  processing: 'bg-amber-100 text-amber-700',
+  submitted: 'bg-green-100 text-green-700',
   archived: 'bg-slate-100 text-slate-600',
 };
 
@@ -100,8 +101,9 @@ export function LeadsManager() {
           className="rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none focus:border-blue-500"
         >
           <option value="all">All Statuses</option>
-          <option value="new">New</option>
-          <option value="contacted">Contacted</option>
+          <option value="received">Received</option>
+          <option value="processing">Processing</option>
+          <option value="submitted">Submitted</option>
           <option value="archived">Archived</option>
         </select>
         <button
@@ -159,8 +161,9 @@ export function LeadsManager() {
                       onChange={(e) => handleStatusChange(s.id, e.target.value as SubmissionStatus)}
                       className={`rounded-full px-2.5 py-1 text-xs font-semibold outline-none ${STATUS_COLORS[s.status]}`}
                     >
-                      <option value="new">New</option>
-                      <option value="contacted">Contacted</option>
+                      <option value="received">Received</option>
+                      <option value="processing">Processing</option>
+                      <option value="submitted">Submitted</option>
                       <option value="archived">Archived</option>
                     </select>
                   </td>

@@ -301,7 +301,7 @@ export interface SiteConfig {
   code: CodeInjectionConfig;
 }
 
-export type SubmissionStatus = 'new' | 'contacted' | 'archived';
+export type SubmissionStatus = 'received' | 'processing' | 'submitted' | 'archived';
 
 export interface FormSubmission {
   id: string;
