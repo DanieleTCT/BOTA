@@ -37,7 +37,7 @@ export function PublicPage({ config }: { config: SiteConfig }) {
   return (
     <div className="min-h-screen" style={{ backgroundColor: 'var(--color-bg)' }}>
       {enabled.map((section) => (
-        <div key={section.id}>{SECTION_RENDERERS[section.id](config)}</div>
+        <div key={section.id} id={section.id}>{SECTION_RENDERERS[section.id](config)}</div>
       ))}
       <FloatingWhatsApp config={config.whatsapp} />
       <CookieBanner config={config.cookie} />
