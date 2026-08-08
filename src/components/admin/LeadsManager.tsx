@@ -1,5 +1,5 @@
-import { useEffect, useState, useMemo } from 'react';
-import { Search, Download, Trash2, Inbox } from 'lucide-react';
+import { Fragment, useEffect, useState, useMemo } from 'react';
+import { Search, Download, Trash2, Inbox, ChevronDown, ChevronUp } from 'lucide-react';
 import type { FormSubmission, SubmissionStatus } from '@/types';
 import { fetchSubmissions, updateSubmissionStatus, deleteSubmission, isUsingSupabase } from '@/lib/submissions';
 import { useToast } from '@/hooks/useToast';
@@ -16,6 +16,7 @@ export function LeadsManager() {
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState('');
   const [statusFilter, setStatusFilter] = useState<SubmissionStatus | 'all'>('all');
+  const [expandedId, setExpandedId] = useState<string | null>(null);
   const { notify } = useToast();
 
   useEffect(() => {
@@ -135,48 +136,83 @@ export function LeadsManager() {
               </tr>
             </thead>
             <tbody>
-              {filtered.map((s) => (
-                <tr key={s.id} className="border-b border-slate-100 last:border-0">
-                  <td className="whitespace-nowrap px-4 py-3 text-xs text-slate-500">
-                    {new Date(s.created_at).toLocaleDateString()}
-                    <br />
-                    {new Date(s.created_at).toLocaleTimeString()}
-                  </td>
-                  <td className="px-4 py-3">
-                    <div className="space-y-0.5">
-                      {Object.entries(s.data).slice(0, 3).map(([k, v]) => (
-                        <div key={k} className="text-xs">
-                          <span className="font-semibold text-slate-600">{k}:</span>{' '}
-                          <span className="text-slate-500">{v.length > 50 ? v.slice(0, 50) + '...' : v}</span>
+              {filtered.map((s) => {
+                const isExpanded = expandedId === s.id;
+                const dataEntries = Object.entries(s.data);
+                return (
+                  <Fragment key={s.id}>
+                    <tr className="border-b border-slate-100 last:border-0">
+                      <td className="whitespace-nowrap px-4 py-3 text-xs text-slate-500">
+                        {new Date(s.created_at).toLocaleDateString()}
+                        <br />
+                        {new Date(s.created_at).toLocaleTimeString()}
+                      </td>
+                      <td className="px-4 py-3">
+                        <div className="space-y-0.5">
+                          {dataEntries.slice(0, 3).map(([k, v]) => (
+                            <div key={k} className="text-xs">
+                              <span className="font-semibold text-slate-600">{k}:</span>{' '}
+                              <span className="text-slate-500">{v.length > 50 ? v.slice(0, 50) + '...' : v}</span>
+                            </div>
+                          ))}
+                          {dataEntries.length > 3 && (
+                            <button
+                              onClick={() => setExpandedId(isExpanded ? null : s.id)}
+                              className="flex items-center gap-1 text-xs font-semibold text-blue-600 transition hover:text-blue-800"
+                            >
+                              {isExpanded ? (
+                                <>
+                                  <ChevronUp className="h-3.5 w-3.5" />
+                                  Nascondi dettagli
+                                </>
+                              ) : (
+                                <>
+                                  <ChevronDown className="h-3.5 w-3.5" />
+                                  Mostra tutti i {dataEntries.length} campi
+                                </>
+                              )}
+                            </button>
+                          )}
                         </div>
-                      ))}
-                      {Object.keys(s.data).length > 3 && (
-                        <div className="text-xs text-slate-400">+{Object.keys(s.data).length - 3} more fields</div>
-                      )}
-                    </div>
-                  </td>
-                  <td className="px-4 py-3">
-                    <select
-                      value={s.status}
-                      onChange={(e) => handleStatusChange(s.id, e.target.value as SubmissionStatus)}
-                      className={`rounded-full px-2.5 py-1 text-xs font-semibold outline-none ${STATUS_COLORS[s.status]}`}
-                    >
-                      <option value="received">Received</option>
-                      <option value="processing">Processing</option>
-                      <option value="submitted">Submitted</option>
-                      <option value="archived">Archived</option>
-                    </select>
-                  </td>
-                  <td className="px-4 py-3 text-right">
-                    <button
-                      onClick={() => handleDelete(s.id)}
-                      className="rounded-lg p-1.5 text-rose-400 transition hover:bg-rose-50 hover:text-rose-600"
-                    >
-                      <Trash2 className="h-4 w-4" />
-                    </button>
-                  </td>
-                </tr>
-              ))}
+                      </td>
+                      <td className="px-4 py-3">
+                        <select
+                          value={s.status}
+                          onChange={(e) => handleStatusChange(s.id, e.target.value as SubmissionStatus)}
+                          className={`rounded-full px-2.5 py-1 text-xs font-semibold outline-none ${STATUS_COLORS[s.status]}`}
+                        >
+                          <option value="received">Received</option>
+                          <option value="processing">Processing</option>
+                          <option value="submitted">Submitted</option>
+                          <option value="archived">Archived</option>
+                        </select>
+                      </td>
+                      <td className="px-4 py-3 text-right">
+                        <button
+                          onClick={() => handleDelete(s.id)}
+                          className="rounded-lg p-1.5 text-rose-400 transition hover:bg-rose-50 hover:text-rose-600"
+                        >
+                          <Trash2 className="h-4 w-4" />
+                        </button>
+                      </td>
+                    </tr>
+                    {isExpanded && (
+                      <tr className="border-b border-slate-100 bg-slate-50/50 last:border-0">
+                        <td colSpan={4} className="px-4 py-3">
+                          <div className="grid grid-cols-1 gap-x-6 gap-y-2 sm:grid-cols-2 lg:grid-cols-3">
+                            {dataEntries.map(([k, v]) => (
+                              <div key={k} className="rounded-lg border border-slate-200 bg-white px-3 py-2">
+                                <div className="text-[10px] font-bold uppercase tracking-wide text-slate-400">{k}</div>
+                                <div className="mt-0.5 break-words text-sm text-slate-700">{v || '—'}</div>
+                              </div>
+                            ))}
+                          </div>
+                        </td>
+                      </tr>
+                    )}
+                  </Fragment>
+                );
+              })}
             </tbody>
           </table>
         </div>
